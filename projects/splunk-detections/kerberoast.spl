@@ -1,0 +1,12 @@
+/*
+Annotated Splunk SPL: Kerberoasting (Kerberos TGS requests with weak encryption)
+MITRE: T1558.003, T1003.006
+Notes: Requires Windows Security logs or DC logs with Kerberos events. Tune time window and thresholds to your lab environment.
+*/
+
+index=security sourcetype=WinEventLog:Security EventCode=4769
+| where like(_raw, "%TGS_REQ%") OR like(_raw, "%EncryptionType=0x17%") OR like(_raw, "%RC4%")
+| stats count as attempts by Account_Name, Service_Name, src_ip
+| where attempts > 5
+| eval mitre="T1558.003,T1003.006"
+| table _time, src_ip, Account_Name, Service_Name, attempts, mitre

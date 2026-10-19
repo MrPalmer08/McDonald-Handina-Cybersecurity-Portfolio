@@ -1,0 +1,12 @@
+/*
+Annotated Splunk SPL: DCSync / Directory replication requests from non-DC accounts
+MITRE: T1003.006, T1484.003 (if abuse leads to privileged changes)
+Notes: Look for event IDs and suspicious access patterns on Directory Service Access (4662) or replication activity.
+*/
+
+index=security sourcetype=WinEventLog:Security (EventCode=4662 OR EventCode=4624)
+| search "Replica" OR "Directory Service" OR "ReplicateGetChanges" OR "DsGetDC"
+| stats count by Account_Name, src_ip, EventCode
+| where count > 3
+| eval mitre="T1003.006"
+| table _time, src_ip, Account_Name, EventCode, count, mitre
