@@ -1,34 +1,60 @@
 # McDonald Handina - Cybersecurity Portfolio
 
-Hands-on cybersecurity projects focused on SOC operations, log analysis, Windows forensics, Splunk SIEM, vulnerability management, Active Directory monitoring, and malware analysis. Built to demonstrate practical blue-team skills.
+Welcome to my cybersecurity portfolio. I am a cybersecurity graduate based in Toronto, ON, targeting junior SOC Analyst, Cybersecurity Engineer, and IT Support roles. This repository showcases my hands-on security labs, technical skills, and continuous learning journey.
+
+[TODO: add LinkedIn URL]
 
 ---
 
-## Technical Skills & Tools
-
-* **SIEM & Log Analysis:** Splunk, Wireshark, Sysmon, Windows Event Logs
-* **Operating Systems & Infrastructure:** Windows Server, Active Directory, Linux (Ubuntu, Kali), VirtualBox/VMware
-* **Vulnerability Management:** Nessus, OpenVAS, CrowdStrike, Suricata
-* **Scripting & Data Analysis:** Python, PowerShell, Bash, SQL, C#
+## Skills
+Python, PowerShell, Bash, Git, Splunk (SPL), Wazuh, Sysmon, pfSense, OpenVAS, Nmap, Wireshark, Active Directory, MobSF, Test DPC
 
 ---
 
 ## Projects Index
+- [Active Directory Lab](projects/active-directory/README.md)
+- [Log Analysis Lab](projects/log-analysis/README.md)
+- [Malware Analysis Lab](projects/malware-analysis/README.md)
+- [Security Assessments](projects/security-assessments/README.md)
+- [SIEM Lab](projects/siem-lab/README.md)
+- [Vulnerability Management Lab](projects/vulnerability-management/README.md)
+- [Windows Forensics Lab](projects/windows-forensics/README.md)
 
-### 1. Security Information and Event Management (SIEM) & SOC Operations
-* Configured security monitoring platforms (Suricata IDS) and analyzed packet captures.
-* Ingested and analyzed Windows Event Logs and Sysmon data using Splunk and Wazuh to detect threat activity.
-
-### 2. Active Directory & Network Security
-* Built virtualized subnets featuring Windows Server, Kali Linux, and Windows 10 for security labs.
-* Evaluated Active Directory logs, user permissions, and network communications using Nmap and Wireshark.
-
-### 3. Vulnerability Management & Threat Monitoring
-* Executed vulnerability scans using OpenVAS and Burp Suite.
-* Documented findings, tracked risk levels, and identified remediation strategies.
+Planned: Windows forensics lab
 
 ---
 
-## Contact & Links
+## Certifications
 
-* **GitHub:** [https://github.com/MrPalmer08](https://github.com/MrPalmer08)
+### Cybersecurity
+- Google Cybersecurity Professional Certificate [TODO: year]
+- IBM: Cybersecurity Tools and Cyber Attacks [TODO: year]
+- Cisco Networking Academy: Introduction to Cybersecurity (Jan 23, 2025)
+- The Linux Foundation: Introduction to Linux, LFS101 (Apr 17, 2025)
+- GNS3 Academy: CCNA IP Addressing and Subnetting (Feb 7, 2025)
+- APNIC Academy: OSPF (Mar 10, 2025)
+- Microsoft Azure Fundamentals [TODO: year]
+- Infosec: Cybersecurity Foundations [TODO: year]
+- Great Learning: Network Security [TODO: year]
+- Forage: Cybersecurity Virtual Experience [TODO: year]
+
+### Compliance and licences
+- WHMIS 2026
+- AODA
+- Ontario Security Guard Licence
+
+## Memberships
+- ISC2 Candidate (candidate status, NOT a certification)
+
+---
+
+## Hands-on Training
+The following are completed learning rooms on TryHackMe:
+- Search Skills
+- Defensive Security Intro
+- SOC L1 Alert Triage
+- SOC Role in Blue Team
+- Linux Fundamentals Part 1
+- Offensive Security Intro
+
+[TODO: TryHackMe profile link]
