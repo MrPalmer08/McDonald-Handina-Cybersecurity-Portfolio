@@ -18,3 +18,9 @@ Notes
 - This is a home lab portfolio. It is not intended to represent production environments or production results.
 - Where a result, screenshot, or date is not confirmed, it is marked with [TODO: confirm], [TODO: year], or [TODO: add screenshot].
 - Do not run any offensive or network-based tools against systems without explicit permission.
+
+Certifications and training
+- Cybersecurity: see resume/RESUME.md
+- Compliance and licences: see resume/RESUME.md
+- Memberships: see PROFILE.md
+- Hands-on training: see PROFILE.md

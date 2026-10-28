@@ -2,7 +2,7 @@ McDonald Tatenda Handina
 Toronto, ON | hantinamcdonald@gmail.com | https://linkedin.com/in/mcdonald-handina-27a862359
 
 PROFILE
-Cybersecurity graduate and IT support professional with hands-on home-lab experience in Splunk, Wazuh, Sysmon, pfSense, and Active Directory fundamentals. I am seeking entry-level cybersecurity or IT support opportunities. My work focuses on home-lab security tooling, log review, troubleshooting, and practical experimentation.
+Cybersecurity graduate and IT support professional with hands-on home-lab experience in Splunk, Wazuh, Sysmon, pfSense, and Active Directory fundamentals. I am seeking entry-level cybersecurity or IT support opportunities. My work focuses on log analysis, troubleshooting, and practical experimentation in home-lab environments.
 
 CORE SKILLS
 - Python
@@ -71,8 +71,10 @@ CERTIFICATIONS
 Cybersecurity
 - Google Cybersecurity Professional Certificate [TODO: year]
 - IBM: Cybersecurity Tools and Cyber Attacks [TODO: year]
-- Cisco: Introduction to Cybersecurity [TODO: year]
-- Cisco: IP Addressing and Subnetting [TODO: year]
+- Cisco Networking Academy: Introduction to Cybersecurity (Jan 23, 2025)
+- The Linux Foundation: Introduction to Linux, LFS101 (Apr 17, 2025)
+- GNS3 Academy: CCNA IP Addressing and Subnetting (Feb 7, 2025)
+- APNIC Academy: OSPF (Mar 10, 2025)
 - Microsoft Azure Fundamentals [TODO: year]
 - Infosec: Cybersecurity Foundations [TODO: year]
 - Great Learning: Network Security [TODO: year]
@@ -84,3 +86,18 @@ Compliance and licences
 - Ontario Security Guard Licence [TODO: year]
 - [TODO: confirm] Worker Health & Safety Awareness
 - [TODO: confirm] other compliance items not yet verified
+
+MEMBERSHIPS
+- ISC2 Candidate badge (candidate status; not a certification)
+
+HANDS-ON TRAINING
+Completed learning rooms on TryHackMe:
+- Search Skills
+- Defensive Security Intro
+- SOC L1 Alert Triage
+- SOC Role in Blue Team
+- Linux Fundamentals Part 1
+- Offensive Security Intro
+- [TODO: TryHackMe profile link]
+
+These are completed learning rooms and are included here as hands-on training. They are not certifications and are not presented as advanced or production-level work.
