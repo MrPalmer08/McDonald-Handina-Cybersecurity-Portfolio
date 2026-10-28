@@ -1,0 +1,44 @@
+# Mobile Data Loss Prevention (DLP) Assessment
+
+Context
+- Seneca Polytechnic
+- Course: CYT230 Mobile Application Security Assessment
+- Project 2
+
+Lab work
+- Android emulator connected via ADB.
+- Test DPC installed and provisioned as Device Owner.
+- "Disable screen capture" policy enabled, then verified by attempting a screenshot; the system blocked the capture.
+
+Static analysis
+- MobSF scan of an APK [TODO: confirm APK name or source].
+- Findings:
+  - dangerous permissions: coarse location, contacts, accounts
+  - manifest issues: outdated Android versions supported, debugging enabled, backup allowed
+  - StrandHogg 2.0 task-hijacking flag on the PostLogin activity
+- No hardcoded credentials, insecure API calls, risky crypto, exported activities, or network config issues were flagged.
+- A clean scan does not prove the app is secure.
+
+Research summary
+- Layered DLP model across hardware/TEE, OS/MDM, application/MAM, network, radio, and physical layers.
+- Case studies on T-Mobile 2021, Pegasus, SHAREit, and Strava.
+- Six recommendations.
+
+Skills demonstrated
+- MDM policy enforcement
+- Android Device Owner provisioning
+- ADB
+- MobSF static analysis
+- OWASP Mobile Top 10 mapping
+- DLP policy design
+
+Screenshots / evidence
+- [TODO: add screenshot] ADB check
+- [TODO: add screenshot] Test DPC provisioning
+- [TODO: add screenshot] screen-capture policy
+- [TODO: add screenshot] blocked screenshot
+- [TODO: add screenshot] MobSF permissions results
+- [TODO: add screenshot] MobSF manifest results
+
+Full report
+- [TODO: add only if allowed, see below]
