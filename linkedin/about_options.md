@@ -1,8 +1,7 @@
+LinkedIn About options
+
 SOC-focused
+Cybersecurity graduate with hands-on home-lab experience in Splunk, Wazuh, Sysmon, pfSense, and Active Directory fundamentals. I am learning security monitoring, log analysis, and troubleshooting through practical projects and lab work. I am seeking entry-level cybersecurity or IT support opportunities where I can apply my technical skills and continue building hands-on experience.
 
-Junior SOC analyst with hands-on experience building a segmented home SOC (pfSense, Windows Server, Splunk, Sysmon) and validating detections at enterprise scale. Skilled in Splunk SPL, Active Directory monitoring, GPO audit configuration, and alert tuning. Seeking entry-level SOC analyst roles where I can apply detection engineering and incident triage skills.
-
-
-Combined (SOC + IT support)
-
-IT support professional and junior cybersecurity practitioner experienced in Tier-1 support, Active Directory administration, and SIEM detection engineering. Built a home SOC lab to practise log analysis and write SPL rules for Kerberoasting and enumeration. Seeking entry-level SOC or IT support roles where I can combine customer-facing support experience with hands-on detection engineering.
+Combined SOC + IT support
+Cybersecurity graduate and IT support professional with practical experience in troubleshooting, incident reporting, and home-lab security projects. I have worked in helpdesk and security-related support environments and have built projects using Splunk, Wazuh, Sysmon, pfSense, and Active Directory. I am seeking entry-level SOC or IT support roles where I can combine technical support skills with cybersecurity learning.

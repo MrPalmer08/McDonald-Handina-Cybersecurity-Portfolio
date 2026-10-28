@@ -1,47 +1,86 @@
 McDonald Tatenda Handina
-Toronto, ON | +1 647-904-8709 | hantinamcdonald@gmail.com | https://linkedin.com/in/mcdonald-handina-27a862359
-Authorized to work in Canada (Post-Graduation Work Permit valid until June 16, 2027)
+Toronto, ON | hantinamcdonald@gmail.com | https://linkedin.com/in/mcdonald-handina-27a862359
 
 PROFILE
-Junior cybersecurity and IT support professional with hands-on experience in SIEM/EDR (Splunk, Wazuh), Active Directory security, and helpdesk support. Built and operated a segmented home SOC lab to validate detections and practiced AD administration at scale. Seeking entry-level SOC analyst or IT support roles.
+Cybersecurity graduate and IT support professional with hands-on home-lab experience in Splunk, Wazuh, Sysmon, pfSense, and Active Directory fundamentals. I am seeking entry-level cybersecurity or IT support opportunities. My work focuses on home-lab security tooling, log review, troubleshooting, and practical experimentation.
 
 CORE SKILLS
-- Security: Splunk (SPL), Sysmon, Wazuh, log analysis, detection engineering, MITRE ATT&CK mapping, alert tuning
-- Identity & Infrastructure: Active Directory (OUs, Group Policy, RBAC), Windows Server, Windows 10/11, Linux (Ubuntu, Kali), VMware Workstation, pfSense
-- Networking: TCP/IP, DNS, DHCP, subnetting, Wireshark, Nmap
-- Automation & Scripting: PowerShell (AD automation), Python (basic), Git/GitHub
-- Support: Tier-1 helpdesk, ticketing systems, remote desktop support, hardware diagnostics, incident documentation
+- Python
+- PowerShell
+- Bash
+- Git
+- Splunk
+- Wazuh
+- Sysmon
+- Windows Server
+- Active Directory fundamentals
+- pfSense
+- Wireshark
+- Nmap
+- Helpdesk and incident reporting
 
 WORK EXPERIENCE
-Concierge — One Society Security Inc. (client: Canadian Property Stars), Toronto, ON | Nov 2024 – Present
-- First point of contact for residents and contractors; monitored access control and CCTV systems and logged incidents with clear written reports.
+One Society Security Inc. — Concierge | Toronto, ON | Nov 2024 – Present
+- Monitor access control and CCTV systems.
+- Log incidents and prepare reports for escalation.
+- Support smooth site operations and respond to security-related issues.
 
-Junior Software Support Developer — GeeSoft Systems, Harare, Zimbabwe | Jul 2023 – Feb 2024
-- Maintained and debugged web applications; authored support documentation to reduce recurring incidents and speed handoffs.
+GeeSoft Systems — Software Developer | Harare, Zimbabwe | Jul 2023 – Feb 2024
+- Developed and maintained web applications.
+- Diagnosed software issues and documented workflows.
 
-IT Support Technician — QuanTech Africa Group, Moka, Mauritius | Aug 2021 – May 2022
-- Delivered Tier-1 hardware, software, and network support using ticketing systems and remote-desktop tools; documented configurations and escalated issues per process.
+QuanTech Africa Group — IT Support Technician | Moka, Mauritius | Aug 2021 – May 2022
+- Provided first-line support for desktops, software, and network issues.
+- Installed and configured systems and supported users with troubleshooting.
 
-TECHNICAL PROJECTS
-Home Enterprise SOC & Active Directory Security Lab (2026)
-- Tools: VMware Workstation, pfSense, Windows Server, Splunk, Sysmon, CrowdSec, Kali Linux
-- Built a segmented virtual lab (letsdefend.local), populated AD with 2,500+ users and 100 computers using BadBlood to simulate enterprise-scale telemetry, and validated detections against realistic background noise.
-- Wrote Splunk detections to flag NetExec enumeration (failed Network Logons) and Kerberoasting activity; mapped detections to MITRE ATT&CK.
+PROJECTS
+Wazuh SIEM in VMware — [TODO: add screenshot]
+- Set up Wazuh in VMware to monitor endpoint activity and review alerts.
+- Documented the setup and learning notes for repeatable testing.
 
-Active Directory Threat Detection & SIEM Engineering (Oct 2026)
-- Installed Splunk Enterprise, configured GPO audit policies for Kerberos and Directory Service Access, ingested Security/System/Application logs, and tuned SPL detections for Kerberoasting and DCSync behaviours.
+Splunk failed-logon detection — [TODO: add screenshot]
+- Reviewed Windows Security logs and built a sample failed-logon detection in Splunk.
+- Documented the query logic and what the alert was meant to highlight.
+
+Sysmon logging — [TODO: add screenshot]
+- Configured Sysmon to collect process and network telemetry on a Windows system.
+- Used the logs to learn how process and connection data appear in security telemetry.
+
+pfSense firewall lab — [TODO: add screenshot]
+- Built a basic lab firewall setup to separate network segments and test traffic flow.
+- Reviewed filtering behaviour and documented the setup.
+
+OpenVAS, Nmap, and Wireshark analysis — [TODO: add screenshot]
+- Used vulnerability scanning and network analysis tools to review findings and investigate traffic patterns.
+- Documented observations and areas for follow-up.
+
+Active Directory lab — [TODO: add screenshot]
+- Built a home-lab Active Directory environment and reviewed basic AD operations and security concepts.
+- Documented the setup and learning notes.
+
+Python IP-reputation lookup tool — [TODO: add screenshot]
+- Built and tested a Python-based lookup utility for IP reputation checks.
+- Used it as a learning project to practise scripting and data retrieval.
 
 EDUCATION
-Postgraduate Diploma, Cybersecurity & Threat Management — Seneca Polytechnic, Toronto | 2025–2026
-Bachelor of Commerce, Business Information Technology & Systems — Curtin University, Mauritius | 2019–2022
-Advanced Diploma, Computer Engineering — Speciss College, Harare, Zimbabwe | 2019
+- Postgraduate Diploma in Cybersecurity and Threat Management — Seneca Polytechnic
+- Bachelor of Commerce, Business Information Technology and Systems — Curtin University
+- Advanced Diploma in Computer Engineering — Speciss College
 
-CERTIFICATIONS & TRAINING
-- Microsoft Azure Fundamentals
-- Cisco: Introduction to Cybersecurity
-- IBM: Cybersecurity Tools & Cyber Attacks
-- Infosec: Cybersecurity Foundations
-- Wazuh/Splunk lab training (self-study)
+CERTIFICATIONS
+Cybersecurity
+- Google Cybersecurity Professional Certificate [TODO: year]
+- IBM: Cybersecurity Tools and Cyber Attacks [TODO: year]
+- Cisco: Introduction to Cybersecurity [TODO: year]
+- Cisco: IP Addressing and Subnetting [TODO: year]
+- Microsoft Azure Fundamentals [TODO: year]
+- Infosec: Cybersecurity Foundations [TODO: year]
+- Great Learning: Network Security [TODO: year]
+- Forage: Cybersecurity Virtual Experience [TODO: year]
 
-NOTES
-- Repository contains lab artifacts and example detections. All offensive tools and AD population scripts are for isolated lab environments only.
+Compliance and licences
+- WHMIS 2026
+- AODA [TODO: year]
+- Ontario Security Guard Licence [TODO: year]
+- [TODO: confirm] Worker Health & Safety Awareness
+- [TODO: confirm] other compliance items not yet verified

@@ -1,0 +1,12 @@
+# Sysmon template notes
+
+This file is a template and should not be treated as a confirmed production configuration.
+
+Example Sysmon concepts
+- Process creation
+- Network connections
+- Security event correlation
+
+Notes
+- [TODO: confirm] exact XML configuration used.
+- [TODO: confirm] the lab environment and hosts involved.

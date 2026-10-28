@@ -1,0 +1,13 @@
+# Splunk failed-logon detection (example/template)
+
+This folder contains example Splunk search logic only. It is a template for review and learning and should not be presented as a confirmed production detection or a tested result unless verified.
+
+Example query (template)
+index=security sourcetype=WinEventLog:Security EventCode=4625 LogonType=3
+| stats count by src_ip, Account_Name
+| where count > 10
+| sort - count
+
+Notes
+- [TODO: confirm] the exact trigger threshold used in the lab.
+- [TODO: confirm] whether this was tested in a live environment.

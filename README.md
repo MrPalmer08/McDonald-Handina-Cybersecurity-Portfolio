@@ -1,22 +1,20 @@
-# McDonald Handina — Cybersecurity & SOC Portfolio
+# McDonald Handina | Cybersecurity & IT Support Portfolio
 
-Junior SOC Analyst & IT Support professional — hands-on SIEM/EDR, Active Directory security, detection engineering, and blue-team labs. Open to entry-level SOC roles and IT support opportunities in Toronto, ON.
+This repository is a home-lab portfolio for cybersecurity and IT support projects. It includes labs, example detection templates, and resume-ready materials created for entry-level cybersecurity and support roles.
 
-Contact
-- McDonald Tatenda Handina
-- Toronto, ON
-- +1 647-904-8709
-- hantinamcdonald@gmail.com
-- LinkedIn: https://linkedin.com/in/mcdonald-handina-27a862359
-
-Quick links
-- Canonical resume: resume/RESUME.md
-- SOC lab project: projects/home-soc-lab/README.md
-- Splunk detections: projects/splunk-detections/
-- AD automation scripts: projects/ad-scripts/
-
-About this repository
-This portfolio collects short, focused artifacts that demonstrate practical SOC and IT support skills: Splunk detections (SPL), AD automation samples, lab documentation, and a polished resume you can use when applying to entry-level SOC analyst or IT support roles.
+Project index
+- Wazuh SIEM in VMware — projects/wazuh-vmware/README.md
+- Splunk failed-logon detection — projects/splunk-failed-logon/README.md
+- Sysmon logging — projects/sysmon-logging/README.md
+- pfSense firewall lab — projects/pfsense-lab/README.md
+- OpenVAS, Nmap, and Wireshark analysis — projects/openvas-nmap-wireshark/README.md
+- Active Directory lab — projects/active-directory/README.md
+- Python IP-reputation lookup tool — projects/python-ip-reputation-tool/README.md
+- Resume — resume/RESUME.md
+- Profile README draft — PROFILE.md
+- LinkedIn-ready snippets — linkedin/README.md
 
 Notes
-- All lab scripts and detection rules are intended for isolated lab environments only. Do not run offensive tools or AD population scripts on production systems.
+- This is a home lab portfolio. It is not intended to represent production environments or production results.
+- Where a result, screenshot, or date is not confirmed, it is marked with [TODO: confirm], [TODO: year], or [TODO: add screenshot].
+- Do not run any offensive or network-based tools against systems without explicit permission.
