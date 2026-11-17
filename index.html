@@ -104,6 +104,13 @@
             background: #00d2ff;
         }
 
+        @media (min-width: 768px) { body { padding-left: 16rem; } html { scroll-padding-top: 1.5rem; } }
+        .sidebar-link { display:flex; align-items:center; gap:.85rem; padding:.8rem 1rem; border-radius:.6rem; color:#9ca3af; border:1px solid transparent; transition:all .22s ease; }
+        .sidebar-link i { width:1rem; text-align:center; color:#a855f7; }
+        .sidebar-link:hover { color:#00d2ff; background:rgba(0,210,255,.055); border-color:rgba(0,210,255,.15); transform:translateX(3px); }
+        .sidebar-link[aria-current="location"] { color:#00d2ff; background:linear-gradient(90deg,rgba(0,210,255,.12),rgba(168,85,247,.06)); border-color:rgba(0,210,255,.22); box-shadow:inset 2px 0 #00d2ff; }
+        #mobile-nav a { color:#c9d1d9; border:1px solid #30363d; border-radius:.5rem; padding:.65rem .75rem; }
+        #mobile-nav a:hover { color:#00d2ff; border-color:rgba(0,210,255,.45); }
         /* Motion system: smooth, restrained, and accessible */
         html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
         body { background-image: radial-gradient(ellipse at 12% 8%, rgba(168,85,247,.055), transparent 34%), radial-gradient(ellipse at 88% 30%, rgba(0,210,255,.045), transparent 32%); }
@@ -136,25 +143,25 @@
 </head>
 <body class="bg-cyber-bg text-cyber-text antialiased selection:bg-cyber-blue selection:text-black">
 
-    <!-- Top Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md border-b border-cyber-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="h-3 w-3 rounded-full bg-cyber-purple animate-ping"></div>
-                <span class="font-mono text-lg font-bold text-cyber-heading tracking-tight">
-                    handina<span class="text-cyber-blue">@sec-ops</span>:~$
-                </span>
-            </div>
-            <nav class="hidden md:flex space-x-5 font-mono text-sm">
-<a href="#hero">/home</a><a href="#red-blue-lab">/red-blue-lab</a><a href="#projects">/projects</a><a href="#triage">/soc-triage</a><a href="#skills">/skills</a><a href="#about-contact">/contact</a></nav>
-            <div class="flex items-center space-x-3 font-mono text-xs">
-                <span class="px-2.5 py-1 rounded-full bg-cyber-green/10 text-cyber-green border border-cyber-green/30">
-                    <i class="fa-solid fa-shield-halved mr-1"></i> IT Support · SOC Labs
-                </span>
-            </div>
-        </div>
+    <!-- Desktop SOC sidebar -->
+    <aside id="desktop-sidebar" class="hidden md:flex fixed inset-y-0 left-0 z-50 w-64 flex-col border-r border-cyber-border bg-[#0a0e14]/95 backdrop-blur-xl">
+      <a href="#hero" class="flex items-center gap-3 px-6 py-7 border-b border-cyber-border"><span class="h-3 w-3 rounded-full bg-cyber-purple shadow-[0_0_14px_rgba(168,85,247,.8)]"></span><span class="font-mono text-lg font-bold text-cyber-heading">handina<span class="text-cyber-blue">@sec-ops</span></span></a>
+      <div class="px-6 pt-7 pb-4"><p class="font-mono text-[10px] uppercase tracking-[.22em] text-cyber-text/50">Workspace</p><p class="mt-2 font-mono text-xs text-cyber-green"><i class="fa-solid fa-circle text-[7px] mr-2"></i>PORTFOLIO ONLINE</p></div>
+      <nav aria-label="Main navigation" class="flex flex-col gap-2 px-3 font-mono text-sm">
+        <a href="#hero" class="sidebar-link"><i class="fa-solid fa-house"></i><span>Overview</span></a>
+        <a href="#red-blue-lab" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i><span>Purple Team Lab</span></a>
+        <a href="#projects" class="sidebar-link"><i class="fa-solid fa-folder-open"></i><span>Projects</span></a>
+        <a href="#triage" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i><span>SOC Triage</span></a>
+        <a href="#skills" class="sidebar-link"><i class="fa-solid fa-layer-group"></i><span>Skills & Tools</span></a>
+        <a href="#about-contact" class="sidebar-link"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      </nav>
+      <div class="mt-auto p-5"><div class="rounded-xl border border-cyber-green/25 bg-cyber-green/5 p-4"><p class="font-mono text-[10px] uppercase tracking-wider text-cyber-green"><i class="fa-solid fa-shield-halved mr-2"></i>Current focus</p><p class="mt-2 text-xs leading-relaxed text-cyber-text">Junior SOC Analyst<br>IT Support · Cybersecurity</p></div><div class="mt-4 flex items-center justify-around text-lg"><a href="https://github.com/MrPalmer08" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-cyber-blue"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/mcdonald-handina-27a862359/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-cyber-blue"><i class="fa-brands fa-linkedin"></i></a><a href="mailto:hantinamcdonald@gmail.com" aria-label="Email" class="hover:text-cyber-purple"><i class="fa-solid fa-paper-plane"></i></a></div></div>
+    </aside>
+    <!-- Mobile navigation -->
+    <header class="md:hidden sticky top-0 z-50 border-b border-cyber-border bg-[#0d1117]/95 backdrop-blur-xl">
+      <div class="h-14 px-4 flex items-center justify-between"><a href="#hero" class="font-mono font-bold text-cyber-heading">handina<span class="text-cyber-blue">@sec-ops</span></a><button id="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" class="rounded-lg border border-cyber-border px-3 py-2 text-cyber-blue" onclick="toggleMobileNav()"><i class="fa-solid fa-bars mr-2"></i>Menu</button></div>
+      <nav id="mobile-nav" aria-label="Mobile navigation" class="hidden border-t border-cyber-border px-4 py-3 grid grid-cols-2 gap-2 font-mono text-xs"><a href="#hero">Overview</a><a href="#red-blue-lab">Purple Team Lab</a><a href="#projects">Projects</a><a href="#triage">SOC Triage</a><a href="#skills">Skills & Tools</a><a href="#about-contact">Contact</a></nav>
     </header>
-
     <!-- 1. HERO SECTION -->
     <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-cyber-border">
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -1082,6 +1089,18 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
             }
         }
 
+        function toggleMobileNav() {
+            const menu = document.getElementById('mobile-nav');
+            const button = document.getElementById('mobile-nav-toggle');
+            const open = menu.classList.toggle('hidden') === false;
+            button.setAttribute('aria-expanded', String(open));
+            button.innerHTML = open ? '<i class="fa-solid fa-xmark mr-2"></i>Close' : '<i class="fa-solid fa-bars mr-2"></i>Menu';
+        }
+        document.querySelectorAll('#mobile-nav a').forEach(link => link.addEventListener('click', () => {
+            document.getElementById('mobile-nav').classList.add('hidden');
+            document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false');
+            document.getElementById('mobile-nav-toggle').innerHTML = '<i class="fa-solid fa-bars mr-2"></i>Menu';
+        }));
         // Progressive reveal, subtle card motion, active section navigation and scroll progress.
         (function initMotionSystem() {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1128,7 +1147,7 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
             updateProgress();
 
             const sections = [...document.querySelectorAll('body > section[id]')];
-            const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
+            const navLinks = [...document.querySelectorAll('#desktop-sidebar nav a[href^="#"]')];
             if ('IntersectionObserver' in window && navLinks.length) {
                 const sectionObserver = new IntersectionObserver(entries => {
                     entries.forEach(entry => {
