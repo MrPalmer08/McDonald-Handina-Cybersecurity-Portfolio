@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrpalmer08.github.io/McDonald-Handina-Cybersecurity-Portfolio/sitemap.xml
