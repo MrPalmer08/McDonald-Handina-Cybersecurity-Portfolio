@@ -148,10 +148,10 @@
       <a href="#hero" class="flex items-center gap-3 px-6 py-7 border-b border-cyber-border"><span class="h-3 w-3 rounded-full bg-cyber-purple shadow-[0_0_14px_rgba(168,85,247,.8)]"></span><span class="font-mono text-lg font-bold text-cyber-heading">handina<span class="text-cyber-blue">@sec-ops</span></span></a>
       <div class="px-6 pt-7 pb-4"><p class="font-mono text-[10px] uppercase tracking-[.22em] text-cyber-text/50">Workspace</p><p class="mt-2 font-mono text-xs text-cyber-green"><i class="fa-solid fa-circle text-[7px] mr-2"></i>PORTFOLIO ONLINE</p></div>
       <nav aria-label="Main navigation" class="flex flex-col gap-2 px-3 font-mono text-sm">
-        <a href="#hero" class="sidebar-link"><i class="fa-solid fa-house"></i><span>Overview</span></a>
+        <a href="#hero" class="sidebar-link"><i class="fa-solid fa-house"></i><span>Overview</span></a><a href="#soc-dashboard" class="sidebar-link"><i class="fa-solid fa-chart-line"></i><span>SOC Dashboard</span></a><a href="#recruiter-snapshot" class="sidebar-link"><i class="fa-solid fa-id-card"></i><span>Recruiter Snapshot</span></a>
         <a href="#red-blue-lab" class="sidebar-link"><i class="fa-solid fa-diagram-project"></i><span>Purple Team Lab</span></a>
         <a href="#projects" class="sidebar-link"><i class="fa-solid fa-folder-open"></i><span>Projects</span></a>
-        <a href="#triage" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i><span>SOC Triage</span></a>
+        <a href="#triage" class="sidebar-link"><i class="fa-solid fa-magnifying-glass-chart"></i><span>SOC Triage</span></a><a href="#attack-mapping" class="sidebar-link"><i class="fa-solid fa-crosshairs"></i><span>ATT&CK Mapping</span></a>
         <a href="#skills" class="sidebar-link"><i class="fa-solid fa-layer-group"></i><span>Skills & Tools</span></a>
         <a href="#about-contact" class="sidebar-link"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
       </nav>
@@ -160,7 +160,7 @@
     <!-- Mobile navigation -->
     <header class="md:hidden sticky top-0 z-50 border-b border-cyber-border bg-[#0d1117]/95 backdrop-blur-xl">
       <div class="h-14 px-4 flex items-center justify-between"><a href="#hero" class="font-mono font-bold text-cyber-heading">handina<span class="text-cyber-blue">@sec-ops</span></a><button id="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" class="rounded-lg border border-cyber-border px-3 py-2 text-cyber-blue" onclick="toggleMobileNav()"><i class="fa-solid fa-bars mr-2"></i>Menu</button></div>
-      <nav id="mobile-nav" aria-label="Mobile navigation" class="hidden border-t border-cyber-border px-4 py-3 grid grid-cols-2 gap-2 font-mono text-xs"><a href="#hero">Overview</a><a href="#red-blue-lab">Purple Team Lab</a><a href="#projects">Projects</a><a href="#triage">SOC Triage</a><a href="#skills">Skills & Tools</a><a href="#about-contact">Contact</a></nav>
+      <nav id="mobile-nav" aria-label="Mobile navigation" class="hidden border-t border-cyber-border px-4 py-3 grid grid-cols-2 gap-2 font-mono text-xs"><a href="#hero">Overview</a><a href="#soc-dashboard">SOC Dashboard</a><a href="#recruiter-snapshot">Recruiter Snapshot</a><a href="#red-blue-lab">Purple Team Lab</a><a href="#projects">Projects</a><a href="#triage">SOC Triage</a><a href="#attack-mapping">ATT&CK Mapping</a><a href="#skills">Skills & Tools</a><a href="#about-contact">Contact</a></nav>
     </header>
     <!-- 1. HERO SECTION -->
     <section id="hero" class="relative py-16 md:py-24 overflow-hidden border-b border-cyber-border">
@@ -263,6 +263,18 @@
         </div>
     </section>
 
+    <!-- SOC analyst dashboard: synthetic lab telemetry -->
+    <section id="soc-dashboard" class="py-14 border-b border-cyber-border bg-[#0a0e14]"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-7"><div><p class="font-mono text-xs tracking-widest text-cyber-blue uppercase">Blue team operations</p><h2 class="text-3xl font-bold text-cyber-heading mt-2">SOC Analyst Dashboard</h2><p class="text-sm text-cyber-text mt-2">Interactive training view built from illustrative lab alerts. Not connected to a live SIEM.</p></div><span class="text-xs font-mono rounded-full px-3 py-2 border border-cyber-yellow/30 text-cyber-yellow bg-cyber-yellow/5">SIMULATED DATASET</span></div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5"><div class="glass-panel p-4"><p class="text-xs text-cyber-text">Total alerts</p><p class="text-3xl font-bold text-cyber-heading mt-2">08</p><p class="text-[10px] text-cyber-text/60 mt-1">Training queue</p></div><div class="glass-panel p-4"><p class="text-xs text-cyber-text">High severity</p><p class="text-3xl font-bold text-cyber-red mt-2">02</p><p class="text-[10px] text-cyber-text/60 mt-1">Requires review</p></div><div class="glass-panel p-4"><p class="text-xs text-cyber-text">Under investigation</p><p class="text-3xl font-bold text-cyber-yellow mt-2">03</p><p class="text-[10px] text-cyber-text/60 mt-1">Analyst workflow</p></div><div class="glass-panel p-4"><p class="text-xs text-cyber-text">Closed / benign</p><p class="text-3xl font-bold text-cyber-green mt-2">03</p><p class="text-[10px] text-cyber-text/60 mt-1">Documented outcomes</p></div></div>
+      <div class="glass-panel p-5"><div class="flex flex-wrap items-center justify-between gap-3 mb-4"><h3 class="font-bold text-cyber-heading">Alert queue</h3><div class="flex flex-wrap gap-2"><button type="button" onclick="filterSOCAlerts('all')" class="soc-filter px-3 py-2 rounded border border-cyber-blue text-cyber-blue text-xs">All alerts</button><button type="button" onclick="filterSOCAlerts('high')" class="soc-filter px-3 py-2 rounded border border-cyber-border text-xs">High</button><button type="button" onclick="filterSOCAlerts('medium')" class="soc-filter px-3 py-2 rounded border border-cyber-border text-xs">Medium</button></div></div>
+      <div id="soc-alert-list" class="space-y-2" aria-live="polite"></div><p class="text-[11px] text-cyber-text/60 mt-4">Select a severity filter to inspect the queue. Counts and alert records are illustrative and intentionally labelled as simulated.</p></div>
+    </div></section>
+
+    <!-- Recruiter snapshot -->
+    <section id="recruiter-snapshot" class="py-12 border-b border-cyber-border"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap items-center justify-between gap-5"><div><p class="font-mono text-xs uppercase tracking-widest text-cyber-purple">Recruiter quick view</p><h2 class="text-2xl font-bold text-cyber-heading mt-2">Candidate Snapshot</h2><p class="text-sm text-cyber-text mt-2">Cybersecurity & Threat Management · Seneca Polytechnic</p></div><div class="flex flex-wrap gap-2"><a href="McDonald_Handina_Resume.pdf" download="McDonald_Handina_Resume.pdf" class="px-4 py-3 rounded-lg bg-cyber-blue text-black font-mono text-xs font-bold"><i class="fa-solid fa-download mr-2"></i>Download Resume</a><a href="https://www.linkedin.com/in/mcdonald-handina-27a862359/" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-lg border border-cyber-border text-cyber-heading font-mono text-xs"><i class="fa-brands fa-linkedin mr-2"></i>LinkedIn</a><a href="https://github.com/MrPalmer08" target="_blank" rel="noopener noreferrer" class="px-4 py-3 rounded-lg border border-cyber-border text-cyber-heading font-mono text-xs"><i class="fa-brands fa-github mr-2"></i>GitHub</a></div></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6"><div class="glass-panel p-4"><p class="text-xs text-cyber-blue font-mono">TARGET ROLES</p><p class="text-sm text-cyber-heading mt-2">IT Support · Help Desk · Junior SOC Analyst</p></div><div class="glass-panel p-4"><p class="text-xs text-cyber-purple font-mono">CORE TOOLING</p><p class="text-sm text-cyber-heading mt-2">Splunk · Windows / AD · Wazuh · Wireshark</p></div><div class="glass-panel p-4"><p class="text-xs text-cyber-green font-mono">PRACTICAL FOCUS</p><p class="text-sm text-cyber-heading mt-2">Alert triage · Evidence review · Clear handoffs</p></div></div>
+    </div></section>
     <!-- 2. ANIMATED PURPLE TEAM INTERACTIVE ARCHITECTURE DIAGRAM -->
     <section id="red-blue-lab" class="py-16 bg-[#0d1117] border-b border-cyber-border relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -717,6 +729,12 @@
 | stats count min(_time) as first_seen max(_time) as last_seen values(EventCode) as event_ids values(TargetUserName) as accounts by Computer, IpAddress
 | convert ctime(first_seen) ctime(last_seen)
 | sort - count</pre><p class="text-xs text-cyber-text/60 mt-3">Illustrative SPL; adapt index, sourcetype and field names to the actual data model.</p><a class="inline-flex items-center gap-2 mt-3 text-xs font-mono text-cyber-blue underline" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/log-analysis/README.md" target="_blank" rel="noopener noreferrer">Open triage notes / SPL on GitHub <i class="fa-brands fa-github"></i></a></div></div></section><!-- 4. TECHNICAL SKILLS MATRIX -->
+    <!-- MITRE ATT&CK mapping -->
+    <section id="attack-mapping" class="py-14 border-b border-cyber-border bg-[#0a0e14]"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-8"><p class="font-mono text-xs uppercase tracking-widest text-cyber-red">Detection engineering</p><h2 class="text-3xl font-bold text-cyber-heading mt-2">MITRE ATT&CK: Activity to Detection</h2><p class="text-sm text-cyber-text mt-3">A transparent mapping of lab exercises to relevant ATT&CK techniques. Technique relevance is a hypothesis until supported by telemetry and investigation.</p></div>
+      <div class="overflow-x-auto glass-panel"><table class="w-full text-left text-xs"><thead class="bg-cyber-bg text-cyber-blue font-mono"><tr><th class="p-4">Lab activity</th><th class="p-4">ATT&CK technique</th><th class="p-4">Defensive evidence</th><th class="p-4">Analyst action</th></tr></thead><tbody class="divide-y divide-cyber-border text-cyber-text"><tr><td class="p-4">Repeated failed logons</td><td class="p-4"><a class="text-cyber-blue underline" href="https://attack.mitre.org/techniques/T1110/" target="_blank" rel="noopener noreferrer">T1110 · Brute Force</a></td><td class="p-4">Windows 4625; source, account and time pattern</td><td class="p-4">Correlate failures with successful logons; assess scope</td></tr><tr><td class="p-4">Explicit credential use</td><td class="p-4"><a class="text-cyber-blue underline" href="https://attack.mitre.org/techniques/T1550/002/" target="_blank" rel="noopener noreferrer">T1550.002 · Pass the Hash</a> (context-dependent)</td><td class="p-4">4624 / 4648 context, logon type, host and account</td><td class="p-4">Validate authentication path; do not infer technique from one event</td></tr><tr><td class="p-4">Credential dumping lab</td><td class="p-4"><a class="text-cyber-blue underline" href="https://attack.mitre.org/techniques/T1003/" target="_blank" rel="noopener noreferrer">T1003 · OS Credential Dumping</a></td><td class="p-4">Process, command-line and endpoint telemetry where available</td><td class="p-4">Review process lineage, privilege context and affected assets</td></tr><tr><td class="p-4">Service discovery / scanning</td><td class="p-4"><a class="text-cyber-blue underline" href="https://attack.mitre.org/techniques/T1046/" target="_blank" rel="noopener noreferrer">T1046 · Network Service Discovery</a></td><td class="p-4">Firewall / network flow patterns and destination ports</td><td class="p-4">Determine source, target scope and whether activity was authorised</td></tr></tbody></table></div>
+      <p class="text-[11px] text-cyber-text/60 mt-3">Mappings are learning references, not claims that every technique was confirmed in a production environment. Validate each mapping against the actual lab evidence.</p>
+    </div></section>
     <section id="skills" class="py-16 bg-[#0d1117] border-b border-cyber-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
@@ -1101,6 +1119,24 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
             document.getElementById('mobile-nav-toggle').setAttribute('aria-expanded', 'false');
             document.getElementById('mobile-nav-toggle').innerHTML = '<i class="fa-solid fa-bars mr-2"></i>Menu';
         }));
+        const socTrainingAlerts = [
+          {id:'SOC-LAB-001',severity:'high',title:'Repeated authentication failures',detail:'27 Event ID 4625 records from one source targeting LAB-DC01.',status:'Investigating'},
+          {id:'SOC-LAB-002',severity:'high',title:'Suspicious PowerShell execution',detail:'Illustrative encoded-command pattern requiring script and parent-process review.',status:'Needs review'},
+          {id:'SOC-LAB-003',severity:'medium',title:'Explicit credential use',detail:'Event ID 4648 observed; correlate account, host and logon context.',status:'Investigating'},
+          {id:'SOC-LAB-004',severity:'medium',title:'Unusual outbound connection',detail:'Training network-flow anomaly; verify destination and authorised activity.',status:'Queued'},
+          {id:'SOC-LAB-005',severity:'medium',title:'New local administrator',detail:'Review account creation, group membership and change approval.',status:'Investigating'},
+          {id:'SOC-LAB-006',severity:'low',title:'Expected service discovery',detail:'Authorised lab scan matched the documented test window.',status:'Closed · benign'},
+          {id:'SOC-LAB-007',severity:'low',title:'Policy audit event',detail:'Routine policy update in the training domain.',status:'Closed · benign'},
+          {id:'SOC-LAB-008',severity:'low',title:'Repeated DNS lookup',detail:'Resolved to expected lab infrastructure after validation.',status:'Closed · benign'}
+        ];
+        function filterSOCAlerts(level) {
+          const host = document.getElementById('soc-alert-list');
+          if (!host) return;
+          const items = level === 'all' ? socTrainingAlerts : socTrainingAlerts.filter(a => a.severity === level);
+          host.innerHTML = items.map(a => '<article class="grid grid-cols-1 md:grid-cols-12 gap-2 items-start p-3 rounded-lg bg-cyber-bg border border-cyber-border"><div class="md:col-span-2 font-mono text-[10px] text-cyber-blue">'+a.id+'</div><div class="md:col-span-3"><span class="text-[10px] uppercase font-mono '+(a.severity==='high'?'text-cyber-red':a.severity==='medium'?'text-cyber-yellow':'text-cyber-green')+'">'+a.severity+'</span><h4 class="text-sm font-semibold text-cyber-heading mt-1">'+a.title+'</h4></div><p class="md:col-span-5 text-xs text-cyber-text">'+a.detail+'</p><div class="md:col-span-2 text-xs text-cyber-text/70">'+a.status+'</div></article>').join('');
+          document.querySelectorAll('.soc-filter').forEach(b => { const active = b.textContent.toLowerCase().startsWith(level); b.classList.toggle('border-cyber-blue', active); b.classList.toggle('text-cyber-blue', active); });
+        }
+        filterSOCAlerts('all');
         // Progressive reveal, subtle card motion, active section navigation and scroll progress.
         (function initMotionSystem() {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
