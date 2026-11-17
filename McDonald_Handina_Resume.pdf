@@ -1,0 +1,102 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 7 0 R >>
+endobj
+6 0 obj
+<< /Length 3789 >>
+stream
+BT /F1 20 Tf 0.043 0.122 0.200 rg 48 760 Td (McDonald Tatenda Handina) Tj ET
+BT /F1 10 Tf 0.031 0.494 0.608 rg 48 738 Td (IT SUPPORT TECHNICIAN | JUNIOR SOC ANALYST | CYBERSECURITY) Tj ET
+BT /F1 9 Tf 0.200 0.255 0.333 rg 48 721 Td (Toronto, Ontario, Canada | hantinamcdonald@gmail.com) Tj ET
+BT /F1 8 Tf 0.200 0.255 0.333 rg 48 707 Td (LinkedIn: linkedin.com/in/mcdonald-handina-27a862359 | GitHub: github.com/MrPalmer08) Tj ET
+BT /F1 8 Tf 0.200 0.255 0.333 rg 48 693 Td (Portfolio: mrpalmer08.github.io/McDonald-Handina-Cybersecurity-Portfolio) Tj ET
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 669 Td (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 647 Td (Cybersecurity & Threat Management graduate with a foundation in computer engineering and hands-on) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 633 Td (experience across Windows environments, SIEM monitoring, security event analysis, identity) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 619 Td (administration and network troubleshooting. Built virtual labs using VMware, Windows Server, Kali) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 605 Td (Linux, pfSense, Splunk and Wazuh. Earlier professional experience includes .NET / ASPX web) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 591 Td (development and MySQL database work. Targeting IT Support, Help Desk and Junior SOC roles.) Tj ET
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 567 Td (TECHNICAL SKILLS) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 545 Td (IT & Operating Systems: Windows 10/11, Windows Server, Ubuntu/Kali, VMware Workstation 17 Pro.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 531 Td (Security Operations: Splunk SIEM, SPL, Wazuh, Sysmon, Windows Security Event Logs, alert triage,) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 517 Td (evidence review, escalation and incident documentation.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 503 Td (Identity & Infrastructure: Active Directory, users/groups, Group Policy, RBAC concepts, pfSense,) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 489 Td (network segmentation, TCP/IP, DNS and DHCP.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 475 Td (Security & Network Tools: Wireshark, Nmap, OpenVAS, Metasploit, MobSF and vulnerability scanning.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 461 Td (Development & Data: .NET / ASPX, MySQL, SQL, PowerShell, Git and GitHub.) Tj ET
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 437 Td (SELECTED PROJECTS & HANDS-ON LABS) Tj ET
+BT /F1 10 Tf 0.043 0.122 0.200 rg 48 415 Td (SOC Monitoring, SIEM & Alert Triage Lab) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 398 Td (- Worked with virtualized Windows, Sysmon / Security telemetry, Wazuh and Splunk; lab records) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 384 Td (  66,000+ indexed events.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 370 Td (- Used SPL to investigate Event ID 4625 and 4648 authentication patterns and correlate evidence.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 356 Td (- Built an analyst workflow for validation, scoping, impact assessment and escalation using synthetic data.) Tj ET
+BT /F1 10 Tf 0.043 0.122 0.200 rg 48 342 Td (Active Directory & Windows Server Lab) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 325 Td (- Practised domain services, user/group administration, Group Policy and access-control concepts.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 311 Td (- Used BadBlood-populated lab objects to explore identity telemetry and defensive monitoring.) Tj ET
+BT /F1 10 Tf 0.043 0.122 0.200 rg 48 297 Td (Network & Firewall Lab) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 280 Td (- Built an isolated VMware / pfSense environment with WAN em0 and LAN em1; examined filtering and) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 266 Td (  network boundaries and connected controlled Kali testing to Windows / SIEM telemetry.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Length 3352 >>
+stream
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 760 Td (SELECTED PROJECTS \(CONTINUED\)) Tj ET
+BT /F1 10 Tf 0.043 0.122 0.200 rg 48 738 Td (Network Analysis & Vulnerability Assessment) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 721 Td (- Used Nmap for network discovery, Wireshark for packet inspection and OpenVAS for vulnerability) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 707 Td (  assessment practice in lab environments; worked with GNS3 IP addressing and subnetting.) Tj ET
+BT /F1 10 Tf 0.043 0.122 0.200 rg 48 693 Td (Mobile Application Security & Data Protection) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 676 Td (- Used MobSF for mobile application analysis and explored mobile data protection, app containment) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 662 Td (  and network security concepts.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 648 Td (- Practised controlled Android security testing in an isolated lab with Kali Linux and Metasploit.) Tj ET
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 624 Td (PROFESSIONAL EXPERIENCE) Tj ET
+BT /F1 10 Tf 0.043 0.122 0.200 rg 48 602 Td (Junior Web Developer | GeeSoft Systems — Harare, Zimbabwe) Tj ET
+BT /F1 9 Tf 0.278 0.333 0.412 rg 48 585 Td (July 2023 – February 2024) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 571 Td (- Developed and supported web application features using .NET / ASPX.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 557 Td (- Worked with MySQL databases and SQL queries to support application data requirements.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 543 Td (- Assisted with testing, troubleshooting and implementation of application functionality.) Tj ET
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 519 Td (EDUCATION) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 497 Td (Postgraduate Diploma — Cybersecurity & Threat Management | Seneca Polytechnic, Canada) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 483 Td (Diploma in Computer Engineering) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 469 Td (Business Information Technology & Systems \(BITS\) | Mauritius) Tj ET
+BT /F1 12 Tf 0.031 0.494 0.608 rg 48 445 Td (CERTIFICATES & TECHNICAL TRAINING) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 423 Td (Google Cybersecurity Professional Certificate) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 409 Td (Cisco Networking Academy — Introduction to Cybersecurity) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 395 Td (GNS3 Academy — CCNA IP Addressing and Subnetting | APNIC Academy — OSPF) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 381 Td (IBM — Cybersecurity Tools and Cyber Attacks) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 367 Td (TryHackMe: SOC L1 Alert Triage; SOC Role in Blue Team; Defensive / Offensive Security Intro;) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 353 Td (Linux Fundamentals Part 1; Search Skills.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 339 Td (ISC2 Candidate — candidate status, not a certification.) Tj ET
+BT /F1 9 Tf 0.090 0.137 0.204 rg 48 325 Td (Microsoft Azure Fundamentals — learning / study.) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 48 301 Td (Credential titles reflect the learning and status information provided. Candidate status and) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 48 287 Td (ongoing study are not represented as earned certifications. Labs are educational demonstrations,) Tj ET
+BT /F1 8 Tf 0.278 0.333 0.412 rg 48 273 Td (not production incident-response engagements.) Tj ET
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000317 00000 n 
+0000000443 00000 n 
+0000004283 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+7686
+%%EOF
