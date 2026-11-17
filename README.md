@@ -1,34 +1,38 @@
-# McDonald Handina - Cybersecurity Portfolio
+# McDonald Tatenda Handina — Cybersecurity & IT Support Portfolio
 
-Hands-on cybersecurity projects focused on SOC operations, log analysis, Windows forensics, Splunk SIEM, vulnerability management, Active Directory monitoring, and malware analysis. Built to demonstrate practical blue-team skills.
+**Toronto, Ontario, Canada**  
+**LinkedIn:** https://www.linkedin.com/in/mcdonald-handina-27a862359/  
+**Portfolio:** https://mrpalmer08.github.io/McDonald-Handina-Cybersecurity-Portfolio/  
+**Resume:** [Open / print resume](resume.html)
 
----
+Entry-level IT Support / Help Desk and Junior SOC / Cybersecurity candidate. This repository showcases hands-on labs in Windows security telemetry, SIEM analysis, Active Directory, network security, vulnerability assessment and mobile application security.
 
-## Technical Skills & Tools
+## Featured demonstrations
+- **SOC alert triage:** guided validation, scoping, impact assessment, response recommendation and documentation using clearly labelled synthetic training data.
+- **Splunk SIEM:** Windows Security Event IDs, SPL investigation queries and lab telemetry.
+- **Purple-team workflow:** red-team emulation, blue-team telemetry and detection feedback with pause, resume and stop controls.
+- **Active Directory:** Windows Server, users/groups, Group Policy and security monitoring labs.
+- **Network security:** isolated VMware and pfSense lab, Nmap discovery and Wireshark traffic inspection.
+- **Mobile application security:** MobSF static analysis and controlled Android lab exercises.
+- **Vulnerability assessment:** OpenVAS and Nmap lab practice.
 
-* **SIEM & Log Analysis:** Splunk, Wireshark, Sysmon, Windows Event Logs
-* **Operating Systems & Infrastructure:** Windows Server, Active Directory, Linux (Ubuntu, Kali), VirtualBox/VMware
-* **Vulnerability Management:** Nessus, OpenVAS, CrowdStrike, Suricata
-* **Scripting & Data Analysis:** Python, PowerShell, Bash, SQL, C#
+## Technical skills
+- **SOC / SIEM:** Splunk, SPL, Wazuh, Sysmon, Windows Event Logs, alert validation and triage.
+- **Identity / endpoint:** Active Directory, Windows Server, Group Policy, Windows 10/11.
+- **Network / infrastructure:** VMware Workstation, pfSense, Kali Linux, Ubuntu, TCP/IP, DNS, DHCP.
+- **Security tools:** Wireshark, Nmap, OpenVAS, Metasploit, MobSF.
+- **Development / data:** .NET / ASPX, MySQL, SQL, PowerShell, Git.
 
----
+## Education
+- Cybersecurity & Threat Management Diploma — Seneca Polytechnic.
+- Diploma in Computer Engineering.
+- Business Information Technology & Systems (BITS) — Mauritius.
 
-## Projects Index
+## Completed training
+- Cisco — Introduction to Cybersecurity (course completion).
+- TryHackMe — Junior Security Analyst learning path (completed).
 
-### 1. Security Information and Event Management (SIEM) & SOC Operations
-* Configured security monitoring platforms (Suricata IDS) and analyzed packet captures.
-* Ingested and analyzed Windows Event Logs and Sysmon data using Splunk and Wazuh to detect threat activity.
+Training completions are not represented as professional vendor certifications. Project examples are educational lab work; synthetic alert data is labelled as such.
 
-### 2. Active Directory & Network Security
-* Built virtualized subnets featuring Windows Server, Kali Linux, and Windows 10 for security labs.
-* Evaluated Active Directory logs, user permissions, and network communications using Nmap and Wireshark.
-
-### 3. Vulnerability Management & Threat Monitoring
-* Executed vulnerability scans using OpenVAS and Burp Suite.
-* Documented findings, tracked risk levels, and identified remediation strategies.
-
----
-
-## Contact & Links
-
-* **GitHub:** [https://github.com/MrPalmer08](https://github.com/MrPalmer08)
+## Contact
+hantinamcdonald@gmail.com
