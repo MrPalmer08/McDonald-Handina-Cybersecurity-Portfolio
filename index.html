@@ -147,7 +147,7 @@
                     <h2 class="text-xl sm:text-2xl font-mono text-cyber-blue font-semibold">
                         Junior SOC Analyst | IT Support | Cybersecurity
 </h2>
-<p class="text-cyber-text text-base sm:text-lg leading-relaxed max-w-2xl">Cybersecurity & Threat Management graduate with hands-on labs in SIEM monitoring, alert triage, Windows event analysis, Active Directory, vulnerability assessment and technical troubleshooting. I investigate the signal, validate the evidence, document the decision and recommend the next action.</p>
+<p class="text-cyber-text text-base sm:text-lg leading-relaxed max-w-2xl">Cybersecurity & Threat Management graduate with practical labs in Splunk, Windows event analysis, Active Directory, vulnerability assessment and network troubleshooting. My focus is on investigating security events, checking the supporting evidence and documenting clear next steps.</p>
 
                     <!-- Core Skill Badges -->
                     <div class="flex flex-wrap gap-2 pt-2">
@@ -191,7 +191,7 @@
                         <div class="mt-6 space-y-4 font-mono text-sm">
                             <div class="flex justify-between items-center p-3 rounded bg-cyber-bg/60 border border-cyber-border">
                                 <span class="text-cyber-text"><i class="fa-solid fa-shield-cat text-cyber-blue mr-2"></i>Defensive Lab (SIEM)</span>
-                                <span class="text-cyber-blue font-bold">66k+ Events Ingested</span>
+                                <span class="text-cyber-blue font-bold">66,969 Windows Events Indexed</span>
                             </div>
 
                             <div class="flex justify-between items-center p-3 rounded bg-cyber-bg/60 border border-cyber-border">
@@ -402,7 +402,7 @@
                                 </div>
 
                                 <div id="sim1-terminal-body" class="p-4 h-64 overflow-y-auto space-y-2 bg-[#05080c] text-cyber-text leading-relaxed">
-                                    <div class="text-cyber-text/60">// Splunk log engine ready. Listening on WinEventLog:Security...</div>
+                                    <div class="text-cyber-text/60">// Scripted walkthrough · sample lab output, not a live Splunk connection</div>
                                     <div class="text-cyber-green">[✓] Indexer active: 66,969 events indexed</div>
                                     <div class="text-cyber-blue">[i] Run the recon, then the detection query.</div>
                                 </div>
@@ -467,10 +467,10 @@
                                 <span>Mobile PenTesting</span>
                             </div>
                             <h3 class="text-2xl font-bold text-cyber-heading">
-                                Android Mobile Application Exploitation & MobSF Static Audit
+                                Android Security Testing & MobSF Static Analysis
                             </h3>
                             <p class="text-cyber-text text-sm leading-relaxed">
-                                End-to-end mobile application security assessment leveraging Kali Linux attacker host against an Android emulator environment. Crafted custom Dalvik reverse TCP payloads, executed Meterpreter command & control, and evaluated APK static risks via MobSF.
+                                Tested an Android emulator from an isolated Kali Linux lab. Generated a Dalvik reverse TCP test payload, established a Meterpreter session, and reviewed the APK's static findings in MobSF.
                             </p>
                             
                             <ul class="space-y-2 text-xs font-mono text-cyber-text">
@@ -771,7 +771,7 @@
                             McDonald Tatenda Handina, Junior SOC Analyst / IT Support
                         </p>
                         <p>
-                            Toronto-based Cybersecurity & Threat Management graduate with prior junior web development experience and hands-on IT and security labs. I build isolated environments, configure SIEM telemetry, investigate Windows security events and document detection logic through practical red-team simulation and blue-team detection exercises.
+                            I’m a Cybersecurity & Threat Management graduate with earlier junior web development experience. My lab work includes Windows security logs, Splunk searches, Active Directory, pfSense and controlled attack simulations. I document what I tested, what the logs showed and how a defender could investigate it.
                         </p>
                         <div class="p-3 rounded bg-cyber-bg border border-cyber-border text-cyber-green">
                             <span class="font-bold">[★] Open to:</span> IT Support, Help Desk, Junior SOC Analyst, and Junior Cybersecurity Analyst roles in Toronto or remote.
@@ -857,8 +857,8 @@
             const body = document.getElementById('sim1-terminal-body');
             body.innerHTML += `
                 <div class="text-cyber-blue font-bold mt-2">splunk> sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)</div>
-                <div class="text-cyber-green">[✓] Query Executed across 66,969 indexed records.</div>
-                <div class="text-cyber-blue">[✓] Correlated 27 failed logon & explicit credential attempts from 192.168.49.130 (KALI).</div>
+                <div class="text-cyber-green">[DEMO] Example query result across the 66,969-event lab dataset.</div>
+                <div class="text-cyber-blue">[DEMO] Example correlation: 27 failed logons and explicit-credential events attributed to the Kali test host.</div>
             `;
             body.scrollTop = body.scrollHeight;
             document.getElementById('sim1-table-view').classList.remove('hidden');
