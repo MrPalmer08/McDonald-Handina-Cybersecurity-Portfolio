@@ -10,6 +10,8 @@ index=wineventlog EventCode=4769 Ticket_Encryption_Type=0x17
 | stats count by Account_Name, Service_Name, Client_Address
 ```
 
+[Open the Kerberoasting detection SPL](kerberoasting-rc4-detection.spl).
+
 Event ID 4769 with RC4 encryption type `0x17` can be a useful hunting signal, but RC4 use alone does not prove Kerberoasting. Interpret it with service-account ownership, SPN, source host, request volume, encryption baseline and change history.
 
 ## False-positive tuning
