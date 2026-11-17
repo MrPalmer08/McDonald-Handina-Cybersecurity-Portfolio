@@ -111,7 +111,7 @@
                 </span>
             </div>
             <nav class="hidden md:flex space-x-5 font-mono text-sm">
-<a href="#hero">/home</a><a href="#purple-team">/purple-lab</a><a href="#projects">/projects</a><a href="#triage">/soc-triage</a><a href="#skills">/skills</a><a href="#about-contact">/contact</a></nav>
+<a href="#hero">/home</a><a href="#purple-team">/red-blue-lab</a><a href="#projects">/projects</a><a href="#triage">/soc-triage</a><a href="#skills">/skills</a><a href="#about-contact">/contact</a></nav>
             <div class="flex items-center space-x-3 font-mono text-xs">
                 <span class="px-2.5 py-1 rounded-full bg-cyber-green/10 text-cyber-green border border-cyber-green/30">
                     <i class="fa-solid fa-shield-halved mr-1"></i> Portfolio · IT Support & SOC
@@ -171,7 +171,7 @@
                             <i class="fa-solid fa-terminal mr-2"></i> Launch Project Sims
                         </a>
                         <a href="#purple-team" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-heading border border-cyber-purple font-semibold font-mono text-sm hover:bg-cyber-purple/10 transition-all flex items-center">
-                            <i class="fa-solid fa-diagram-project text-cyber-purple mr-2"></i> View Purple Team Diagram
+                            <i class="fa-solid fa-diagram-project text-cyber-purple mr-2"></i> View Red / Blue Lab Diagram
                         </a>
                         <a href="resume.html" target="_blank" rel="noopener" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-heading border border-cyber-green/60 font-mono text-sm hover:border-cyber-green transition-all flex items-center"><i class="fa-solid fa-file-arrow-down mr-2"></i> Download Resume</a>
 <a href="#about-contact" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-text border border-cyber-border font-mono text-sm hover:border-cyber-blue transition-all flex items-center"><i class="fa-solid fa-envelope mr-2"></i> Contact Me</a>
@@ -228,10 +228,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-xs font-mono text-cyber-purple mb-3">
-                    <i class="fa-solid fa-rotate mr-1"></i> Continuous Closed-Loop Simulation
+                    <i class="fa-solid fa-rotate mr-1"></i> Red Team Attack Simulation · Blue Team Detection
                 </div>
                 <h2 class="text-3xl font-bold text-cyber-heading tracking-tight">
-                    Purple Team Lab Architecture & Telemetry Loop
+                    Adversary Simulation & SOC Telemetry Architecture
                 </h2>
                 <p class="mt-3 text-cyber-text text-sm sm:text-base">
                     Interactive visualization of the end-to-end adversary simulation, pfSense network boundary, Windows Server identity ingestion, and Splunk detection feedback loop.
@@ -241,7 +241,7 @@
             <div class="flex flex-wrap justify-center gap-3 mb-5 text-xs font-mono">
                 <span class="px-3 py-2 rounded border border-cyber-red/50 bg-cyber-red/10 text-cyber-red"><i class="fa-solid fa-user-secret mr-2"></i>RED TEAM · Adversary emulation (Kali Linux)</span>
                 <span class="px-3 py-2 rounded border border-cyber-blue/50 bg-cyber-blue/10 text-cyber-blue"><i class="fa-solid fa-shield-halved mr-2"></i>BLUE TEAM · Monitoring & detection (Windows / Splunk)</span>
-                <span class="px-3 py-2 rounded border border-cyber-purple/50 bg-cyber-purple/10 text-cyber-purple"><i class="fa-solid fa-arrows-rotate mr-2"></i>PURPLE TEAM · Validate & improve detections</span>
+                
             </div>
 
             <!-- Architecture Canvas Container -->
@@ -257,11 +257,11 @@
                         </span>
                     </div>
 
-                    <!-- Purple Team playback controls -->
+                    <!-- Red / Blue playback controls -->
                     <div class="flex flex-wrap gap-2 items-center">
                       <button type="button" onclick="setPurpleStage(1)" id="stage-btn-1" class="px-3 py-1.5 rounded">Red: Attack</button>
                       <button type="button" onclick="setPurpleStage(2)" id="stage-btn-2" class="px-3 py-1.5 rounded">Blue: Detect</button>
-                      <button type="button" onclick="setPurpleStage(3)" id="stage-btn-3" class="px-3 py-1.5 rounded">Purple: Improve</button>
+                      
                       <button type="button" onclick="pausePurple()" id="purple-pause" class="px-3 py-1.5 rounded border border-cyber-yellow/50 text-cyber-yellow"><i class="fa-solid fa-pause mr-1"></i>Pause</button>
                       <button type="button" onclick="resumePurple()" id="purple-resume" class="px-3 py-1.5 rounded border border-cyber-green/50 text-cyber-green"><i class="fa-solid fa-play mr-1"></i>Resume</button>
                       <button type="button" onclick="stopPurple()" id="purple-stop" class="px-3 py-1.5 rounded border border-cyber-red/50 text-cyber-red"><i class="fa-solid fa-stop mr-1"></i>Stop</button>
@@ -269,11 +269,11 @@
                   </div>
                   <!-- SVG Architecture Diagram Area -->
                 <div class="w-full overflow-x-auto py-6">
-                    <svg id="purple-svg" viewBox="0 0 1200 650" class="w-full min-w-[900px] h-auto font-mono text-xs" role="img" aria-label="Purple Team lab architecture">
+                    <svg id="purple-svg" viewBox="0 0 1200 650" class="w-full min-w-[900px] h-auto font-mono text-xs" role="img" aria-label="Red Team adversary simulation and Blue Team SOC telemetry architecture">
 <defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#30363d" stroke-width=".6"/></pattern><pattern id="brick" width="44" height="24" patternUnits="userSpaceOnUse"><path d="M0 0H44M0 12H44M0 24H44M22 0V12M0 12V24M44 12V24" fill="none" stroke="#f59e0b" stroke-width="1.5"/></pattern><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#fb7185"/></marker><marker id="ab" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#38bdf8"/></marker><marker id="ap" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#c084fc"/></marker></defs>
 <rect width="1200" height="650" fill="url(#grid)"/>
 <rect x="22" y="22" width="1156" height="606" rx="24" fill="#a855f7" fill-opacity=".035" stroke="#a855f7" stroke-width="3" stroke-dasharray="12 7"/>
-<rect x="430" y="8" width="340" height="34" rx="17" fill="#24163b" stroke="#a855f7" stroke-width="1.5"/><text x="600" y="30" text-anchor="middle" fill="#e9d5ff" font-size="17" font-weight="bold">PURPLE TEAM · OPERATIONS ENVIRONMENT</text>
+<rect x="430" y="8" width="340" height="34" rx="17" fill="#24163b" stroke="#a855f7" stroke-width="1.5"/><text x="600" y="30" text-anchor="middle" fill="#e9d5ff" font-size="17" font-weight="bold">ADVERSARY SIMULATION & SOC TELEMETRY</text>
 <text x="600" y="62" text-anchor="middle" fill="#c4b5fd" font-size="11">Adversary emulation → Firewall inspection → Defensive telemetry → SIEM detection → Feedback</text>
 <!-- RED TEAM -->
 <rect x="48" y="92" width="330" height="490" rx="16" fill="#ef4444" fill-opacity=".055" stroke="#fb7185" stroke-width="2"/><text x="213" y="122" text-anchor="middle" fill="#fb7185" font-size="19" font-weight="bold">RED TEAM</text><text x="213" y="143" text-anchor="middle" fill="#fecdd3" font-size="11">Attacker workstation · Kali Linux</text>
@@ -425,21 +425,21 @@
                                             </thead>
                                             <tbody class="divide-y divide-cyber-border/40">
                                                 <tr>
-                                                    <td class="p-1.5">10/28/26 11:32:44</td>
+                                                    <td class="p-1.5">${new Date().toLocaleDateString()} 11:32:44</td>
                                                     <td class="p-1.5 text-cyber-red font-bold">4625</td>
                                                     <td class="p-1.5">KALI-NODE</td>
                                                     <td class="p-1.5">NULL / Anonymous</td>
                                                     <td class="p-1.5 text-cyber-red">STATUS_LOGON_FAILURE</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="p-1.5">10/28/26 11:32:45</td>
+                                                    <td class="p-1.5">${new Date().toLocaleDateString()} 11:32:45</td>
                                                     <td class="p-1.5 text-cyber-red font-bold">4625</td>
                                                     <td class="p-1.5">KALI-NODE</td>
                                                     <td class="p-1.5">administrator</td>
                                                     <td class="p-1.5 text-cyber-red">NT_STATUS_ACCESS_DENIED</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="p-1.5">10/28/26 11:32:46</td>
+                                                    <td class="p-1.5">${new Date().toLocaleDateString()} 11:32:46</td>
                                                     <td class="p-1.5 text-cyber-purple font-bold">4648</td>
                                                     <td class="p-1.5">KALI-NODE</td>
                                                     <td class="p-1.5">krbtgt</td>
@@ -456,7 +456,7 @@
                     </div>
                 </div>
 
-                <!-- PROJECT B: Mobile Application Security & Penetration Testing -->
+                <h3 class="text-2xl font-bold text-cyber-heading mb-5">2. Android Mobile Application Security Assessment</h3><div class="rounded-xl border border-cyber-blue/30 bg-[#080d14] p-4 mb-8"><div class="font-mono text-xs uppercase tracking-wider text-cyber-blue mb-3">Diagram simulation · APK testing & static analysis <span class="text-cyber-text/60 normal-case">| illustrative workflow</span></div><div class="overflow-x-auto"><svg viewBox="0 0 960 230" role="img" aria-label="Kali Linux, Android emulator, MobSF and security findings" class="w-full min-w-[680px] h-auto"><rect x="5" y="5" width="950" height="220" rx="14" fill="#a855f7" fill-opacity=".025" stroke="#a855f7" stroke-opacity=".35" stroke-dasharray="7 6"/><g font-family="monospace" text-anchor="middle"><rect x="20" y="70" width="190" height="100" rx="12" fill="#101827" stroke="#fb7185" stroke-width="2"/><text x="115" y="102" fill="#fb7185" font-size="14" font-weight="bold">KALI LINUX</text><text x="115" y="127" fill="#e5e7eb" font-size="11">msfvenom / handler</text><text x="115" y="148" fill="#cbd5e1" font-size="10">Controlled test payload</text><rect x="270" y="70" width="190" height="100" rx="12" fill="#101827" stroke="#38bdf8" stroke-width="2"/><text x="365" y="102" fill="#38bdf8" font-size="14" font-weight="bold">ANDROID</text><text x="365" y="127" fill="#e5e7eb" font-size="11">Emulator / APK</text><text x="365" y="148" fill="#cbd5e1" font-size="10">Test environment</text><rect x="520" y="70" width="190" height="100" rx="12" fill="#101827" stroke="#c084fc" stroke-width="2"/><text x="615" y="102" fill="#c084fc" font-size="14" font-weight="bold">MobSF</text><text x="615" y="127" fill="#e5e7eb" font-size="11">Static APK analysis</text><text x="615" y="148" fill="#cbd5e1" font-size="10">Manifest / permissions</text><rect x="770" y="70" width="170" height="100" rx="12" fill="#101827" stroke="#4ade80" stroke-width="2"/><text x="855" y="102" fill="#4ade80" font-size="14" font-weight="bold">FINDINGS</text><text x="855" y="127" fill="#e5e7eb" font-size="11">Risk review</text><text x="855" y="148" fill="#cbd5e1" font-size="10">Remediation notes</text></g><path d="M210 115H270" stroke="#94a3b8" stroke-width="3" fill="none"/><path d="M460 115H520" stroke="#94a3b8" stroke-width="3" fill="none"/><path d="M710 115H770" stroke="#94a3b8" stroke-width="3" fill="none"/></svg></div><p class="text-xs text-cyber-text/70 mt-3">Controlled APK assessment path: generate a lab payload, test in an Android emulator, inspect the APK with MobSF, and document risks.</p></div><!-- PROJECT B: Mobile Application Security & Penetration Testing -->
                 <div class="glass-panel p-6 lg:p-8 border-cyber-red/30">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
@@ -569,7 +569,7 @@
                     </div>
                 </div>
 
-                <!-- PROJECT C: Multi-Layered Mobile Data Loss Prevention (DLP) Framework -->
+                <h3 class="text-2xl font-bold text-cyber-heading mb-5">3. Mobile Data Loss Prevention — Layered Control Model</h3><div class="rounded-xl border border-cyber-blue/30 bg-[#080d14] p-4 mb-8"><div class="font-mono text-xs uppercase tracking-wider text-cyber-blue mb-3">Diagram simulation · Mobile DLP control layers <span class="text-cyber-text/60 normal-case">| illustrative workflow</span></div><div class="overflow-x-auto"><svg viewBox="0 0 960 230" role="img" aria-label="Hardware trust, UEM policy, app containment and data channels" class="w-full min-w-[680px] h-auto"><rect x="5" y="5" width="950" height="220" rx="14" fill="#a855f7" fill-opacity=".025" stroke="#a855f7" stroke-opacity=".35" stroke-dasharray="7 6"/><g font-family="monospace" text-anchor="middle"><rect x="20" y="70" width="200" height="100" rx="12" fill="#101827" stroke="#f59e0b" stroke-width="2"/><text x="120" y="102" fill="#f59e0b" font-size="14" font-weight="bold">HARDWARE ROOT</text><text x="120" y="127" fill="#e5e7eb" font-size="11">ARM TrustZone / TEE</text><text x="120" y="148" fill="#cbd5e1" font-size="10">Secure boot / keys</text><rect x="265" y="70" width="200" height="100" rx="12" fill="#101827" stroke="#38bdf8" stroke-width="2"/><text x="365" y="102" fill="#38bdf8" font-size="14" font-weight="bold">OS / UEM</text><text x="365" y="127" fill="#e5e7eb" font-size="11">Device policy</text><text x="365" y="148" fill="#cbd5e1" font-size="10">Compliance / capture</text><rect x="510" y="70" width="200" height="100" rx="12" fill="#101827" stroke="#c084fc" stroke-width="2"/><text x="610" y="102" fill="#c084fc" font-size="14" font-weight="bold">APP / MAM</text><text x="610" y="127" fill="#e5e7eb" font-size="11">Managed container</text><text x="610" y="148" fill="#cbd5e1" font-size="10">Clipboard / encryption</text><rect x="755" y="70" width="185" height="100" rx="12" fill="#101827" stroke="#4ade80" stroke-width="2"/><text x="847.5" y="102" fill="#4ade80" font-size="14" font-weight="bold">DATA CHANNELS</text><text x="847.5" y="127" fill="#e5e7eb" font-size="11">Wi-Fi / Bluetooth</text><text x="847.5" y="148" fill="#cbd5e1" font-size="10">Leakage monitoring</text></g><path d="M220 115H265" stroke="#94a3b8" stroke-width="3" fill="none"/><path d="M465 115H510" stroke="#94a3b8" stroke-width="3" fill="none"/><path d="M710 115H755" stroke="#94a3b8" stroke-width="3" fill="none"/></svg></div><p class="text-xs text-cyber-text/70 mt-3">Device trust, operating-system policy, application containment and network controls combine to reduce data leakage.</p></div><!-- PROJECT C: Multi-Layered Mobile Data Loss Prevention (DLP) Framework -->
                 <div class="glass-panel p-6 lg:p-8 border-cyber-purple/30">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
@@ -619,7 +619,7 @@
                     </div>
                 </div>
 
-                <!-- PROJECT D: Detection Engineering (Kerberoasting & DCSync) -->
+                <h3 class="text-2xl font-bold text-cyber-heading mb-5">4. Kerberoasting & DCSync Detection Engineering</h3><div class="rounded-xl border border-cyber-blue/30 bg-[#080d14] p-4 mb-8"><div class="font-mono text-xs uppercase tracking-wider text-cyber-blue mb-3">Diagram simulation · Identity attack telemetry & detection <span class="text-cyber-text/60 normal-case">| illustrative workflow</span></div><div class="overflow-x-auto"><svg viewBox="0 0 960 230" role="img" aria-label="Impacket identity testing, Active Directory events and Splunk detections" class="w-full min-w-[680px] h-auto"><rect x="5" y="5" width="950" height="220" rx="14" fill="#a855f7" fill-opacity=".025" stroke="#a855f7" stroke-opacity=".35" stroke-dasharray="7 6"/><g font-family="monospace" text-anchor="middle"><rect x="20" y="70" width="200" height="100" rx="12" fill="#101827" stroke="#fb7185" stroke-width="2"/><text x="120" y="102" fill="#fb7185" font-size="14" font-weight="bold">IDENTITY TEST</text><text x="120" y="127" fill="#e5e7eb" font-size="11">Impacket tools</text><text x="120" y="148" fill="#cbd5e1" font-size="10">GetUserSPNs / secretsdump</text><rect x="265" y="70" width="200" height="100" rx="12" fill="#101827" stroke="#38bdf8" stroke-width="2"/><text x="365" y="102" fill="#38bdf8" font-size="14" font-weight="bold">ACTIVE DIRECTORY</text><text x="365" y="127" fill="#e5e7eb" font-size="11">Domain Controller</text><text x="365" y="148" fill="#cbd5e1" font-size="10">4769 / 4662 auditing</text><rect x="510" y="70" width="200" height="100" rx="12" fill="#101827" stroke="#f59e0b" stroke-width="2"/><text x="610" y="102" fill="#f59e0b" font-size="14" font-weight="bold">WINDOWS EVENTS</text><text x="610" y="127" fill="#e5e7eb" font-size="11">RC4 0x17 / replication</text><text x="610" y="148" fill="#cbd5e1" font-size="10">Source / account context</text><rect x="755" y="70" width="185" height="100" rx="12" fill="#101827" stroke="#c084fc" stroke-width="2"/><text x="847.5" y="102" fill="#c084fc" font-size="14" font-weight="bold">SPLUNK SIEM</text><text x="847.5" y="127" fill="#e5e7eb" font-size="11">SPL detections</text><text x="847.5" y="148" fill="#cbd5e1" font-size="10">T1558.003 / T1003.006</text></g><path d="M220 115H265" stroke="#94a3b8" stroke-width="3" fill="none"/><path d="M465 115H510" stroke="#94a3b8" stroke-width="3" fill="none"/><path d="M710 115H755" stroke="#94a3b8" stroke-width="3" fill="none"/></svg></div><p class="text-xs text-cyber-text/70 mt-3">Controlled identity-attack simulation → AD audit events (4769 / 4662) → Splunk correlation and ATT&CK-aligned detection.</p></div><!-- PROJECT D: Detection Engineering (Kerberoasting & DCSync) -->
                 <div class="glass-panel p-6 lg:p-8 border-cyber-yellow/30">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
@@ -768,7 +768,7 @@
 
                     <div class="mt-4 font-mono text-xs text-cyber-text space-y-3 leading-relaxed">
                         <p class="text-cyber-heading font-bold">
-                            > McDonald Tatenda Handina, Junior SOC Analyst / IT Support
+                            McDonald Tatenda Handina, Junior SOC Analyst / IT Support
                         </p>
                         <p>
                             Toronto-based Cybersecurity & Threat Management graduate with prior junior web development experience and hands-on IT and security labs. I build isolated environments, configure SIEM telemetry, investigate Windows security events and document detection logic through practical purple-team exercises.
@@ -835,60 +835,9 @@
         // PURPLE TEAM ARCHITECTURE CYCLE
         let currentPurpleStage = 1;
 
-        const stageData = {
-            1: {
-                badge: "STAGE 1: Red Team Attack (enum4linux)",
-                badgeClass: "bg-cyber-red/20 text-cyber-red border-cyber-red/40",
-                desc: "<span class='text-cyber-red font-bold'>STAGE 1:</span> Kali Linux executes unauthenticated SMB/LDAP enumeration (<code class='text-cyber-blue'>enum4linux -a 192.168.49.10</code>) targeting Domain Controller ports (139, 445, 389).",
-                kaliBorder: "#ff4d4d",
-                dcBorder: "#ff4d4d",
-                splunkBorder: "#30363d",
-                purpleLoopOpacity: 0
-            },
-            2: {
-                badge: "STAGE 2: Blue Telemetry Ingestion",
-                badgeClass: "bg-cyber-blue/20 text-cyber-blue border-cyber-blue/40",
-                desc: "<span class='text-cyber-blue font-bold'>STAGE 2:</span> pfSense routes security audit telemetry. Windows Domain Controller & Endpoints transmit WinEventLog:Security events to Splunk SIEM.",
-                kaliBorder: "#30363d",
-                dcBorder: "#00d2ff",
-                splunkBorder: "#00d2ff",
-                purpleLoopOpacity: 0
-            },
-            3: {
-                badge: "STAGE 3: Purple Team Feedback Loop",
-                badgeClass: "bg-cyber-purple/20 text-cyber-purple border-cyber-purple/40",
-                desc: "<span class='text-cyber-purple font-bold'>STAGE 3:</span> Analyst queries Splunk SPL (<code class='text-cyber-purple'>EventCode=4625</code>), validates reconnaissance alerts, and tunes detection logic back to adversary emulation.",
-                kaliBorder: "#a855f7",
-                dcBorder: "#a855f7",
-                splunkBorder: "#a855f7",
-                purpleLoopOpacity: 1
-            }
-        };
-
-        function setPurpleStage(stage, fromTimer=false) {
-            if(![1,2,3].includes(stage))return;
-            currentPurpleStage=stage;const data=stageData[stage];
-            const badge=document.getElementById('purple-phase-badge'),desc=document.getElementById('purple-stage-desc');
-            if(badge){badge.className=`px-3 py-1 rounded-full border font-bold ${data.badgeClass}`;badge.textContent=data.badge;}
-            if(desc)desc.innerHTML=data.desc;
-            for(let i=1;i<=3;i++){const b=document.getElementById('stage-btn-'+i);if(b)b.className=i===stage?`px-3 py-1.5 rounded font-bold border ${i===1?'bg-cyber-red/20 text-cyber-red border-cyber-red/50':i===2?'bg-cyber-blue/20 text-cyber-blue border-cyber-blue/50':'bg-cyber-purple/20 text-cyber-purple border-cyber-purple/50'}`:'px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border';}
-            const setStroke=(id,color)=>{const el=document.querySelector(id+' rect');if(el)el.setAttribute('stroke',color);};
-            setStroke('#node-kali','#fb7185');setStroke('#node-pfsense','#f59e0b');setStroke('#node-dc','#38bdf8');setStroke('#node-ep','#38bdf8');setStroke('#node-splunk','#38bdf8');
-            ['path-kali-pfsense','path-pfsense-dc','path-pfsense-ep','path-dc-splunk','path-ep-splunk','path-purple-feedback'].forEach(id=>{const el=document.getElementById(id);if(el){el.setAttribute('stroke','#475569');el.setAttribute('stroke-width','3');}});
-            const light=(id,color)=>{const el=document.getElementById(id);if(el){el.setAttribute('stroke',color);el.setAttribute('stroke-width','5');}};
-            if(stage===1){light('path-kali-pfsense','#fb7185');light('path-pfsense-dc','#fb7185');light('path-pfsense-ep','#fb7185');}
-            if(stage===2){light('path-dc-splunk','#38bdf8');light('path-ep-splunk','#38bdf8');}
-            if(stage===3)light('path-purple-feedback','#c084fc');
-            const loop=document.getElementById('purple-loop-text');if(loop)loop.setAttribute('opacity',stage===3?'1':'0');
-            if(!fromTimer&&purpleMode==='running')pausePurple('Manual stage selected · paused');
-        }
-        let purpleTimer=null,purpleMode='paused';
-        function purpleStatus(msg){const el=document.getElementById('purple-run-state');if(el)el.textContent=msg;}
-        function pausePurple(msg='Paused · stage '+currentPurpleStage){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='paused';purpleStatus(msg);}
-        function resumePurple(){if(purpleMode==='running'&&purpleTimer!==null)return;purpleMode='running';purpleStatus('Running · advances every 4 seconds');if(purpleTimer!==null)clearInterval(purpleTimer);purpleTimer=setInterval(()=>{if(purpleMode==='running')setPurpleStage(currentPurpleStage>=3?1:currentPurpleStage+1,true);},4000);}
-        function stopPurple(){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='stopped';setPurpleStage(1,true);purpleStatus('Stopped · press Resume to restart');}
-        window.setPurpleStage=setPurpleStage;window.pausePurple=pausePurple;window.resumePurple=resumePurple;window.stopPurple=stopPurple;
-        setPurpleStage(1,true);resumePurple();
+        const stageData={1:{badge:"RED TEAM: Controlled Attack Simulation",badgeClass:"bg-cyber-red/20 text-cyber-red border-cyber-red/40",desc:"<span class='text-cyber-red font-bold'>RED TEAM:</span> Kali Linux performs controlled SMB / LDAP enumeration against the isolated lab domain controller."},2:{badge:"BLUE TEAM: Detection & Triage",badgeClass:"bg-cyber-blue/20 text-cyber-blue border-cyber-blue/40",desc:"<span class='text-cyber-blue font-bold'>BLUE TEAM:</span> Windows security telemetry is reviewed in Splunk; the analyst validates evidence, scopes impact and documents next actions."}};
+        function setPurpleStage(stage,fromTimer=false){if(![1,2].includes(stage))return;currentPurpleStage=stage;const d=stageData[stage],b=document.getElementById('purple-phase-badge'),desc=document.getElementById('purple-stage-desc');if(b){b.className='px-3 py-1 rounded-full border font-bold '+d.badgeClass;b.textContent=d.badge;}if(desc)desc.innerHTML=d.desc;for(let i=1;i<=2;i++){const x=document.getElementById('stage-btn-'+i);if(x)x.className=i===stage?'px-3 py-1.5 rounded font-bold border '+(i===1?'bg-cyber-red/20 text-cyber-red border-cyber-red/50':'bg-cyber-blue/20 text-cyber-blue border-cyber-blue/50'):'px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border';}['path-kali-pfsense','path-pfsense-dc','path-pfsense-ep','path-dc-splunk','path-ep-splunk'].forEach(id=>{const e=document.getElementById(id);if(e){e.setAttribute('stroke','#475569');e.setAttribute('stroke-width','3');}});const light=(id,c)=>{const e=document.getElementById(id);if(e){e.setAttribute('stroke',c);e.setAttribute('stroke-width','5');}};if(stage===1){light('path-kali-pfsense','#fb7185');light('path-pfsense-dc','#fb7185');light('path-pfsense-ep','#fb7185');}else{light('path-dc-splunk','#38bdf8');light('path-ep-splunk','#38bdf8');}if(!fromTimer&&purpleMode==='running')pausePurple('Manual stage selected · paused');}
+        let purpleTimer=null,purpleMode='paused';function purpleStatus(m){const e=document.getElementById('purple-run-state');if(e)e.textContent=m;}function pausePurple(m='Paused · stage '+currentPurpleStage){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='paused';purpleStatus(m);}function resumePurple(){if(purpleMode==='running'&&purpleTimer!==null)return;purpleMode='running';purpleStatus('Running · alternates Red Attack / Blue Detection every 4 seconds');if(purpleTimer!==null)clearInterval(purpleTimer);purpleTimer=setInterval(()=>{if(purpleMode==='running')setPurpleStage(currentPurpleStage===1?2:1,true);},4000);}function stopPurple(){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='stopped';setPurpleStage(1,true);purpleStatus('Stopped · press Resume to restart');}window.setPurpleStage=setPurpleStage;window.pausePurple=pausePurple;window.resumePurple=resumePurple;window.stopPurple=stopPurple;setPurpleStage(1,true);resumePurple();
 
         // PROJECT A SIMULATOR
         function runSimulatedScan() {
@@ -896,7 +845,7 @@
             body.innerHTML += `
                 <div class="text-cyber-red font-bold mt-2">┌──(kali㉿kali)-[~]</div>
                 <div class="text-cyber-red">└─$ enum4linux -a 192.168.49.10</div>
-                <div class="text-cyber-text/80">Starting enum4linux v0.9.1 on Wed Oct 28 11:32:37 2026</div>
+                <div class="text-cyber-text/80">Starting enum4linux v0.9.1 on ${new Date().toDateString()} 11:32:37</div>
                 <div class="text-cyber-text/80">[+] Got domain/workgroup name: LETSDEFEND</div>
                 <div class="text-cyber-text/80">[+] Domain Sid: S-1-5-21-848233000-867439076-3727323734</div>
                 <div class="text-cyber-red">[E] Couldn't find users using enumdomusers: NT_STATUS_ACCESS_DENIED</div>
