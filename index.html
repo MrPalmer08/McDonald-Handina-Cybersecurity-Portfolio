@@ -111,7 +111,7 @@
                 </span>
             </div>
             <nav class="hidden md:flex space-x-5 font-mono text-sm">
-<a href="#hero">/home</a><a href="#purple-team">/red-blue-lab</a><a href="#projects">/projects</a><a href="#triage">/soc-triage</a><a href="#skills">/skills</a><a href="#about-contact">/contact</a></nav>
+<a href="#hero">/home</a><a href="#red-blue-lab">/red-blue-lab</a><a href="#projects">/projects</a><a href="#triage">/soc-triage</a><a href="#skills">/skills</a><a href="#about-contact">/contact</a></nav>
             <div class="flex items-center space-x-3 font-mono text-xs">
                 <span class="px-2.5 py-1 rounded-full bg-cyber-green/10 text-cyber-green border border-cyber-green/30">
                     <i class="fa-solid fa-shield-halved mr-1"></i> Portfolio · IT Support & SOC
@@ -224,7 +224,7 @@
     </section>
 
     <!-- 2. ANIMATED PURPLE TEAM INTERACTIVE ARCHITECTURE DIAGRAM -->
-    <section id="purple-team" class="py-16 bg-[#0d1117] border-b border-cyber-border relative">
+    <section id="red-blue-lab" class="py-16 bg-[#0d1117] border-b border-cyber-border relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-xs font-mono text-cyber-purple mb-3">
@@ -252,7 +252,7 @@
                         <span class="text-cyber-heading font-bold flex items-center">
                             <i class="fa-solid fa-circle-play text-cyber-purple mr-2"></i> Current Phase:
                         </span>
-                        <span id="purple-phase-badge" class="px-3 py-1 rounded-full bg-cyber-red/20 text-cyber-red border border-cyber-red/40 font-bold">
+                        <span id="red-blue-phase-badge" class="px-3 py-1 rounded-full bg-cyber-red/20 text-cyber-red border border-cyber-red/40 font-bold">
                             STAGE 1: Red Team Attack (enum4linux)
                         </span>
                     </div>
@@ -269,7 +269,7 @@
                   </div>
                   <!-- SVG Architecture Diagram Area -->
                 <div class="w-full overflow-x-auto py-6">
-                    <svg id="purple-svg" viewBox="0 0 1200 650" class="w-full min-w-[900px] h-auto font-mono text-xs" role="img" aria-label="Red Team adversary simulation and Blue Team SOC telemetry architecture">
+                    <svg id="red-blue-svg" viewBox="0 0 1200 650" class="w-full min-w-[900px] h-auto font-mono text-xs" role="img" aria-label="Red Team adversary simulation and Blue Team SOC telemetry architecture">
 <defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#30363d" stroke-width=".6"/></pattern><pattern id="brick" width="44" height="24" patternUnits="userSpaceOnUse"><path d="M0 0H44M0 12H44M0 24H44M22 0V12M0 12V24M44 12V24" fill="none" stroke="#f59e0b" stroke-width="1.5"/></pattern><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#fb7185"/></marker><marker id="ab" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#38bdf8"/></marker><marker id="ap" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#c084fc"/></marker></defs>
 <rect width="1200" height="650" fill="url(#grid)"/>
 <rect x="22" y="22" width="1156" height="606" rx="24" fill="#a855f7" fill-opacity=".035" stroke="#a855f7" stroke-width="3" stroke-dasharray="12 7"/>
@@ -289,17 +289,17 @@
 <path id="path-kali-pfsense" d="M300 250H435" fill="none" stroke="#fb7185" stroke-width="4" marker-end="url(#ar)"/><text x="365" y="235" text-anchor="middle" fill="#fda4af" font-size="10">ATTACK TRAFFIC</text>
 <path id="path-pfsense-dc" d="M685 260C720 260 735 240 780 240" fill="none" stroke="#fbbf24" stroke-width="4" marker-end="url(#ab)"/><path id="path-pfsense-ep" d="M685 310C800 355 900 330 970 290" fill="none" stroke="#fbbf24" stroke-width="3" marker-end="url(#ab)"/>
 <path id="path-dc-splunk" d="M855 345V380" fill="none" stroke="#38bdf8" stroke-width="4" marker-end="url(#ab)"/><path id="path-ep-splunk" d="M1040 345C1040 365 1015 375 1000 385" fill="none" stroke="#38bdf8" stroke-width="4" marker-end="url(#ab)"/>
-<path id="path-purple-feedback" d="M820 545C670 615 430 615 270 545" fill="none" stroke="#c084fc" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#ap)"/><text x="545" y="606" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="bold">BLUE TEAM · Correlate events → triage alert → document handoff</text><text x="600" y="642" text-anchor="middle" fill="#94a3b8" font-size="10">Conceptual lab topology · pfSense interfaces reflect the configured VMware lab</text>
-<g id="purple-loop-text" opacity="0"><rect x="430" y="72" width="340" height="28" rx="14" fill="#211532" stroke="#c084fc"/><text x="600" y="91" text-anchor="middle" fill="#e9d5ff" font-size="11" font-weight="bold">DETECTION VALIDATED · LOOP COMPLETE</text></g></svg>
+<text x="545" y="606" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="bold">BLUE TEAM · Correlate events → triage alert → document handoff</text><text x="600" y="642" text-anchor="middle" fill="#94a3b8" font-size="10">Conceptual lab topology · pfSense interfaces reflect the configured VMware lab</text>
+</svg>
                 </div>
 
                 <!-- Simulation Footnote -->
                 <div class="mt-4 p-4 rounded bg-cyber-bg border border-cyber-border font-mono text-xs flex flex-wrap justify-between items-center gap-2">
-                    <div id="purple-stage-desc" class="text-cyber-text">
+                    <div id="red-blue-stage-desc" class="text-cyber-text">
                         <span class="text-cyber-red font-bold">STAGE 1:</span> Kali Linux executes unauthenticated SMB/LDAP enumeration (<code class="text-cyber-blue">enum4linux -a 192.168.49.10</code>) targeting Domain Controller ports (139, 445, 389).
                     </div>
                     <div class="text-cyber-text/60 text-[10px]">
-                        <span id="purple-run-state" class="text-cyber-green">Auto-playing · 4s per stage</span>
+                        <span id="red-blue-run-state" class="text-cyber-green">Auto-playing · 4s per stage</span>
                     </div>
                 </div>
 
@@ -836,8 +836,8 @@
         let currentPurpleStage = 1;
 
         const stageData={1:{badge:"RED TEAM: Controlled Attack Simulation",badgeClass:"bg-cyber-red/20 text-cyber-red border-cyber-red/40",desc:"<span class='text-cyber-red font-bold'>RED TEAM:</span> Kali Linux performs controlled SMB / LDAP enumeration against the isolated lab domain controller."},2:{badge:"BLUE TEAM: Detection & Triage",badgeClass:"bg-cyber-blue/20 text-cyber-blue border-cyber-blue/40",desc:"<span class='text-cyber-blue font-bold'>BLUE TEAM:</span> Windows security telemetry is reviewed in Splunk; the analyst validates evidence, scopes impact and documents next actions."}};
-        function setPurpleStage(stage,fromTimer=false){if(![1,2].includes(stage))return;currentPurpleStage=stage;const d=stageData[stage],b=document.getElementById('purple-phase-badge'),desc=document.getElementById('purple-stage-desc');if(b){b.className='px-3 py-1 rounded-full border font-bold '+d.badgeClass;b.textContent=d.badge;}if(desc)desc.innerHTML=d.desc;for(let i=1;i<=2;i++){const x=document.getElementById('stage-btn-'+i);if(x)x.className=i===stage?'px-3 py-1.5 rounded font-bold border '+(i===1?'bg-cyber-red/20 text-cyber-red border-cyber-red/50':'bg-cyber-blue/20 text-cyber-blue border-cyber-blue/50'):'px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border';}['path-kali-pfsense','path-pfsense-dc','path-pfsense-ep','path-dc-splunk','path-ep-splunk'].forEach(id=>{const e=document.getElementById(id);if(e){e.setAttribute('stroke','#475569');e.setAttribute('stroke-width','3');}});const light=(id,c)=>{const e=document.getElementById(id);if(e){e.setAttribute('stroke',c);e.setAttribute('stroke-width','5');}};if(stage===1){light('path-kali-pfsense','#fb7185');light('path-pfsense-dc','#fb7185');light('path-pfsense-ep','#fb7185');}else{light('path-dc-splunk','#38bdf8');light('path-ep-splunk','#38bdf8');}if(!fromTimer&&purpleMode==='running')pausePurple('Manual stage selected · paused');}
-        let purpleTimer=null,purpleMode='paused';function purpleStatus(m){const e=document.getElementById('purple-run-state');if(e)e.textContent=m;}function pausePurple(m='Paused · stage '+currentPurpleStage){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='paused';purpleStatus(m);}function resumePurple(){if(purpleMode==='running'&&purpleTimer!==null)return;purpleMode='running';purpleStatus('Running · alternates Red Attack / Blue Detection every 4 seconds');if(purpleTimer!==null)clearInterval(purpleTimer);purpleTimer=setInterval(()=>{if(purpleMode==='running')setPurpleStage(currentPurpleStage===1?2:1,true);},4000);}function stopPurple(){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='stopped';setPurpleStage(1,true);purpleStatus('Stopped · press Resume to restart');}window.setPurpleStage=setPurpleStage;window.pausePurple=pausePurple;window.resumePurple=resumePurple;window.stopPurple=stopPurple;setPurpleStage(1,true);resumePurple();
+        function setPurpleStage(stage,fromTimer=false){if(![1,2].includes(stage))return;currentPurpleStage=stage;const d=stageData[stage],b=document.getElementById('red-blue-phase-badge'),desc=document.getElementById('red-blue-stage-desc');if(b){b.className='px-3 py-1 rounded-full border font-bold '+d.badgeClass;b.textContent=d.badge;}if(desc)desc.innerHTML=d.desc;for(let i=1;i<=2;i++){const x=document.getElementById('stage-btn-'+i);if(x)x.className=i===stage?'px-3 py-1.5 rounded font-bold border '+(i===1?'bg-cyber-red/20 text-cyber-red border-cyber-red/50':'bg-cyber-blue/20 text-cyber-blue border-cyber-blue/50'):'px-3 py-1.5 rounded bg-cyber-card text-cyber-text border border-cyber-border';}['path-kali-pfsense','path-pfsense-dc','path-pfsense-ep','path-dc-splunk','path-ep-splunk'].forEach(id=>{const e=document.getElementById(id);if(e){e.setAttribute('stroke','#475569');e.setAttribute('stroke-width','3');}});const light=(id,c)=>{const e=document.getElementById(id);if(e){e.setAttribute('stroke',c);e.setAttribute('stroke-width','5');}};if(stage===1){light('path-kali-pfsense','#fb7185');light('path-pfsense-dc','#fb7185');light('path-pfsense-ep','#fb7185');}else{light('path-dc-splunk','#38bdf8');light('path-ep-splunk','#38bdf8');}if(!fromTimer&&purpleMode==='running')pausePurple('Manual stage selected · paused');}
+        let purpleTimer=null,purpleMode='paused';function purpleStatus(m){const e=document.getElementById('red-blue-run-state');if(e)e.textContent=m;}function pausePurple(m='Paused · stage '+currentPurpleStage){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='paused';purpleStatus(m);}function resumePurple(){if(purpleMode==='running'&&purpleTimer!==null)return;purpleMode='running';purpleStatus('Running · alternates Red Attack / Blue Detection every 4 seconds');if(purpleTimer!==null)clearInterval(purpleTimer);purpleTimer=setInterval(()=>{if(purpleMode==='running')setPurpleStage(currentPurpleStage===1?2:1,true);},4000);}function stopPurple(){if(purpleTimer!==null){clearInterval(purpleTimer);purpleTimer=null;}purpleMode='stopped';setPurpleStage(1,true);purpleStatus('Stopped · press Resume to restart');}window.setPurpleStage=setPurpleStage;window.pausePurple=pausePurple;window.resumePurple=resumePurple;window.stopPurple=stopPurple;setPurpleStage(1,true);resumePurple();
 
         // PROJECT A SIMULATOR
         function runSimulatedScan() {
