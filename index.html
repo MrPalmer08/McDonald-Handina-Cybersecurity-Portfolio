@@ -401,7 +401,7 @@
 
                                 <div id="sim1-terminal-body" class="p-4 h-64 overflow-y-auto space-y-2 bg-[#05080c] text-cyber-text leading-relaxed">
                                     <div class="text-cyber-text/60">// Scripted walkthrough · sample lab output, not a live Splunk connection</div>
-                                    <div class="text-cyber-green">[✓] Indexer active: 66,969 events indexed</div>
+                                    <div class="text-cyber-green">[DEMO] Lab dataset: 66,969 Windows Security events</div>
                                     <div class="text-cyber-blue">[i] Run the recon, then the detection query.</div>
                                 </div>
 
@@ -1041,7 +1041,7 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
                 notice.textContent = 'Message not sent: ' + (error.message || 'Please try again or email hantinamcdonald@gmail.com directly.');
             } finally {
                 button.disabled = false;
-                button.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Transmit Message';
+                button.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Send Message';
             }
         }
     </script>
