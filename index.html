@@ -289,7 +289,7 @@
 <path id="path-kali-pfsense" d="M300 250H435" fill="none" stroke="#fb7185" stroke-width="4" marker-end="url(#ar)"/><text x="365" y="235" text-anchor="middle" fill="#fda4af" font-size="10">ATTACK TRAFFIC</text>
 <path id="path-pfsense-dc" d="M685 260C720 260 735 240 780 240" fill="none" stroke="#fbbf24" stroke-width="4" marker-end="url(#ab)"/><path id="path-pfsense-ep" d="M685 310C800 355 900 330 970 290" fill="none" stroke="#fbbf24" stroke-width="3" marker-end="url(#ab)"/>
 <path id="path-dc-splunk" d="M855 345V380" fill="none" stroke="#38bdf8" stroke-width="4" marker-end="url(#ab)"/><path id="path-ep-splunk" d="M1040 345C1040 365 1015 375 1000 385" fill="none" stroke="#38bdf8" stroke-width="4" marker-end="url(#ab)"/>
-<path id="path-purple-feedback" d="M820 545C670 615 430 615 270 545" fill="none" stroke="#c084fc" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#ap)"/><text x="545" y="606" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="bold">PURPLE FEEDBACK · Validate detection → tune rule → retest</text><text x="600" y="642" text-anchor="middle" fill="#94a3b8" font-size="10">Conceptual lab topology · pfSense interfaces reflect the configured VMware lab</text>
+<path id="path-purple-feedback" d="M820 545C670 615 430 615 270 545" fill="none" stroke="#c084fc" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#ap)"/><text x="545" y="606" text-anchor="middle" fill="#d8b4fe" font-size="12" font-weight="bold">BLUE TEAM · Correlate events → triage alert → document handoff</text><text x="600" y="642" text-anchor="middle" fill="#94a3b8" font-size="10">Conceptual lab topology · pfSense interfaces reflect the configured VMware lab</text>
 <g id="purple-loop-text" opacity="0"><rect x="430" y="72" width="340" height="28" rx="14" fill="#211532" stroke="#c084fc"/><text x="600" y="91" text-anchor="middle" fill="#e9d5ff" font-size="11" font-weight="bold">DETECTION VALIDATED · LOOP COMPLETE</text></g></svg>
                 </div>
 
@@ -771,7 +771,7 @@
                             McDonald Tatenda Handina, Junior SOC Analyst / IT Support
                         </p>
                         <p>
-                            Toronto-based Cybersecurity & Threat Management graduate with prior junior web development experience and hands-on IT and security labs. I build isolated environments, configure SIEM telemetry, investigate Windows security events and document detection logic through practical purple-team exercises.
+                            Toronto-based Cybersecurity & Threat Management graduate with prior junior web development experience and hands-on IT and security labs. I build isolated environments, configure SIEM telemetry, investigate Windows security events and document detection logic through practical red-team simulation and blue-team detection exercises.
                         </p>
                         <div class="p-3 rounded bg-cyber-bg border border-cyber-border text-cyber-green">
                             <span class="font-bold">[★] Open to:</span> IT Support, Help Desk, Junior SOC Analyst, and Junior Cybersecurity Analyst roles in Toronto or remote.
@@ -971,12 +971,40 @@
 
         const triageSteps=[
 ['01 / VALIDATE','Confirm the alert is supported by evidence','Check raw Windows Security logs, timestamps, host identity and event fields. Confirm the 27 Event ID 4625 failures share the same source and target. Event ID 4648 records explicit credential use; it does not prove a successful login or compromise.','Output: Alert is reproducible in the synthetic lab dataset.'],
-['02 / SCOPE','Identify affected identities and assets','Pivot on source IP, destination host, account, logon type and time window. Review nearby Event IDs 4624 (successful logon), 4672 (special privileges) and endpoint telemetry. Check whether the source is an authorized test machine.','Output: Source and target mapped; attribution remains unconfirmed.'],
+['02 / SCOPE','Identify affected identities and assets','Pivot on source IP, destination host, account, logon type and time window. Review nearby Event IDs 4624 (successful logon), 4672 (special privileges) and endpoint telemetry. For Event ID 4648, inspect Logon Type (Type 3 network vs Type 2 interactive), Process Name and caller context. lsass.exe or svchost.exe may appear in legitimate authentication flows; neither process name alone proves malicious activity. Check approved admin scripts, scheduled tasks and authorized RMM tools before escalating.','Output: Source and target mapped; benign admin / service activity checked; attribution remains unconfirmed.'],
 ['03 / ASSESS','Determine likelihood and potential impact','Look for successful authentication after failures, unusual account activity, privilege changes, lateral movement or endpoint alerts. Compare activity with the lab baseline. Raise severity only when corroborating evidence supports it.','Output: Medium-priority suspicious pattern; compromise not established.'],
 ['04 / RESPOND','Recommend proportionate response actions','If production evidence confirms malicious activity, follow the incident playbook: notify the incident lead, preserve logs, and consider account/session containment or source blocking only after checking business impact and obtaining authorization.','Output: Escalate for review; containment is conditional on confirmation.'],
-['05 / DOCUMENT','Record disposition and improve detection','Document alert ID, scope, timestamps, evidence, queries, confidence, actions, owner and next review. Tune thresholds and add context such as approved scanners, service accounts and asset criticality.','Final disposition: Suspicious activity — escalated for validation. No confirmed compromise in this illustrative case.']
+['05 / DOCUMENT','Record disposition and prepare Tier 2 handoff','Document the evidence, validation steps, benign-activity checks, confidence and recommended containment. Use the Tier 2 escalation ticket below as the analyst handoff artifact.','Final disposition: Suspicious activity — escalated for validation. No confirmed compromise in this illustrative case.']
 ];let triageIndex=0;
-function renderTriage(){const x=triageSteps[triageIndex];document.getElementById('triage-progress').textContent='Step '+(triageIndex+1)+' of 5';document.getElementById('triage-progress-bar').style.width=((triageIndex+1)*20)+'%';document.getElementById('triage-step-content').innerHTML='<div class="text-cyber-blue font-mono text-xs mb-2">'+x[0]+'</div><h4 class="text-lg font-bold text-cyber-heading">'+x[1]+'</h4><p class="text-sm text-cyber-text mt-2">'+x[2]+'</p><div class="mt-4 text-xs font-mono text-cyber-green">'+x[3]+'</div>';}
+const escalationTicket=`SOC ESCALATION TICKET — TIER 2 INCIDENT RESPONSE HANDOFF
+Ticket: SOC-TRAIN-0042 | Synthetic training scenario | Severity: Medium — Escalated for validation
+Alert source: Splunk SIEM — Windows Security Events 4625 + 4648
+Affected host: LAB-DC01 (192.168.49.10)
+Source host/IP: KALI-NODE (192.168.49.130) — isolated lab source
+MITRE ATT&CK: T1110.001 Password Guessing (hypothesis); T1078 Valid Accounts (review context)
+
+ALERT SUMMARY
+27 failed logon records (4625) in the synthetic dataset within a short interval, followed by one explicit-credential-use event (4648) referencing krbtgt. Event 4648 alone does not establish a successful logon or compromise.
+
+EVIDENCE & VALIDATION
+• Correlate 4625 status/substatus, source address, target account and timestamps.
+• Search for 4624 successful logons from the same source/account; inspect Logon Type and authentication package.
+• For 4648, review Logon Type (Type 3 network vs Type 2 interactive), Process Name, caller context and host. Check expected admin scripts, scheduled tasks and approved RMM activity; lsass.exe / svchost.exe can occur in legitimate flows.
+• Review 4672, 4768/4769, 4662 and endpoint telemetry for privilege use, Kerberos activity, directory replication or lateral movement.
+• Displayed evidence supports suspicious authentication activity; no confirmed successful interactive compromise is established here.
+
+RECOMMENDED CONTAINMENT / FOLLOW-UP
+1. Preserve Security logs and Splunk results; record the event window and query.
+2. Verify whether 192.168.49.130 is an authorized test source. In production, coordinate any source restriction with the incident lead and firewall owner after corroboration.
+3. Review krbtgt and privileged-account activity; do not reset credentials solely on this alert without validating impact and following domain recovery procedures.
+4. Review account-lockout policy and monitor for unusual 4769 service-ticket requests and 4662 replication access.
+5. Assign a Tier 2 owner, document the decision and schedule follow-up.
+
+Confidence: Medium for suspicious activity; insufficient evidence to declare compromise.
+Data note: Synthetic training data — not a live incident or production case.`;
+function copyEscalationTicket(){const b=document.getElementById('copy-ticket-btn');const done=()=>{if(b)b.textContent='Copied ✓';};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(escalationTicket).then(done).catch(fallbackCopyTicket);}else fallbackCopyTicket();}
+function fallbackCopyTicket(){const t=document.createElement('textarea');t.value=escalationTicket;document.body.appendChild(t);t.select();try{document.execCommand('copy');const b=document.getElementById('copy-ticket-btn');if(b)b.textContent='Copied ✓';}catch(e){const b=document.getElementById('copy-ticket-btn');if(b)b.textContent='Select text to copy';}t.remove();}
+function renderTriage(){const x=triageSteps[triageIndex];document.getElementById('triage-progress').textContent='Step '+(triageIndex+1)+' of 5';document.getElementById('triage-progress-bar').style.width=((triageIndex+1)*20)+'%';let html='<div class="text-cyber-blue font-mono text-xs mb-2">'+x[0]+'</div><h4 class="text-lg font-bold text-cyber-heading">'+x[1]+'</h4><p class="text-sm text-cyber-text mt-2">'+x[2]+'</p><div class="mt-4 text-xs font-mono text-cyber-green">'+x[3]+'</div>';if(triageIndex===4){html+='<div class="mt-5 rounded-lg border border-cyber-blue/40 bg-[#080d14] p-4"><div class="flex flex-wrap items-center justify-between gap-3 mb-3"><h5 class="font-bold text-cyber-blue">Tier 2 SOC Escalation Ticket / Handoff</h5><button type="button" id="copy-ticket-btn" onclick="copyEscalationTicket()" class="px-3 py-2 rounded bg-cyber-blue text-black font-bold text-xs">Copy Escalation Ticket</button></div><pre class="whitespace-pre-wrap overflow-x-auto text-[11px] leading-relaxed text-cyber-text font-mono">'+escalationTicket.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></div>';}document.getElementById('triage-step-content').innerHTML=html;}
 function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}function triagePrev(){triageIndex=Math.max(0,triageIndex-1);renderTriage();}function triageReset(){triageIndex=0;renderTriage();}renderTriage();
 
 // CONTACT FORM TOAST
