@@ -212,8 +212,8 @@
 
                         <!-- External Links -->
                         <div class="mt-6 pt-4 border-t border-cyber-border flex justify-around text-xl text-cyber-text">
-                            <a href="https://github.com/Mrpalmer08" target="_blank" class="hover:text-cyber-blue transition-colors" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/mcdonald-handina-27a862359/" target="_blank" class="hover:text-cyber-blue transition-colors" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/MrPalmer08" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="hover:text-cyber-blue transition-colors" title="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mcdonald-handina-27a862359/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="hover:text-cyber-blue transition-colors" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
                             <a href="mailto:hantinamcdonald@gmail.com" class="hover:text-cyber-purple transition-colors" title="Send Email"><i class="fa-solid fa-paper-plane"></i></a>
                         </div>
                     </div>
@@ -777,10 +777,10 @@
                             <span class="font-bold">[★] Open to:</span> IT Support, Help Desk, Junior SOC Analyst, and Junior Cybersecurity Analyst roles in Toronto or remote.
                         </div>
                         <div class="pt-2 text-cyber-text/80 space-y-1">
-                            <div><span class="text-cyber-blue font-bold">Email:</span> hantinamcdonald@gmail.com</div>
-                            <div><span class="text-cyber-blue font-bold">GitHub:</span> github.com/MrPalmer08</div>
-<div><span class="text-cyber-blue font-bold">LinkedIn:</span> linkedin.com/in/mcdonald-handina-27a862359</div>
-<div><span class="text-cyber-blue font-bold">Portfolio:</span> mrpalmer08.github.io/McDonald-Handina-Cybersecurity-Portfolio</div>
+                            <div><span class="text-cyber-blue font-bold">Email:</span> <a class="underline hover:text-cyber-blue" href="mailto:hantinamcdonald@gmail.com">hantinamcdonald@gmail.com</a></div>
+                            <div><span class="text-cyber-blue font-bold">GitHub:</span> <a class="underline hover:text-cyber-blue" href="https://github.com/MrPalmer08" target="_blank" rel="noopener noreferrer">github.com/MrPalmer08</a></div>
+<div><span class="text-cyber-blue font-bold">LinkedIn:</span> <a class="underline hover:text-cyber-blue" href="https://www.linkedin.com/in/mcdonald-handina-27a862359/" target="_blank" rel="noopener noreferrer">linkedin.com/in/mcdonald-handina-27a862359</a></div>
+<div><span class="text-cyber-blue font-bold">Portfolio:</span> <a class="underline hover:text-cyber-blue" href="https://mrpalmer08.github.io/McDonald-Handina-Cybersecurity-Portfolio/" target="_blank" rel="noopener noreferrer">Open portfolio</a></div>
                         </div>
                     </div>
                 </div>
@@ -795,17 +795,17 @@
                     <form id="contact-form" onsubmit="handleContactSubmit(event)" class="mt-4 space-y-4 font-mono text-xs">
                         <div>
                             <label class="block text-cyber-heading mb-1">Your name / organization</label>
-                            <input type="text" required placeholder="Hiring manager, security recruiter" class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors">
+                            <input type="text" name="name" required placeholder="Hiring manager, security recruiter" class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors">
                         </div>
 
                         <div>
                             <label class="block text-cyber-heading mb-1">Your email</label>
-                            <input type="email" required placeholder="name@company.com" class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors">
+                            <input type="email" name="email" required placeholder="name@company.com" class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors">
                         </div>
 
                         <div>
                             <label class="block text-cyber-heading mb-1">Message</label>
-                            <textarea rows="4" required placeholder="Hello McDonald, I reviewed your portfolio..." class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors"></textarea>
+                            <textarea name="message" rows="4" required placeholder="Hello McDonald, I reviewed your portfolio..." class="w-full p-2.5 rounded bg-cyber-bg border border-cyber-border text-cyber-text focus:outline-none focus:border-cyber-blue transition-colors"></textarea>
                         </div>
 
                         <button type="submit" class="w-full py-3 rounded bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-red text-black font-bold hover:opacity-90 transition-opacity flex items-center justify-center text-sm">
@@ -813,9 +813,8 @@
                         </button>
                     </form>
 
-                    <div id="contact-toast" class="hidden mt-4 p-3 rounded bg-cyber-green/10 border border-cyber-green/40 text-cyber-green font-mono text-xs text-center">
-                        <i class="fa-solid fa-check-circle mr-1"></i> Email draft prepared in your mail application. The website does not send or store messages.
-                    </div>
+                    <div id="contact-toast" role="status" aria-live="polite" class="hidden mt-4 p-3 rounded border font-mono text-xs text-center"></div>
+                    <p class="mt-3 text-[10px] text-cyber-text/60 font-mono">Messages are delivered through FormSubmit. First-time setup requires the site owner to confirm the activation email.</p>
                 </div>
 
             </div>
@@ -1007,17 +1006,45 @@ function fallbackCopyTicket(){const t=document.createElement('textarea');t.value
 function renderTriage(){const x=triageSteps[triageIndex];document.getElementById('triage-progress').textContent='Step '+(triageIndex+1)+' of 5';document.getElementById('triage-progress-bar').style.width=((triageIndex+1)*20)+'%';let html='<div class="text-cyber-blue font-mono text-xs mb-2">'+x[0]+'</div><h4 class="text-lg font-bold text-cyber-heading">'+x[1]+'</h4><p class="text-sm text-cyber-text mt-2">'+x[2]+'</p><div class="mt-4 text-xs font-mono text-cyber-green">'+x[3]+'</div>';if(triageIndex===4){html+='<div class="mt-5 rounded-lg border border-cyber-blue/40 bg-[#080d14] p-4"><div class="flex flex-wrap items-center justify-between gap-3 mb-3"><h5 class="font-bold text-cyber-blue">Tier 2 SOC Escalation Ticket / Handoff</h5><button type="button" id="copy-ticket-btn" onclick="copyEscalationTicket()" class="px-3 py-2 rounded bg-cyber-blue text-black font-bold text-xs">Copy Escalation Ticket</button></div><pre class="whitespace-pre-wrap overflow-x-auto text-[11px] leading-relaxed text-cyber-text font-mono">'+escalationTicket.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></div>';}document.getElementById('triage-step-content').innerHTML=html;}
 function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}function triagePrev(){triageIndex=Math.max(0,triageIndex-1);renderTriage();}function triageReset(){triageIndex=0;renderTriage();}renderTriage();
 
-// CONTACT FORM TOAST
-        function handleContactSubmit(e) {
+// CONTACT FORM — direct email delivery via FormSubmit AJAX
+        async function handleContactSubmit(e) {
             e.preventDefault();
-            const fields = e.target.querySelectorAll('input, textarea');
-            const name = fields[0].value.trim();
-            const email = fields[1].value.trim();
-            const message = fields[2].value.trim();
-            const subject = encodeURIComponent('Portfolio enquiry from ' + name);
-            const body = encodeURIComponent(message + '\\n\\nReply to: ' + email);
-            document.getElementById('contact-toast').classList.remove('hidden');
-            window.location.href = 'mailto:hantinamcdonald@gmail.com?subject=' + subject + '&body=' + body;
+            const form = e.currentTarget;
+            const button = form.querySelector('button[type="submit"]');
+            const notice = document.getElementById('contact-toast');
+            const formData = new FormData(form);
+            const payload = {
+                name: String(formData.get('name') || '').trim(),
+                email: String(formData.get('email') || '').trim(),
+                message: String(formData.get('message') || '').trim(),
+                _subject: 'New portfolio enquiry from ' + String(formData.get('name') || 'Website visitor'),
+                _template: 'table'
+            };
+            button.disabled = true;
+            button.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Sending...';
+            notice.className = 'mt-4 p-3 rounded border border-cyber-blue/40 bg-cyber-blue/10 text-cyber-blue font-mono text-xs text-center';
+            notice.textContent = 'Sending your message securely...';
+            notice.classList.remove('hidden');
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/hantinamcdonald@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (!response.ok || String(result.success) !== 'true') {
+                    throw new Error(result.message || 'The email service could not accept the message.');
+                }
+                notice.className = 'mt-4 p-3 rounded border border-cyber-green/40 bg-cyber-green/10 text-cyber-green font-mono text-xs text-center';
+                notice.textContent = 'Message sent successfully. Thank you for getting in touch.';
+                form.reset();
+            } catch (error) {
+                notice.className = 'mt-4 p-3 rounded border border-cyber-red/40 bg-cyber-red/10 text-cyber-red font-mono text-xs text-center';
+                notice.textContent = 'Message not sent: ' + (error.message || 'Please try again or email hantinamcdonald@gmail.com directly.');
+            } finally {
+                button.disabled = false;
+                button.innerHTML = '<i class="fa-solid fa-paper-plane mr-2"></i> Transmit Message';
+            }
         }
     </script>
 </body>
