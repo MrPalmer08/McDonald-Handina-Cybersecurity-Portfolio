@@ -1,3 +1,36 @@
 # SIEM & Splunk Lab
 
-*Documentation, logs, and screenshots coming soon.*
+## Purpose
+A hands-on Windows Security telemetry and Splunk investigation exercise. The portfolio's interactive console is a scripted walkthrough; it does not connect to a live Splunk instance.
+
+## Lab evidence and scope
+- The separate Windows Security dataset contains **66,969 indexed events**.
+- The training scenario shown in the portfolio uses **synthetic demonstration data**: 27 Event ID 4625 records and one Event ID 4648 record.
+- The scenario attributes the sample source to `192.168.49.130` and the target to `LAB-DC01`.
+- Event ID 4648 records explicit credential use; it does not by itself establish a successful logon or compromise.
+- Field names and index names below are examples and must be adapted to the actual Splunk data model.
+
+## Correlation query
+```spl
+index=windows sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)
+| stats count min(_time) as first_seen max(_time) as last_seen values(EventCode) as event_ids values(TargetUserName) as accounts by Computer, IpAddress
+| convert ctime(first_seen) ctime(last_seen)
+| sort - count
+```
+
+## Validate successful authentication
+```spl
+index=windows sourcetype="WinEventLog:Security" EventCode=4624 IpAddress="192.168.49.130"
+| table _time Computer TargetUserName Logon_Type Authentication_Package
+| sort _time
+```
+
+## Analyst checks
+1. Validate the source, destination, account, timestamps and 4625 status/substatus.
+2. Search for 4624 successful logons from the same source/account; inspect logon type and authentication package.
+3. Correlate 4648 with process name, caller context and expected administrative activity.
+4. Review nearby 4672, Kerberos events, directory-service events and endpoint telemetry.
+5. Record confidence, scope, benign explanations and escalation rationale.
+
+## Limitations
+This repository documents educational lab work and a synthetic triage scenario. The displayed rows are not a production incident, and the page's console is not a live SIEM integration.
