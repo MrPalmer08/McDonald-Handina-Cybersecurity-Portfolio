@@ -361,7 +361,7 @@
                                     <span>Detection SPL: EventCode 4625 (Failed Logon) & 4648 (Explicit Credentials)</span>
                                 </li>
                             </ul>
-                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-blue underline hover:text-cyber-heading" href="projects/siem-lab/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
+                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-blue underline hover:text-cyber-heading" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/siem-lab/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
 </div>
 
                         <!-- Right Interactive Terminal Simulator -->
@@ -480,7 +480,7 @@
                                     <span>MobSF Scan: StrandHogg 2.0 and dangerous permissions flagged</span>
                                 </li>
                             </ul>
-                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-red underline hover:text-cyber-heading" href="projects/malware-analysis/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
+                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-red underline hover:text-cyber-heading" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/malware-analysis/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
 </div>
 
                         <!-- Right Interactive Terminal & MobSF Scanner -->
@@ -575,7 +575,7 @@
                             <p class="text-cyber-text text-sm leading-relaxed">
                                 Model spanning hardware root of trust (ARM TrustZone, TEE), OS/UEM policies, app containment (MAM), and radio channels. Verified screen-capture blocking via Android Test DPC in lab drills.
                             </p>
-                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-purple underline hover:text-cyber-heading" href="projects/security-assessments/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
+                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-purple underline hover:text-cyber-heading" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/security-assessments/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
 </div>
 
                         <!-- Right Dynamic Matrix Visualizer -->
@@ -640,7 +640,7 @@
                                     <span>False-positive tuning: allowlist approved legacy RC4 (0x17) service accounts only by account, SPN and expected source; review exceptions regularly and alert on deviations.</span>
                                 </li>
                             </ul>
-                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-yellow underline hover:text-cyber-heading" href="projects/active-directory/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
+                        <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-yellow underline hover:text-cyber-heading" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/active-directory/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
 </div>
 
                         <div class="lg:col-span-7">
@@ -679,7 +679,7 @@
 <div class="glass-panel p-5 mt-6"><h3 class="font-bold text-cyber-heading mb-3">Example SPL investigation query</h3><pre class="overflow-x-auto text-xs text-cyber-blue font-mono whitespace-pre-wrap">index=windows sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)
 | stats count min(_time) as first_seen max(_time) as last_seen values(EventCode) as event_ids values(TargetUserName) as accounts by Computer, IpAddress
 | convert ctime(first_seen) ctime(last_seen)
-| sort - count</pre><p class="text-xs text-cyber-text/60 mt-3">Illustrative SPL; adapt index, sourcetype and field names to the actual data model.</p><a class="inline-flex items-center gap-2 mt-3 text-xs font-mono text-cyber-blue underline" href="projects/log-analysis/README.md" target="_blank" rel="noopener noreferrer">Open triage notes / SPL on GitHub <i class="fa-brands fa-github"></i></a></div></div></section><!-- 4. TECHNICAL SKILLS MATRIX -->
+| sort - count</pre><p class="text-xs text-cyber-text/60 mt-3">Illustrative SPL; adapt index, sourcetype and field names to the actual data model.</p><a class="inline-flex items-center gap-2 mt-3 text-xs font-mono text-cyber-blue underline" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/log-analysis/README.md" target="_blank" rel="noopener noreferrer">Open triage notes / SPL on GitHub <i class="fa-brands fa-github"></i></a></div></div></section><!-- 4. TECHNICAL SKILLS MATRIX -->
     <section id="skills" class="py-16 bg-[#0d1117] border-b border-cyber-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
