@@ -28,9 +28,13 @@ Entry-level IT Support / Help Desk and Junior SOC / Cybersecurity candidate. Thi
 - Diploma in Computer Engineering.
 - Business Information Technology & Systems (BITS) — Mauritius.
 
-## Completed training
-- Cisco — Introduction to Cybersecurity (course completion).
+## Certificates and technical training
+- Google Cybersecurity Professional Certificate.
+- Cisco Networking Academy — Introduction to Cybersecurity (course completion).
 - TryHackMe — Junior Security Analyst learning path (completed).
+- GNS3 Academy — CCNA IP Addressing and Subnetting.
+- APNIC Academy — OSPF.
+- IBM — Cybersecurity Tools and Cyber Attacks.
 
 Training completions are not represented as professional vendor certifications. Project examples are educational lab work; synthetic alert data is labelled as such.
 
