@@ -25,6 +25,10 @@ index=windows sourcetype="WinEventLog:Security" EventCode=4624 IpAddress="192.16
 | sort _time
 ```
 
+## Query files
+- [Authentication correlation](queries/authentication-correlation.spl)
+- [Successful logon validation (4624)](queries/successful-logon-validation.spl)
+
 ## Analyst checks
 1. Validate the source, destination, account, timestamps and 4625 status/substatus.
 2. Search for 4624 successful logons from the same source/account; inspect logon type and authentication package.
