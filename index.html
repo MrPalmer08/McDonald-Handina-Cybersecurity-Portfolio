@@ -168,7 +168,7 @@
                         <a href="#projects" class="px-6 py-3 rounded-lg bg-cyber-blue text-black font-semibold font-mono text-sm hover:bg-opacity-90 transition-all flex items-center shadow-lg shadow-cyber-blue/20">
                             <i class="fa-solid fa-terminal mr-2"></i> Explore Projects
                         </a>
-                        <a href="#purple-team" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-heading border border-cyber-purple font-semibold font-mono text-sm hover:bg-cyber-purple/10 transition-all flex items-center">
+                        <a href="#red-blue-lab" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-heading border border-cyber-purple font-semibold font-mono text-sm hover:bg-cyber-purple/10 transition-all flex items-center">
                             <i class="fa-solid fa-diagram-project text-cyber-purple mr-2"></i> View Purple Team Lab
                         </a>
                         <a href="McDonald_Handina_Resume.pdf" download="McDonald_Handina_Resume.pdf" class="px-6 py-3 rounded-lg bg-cyber-card text-cyber-heading border border-cyber-green/60 font-mono text-sm hover:border-cyber-green transition-all flex items-center"><i class="fa-solid fa-file-arrow-down mr-2"></i> Download Resume (PDF)</a>
@@ -1004,7 +1004,13 @@ function fallbackCopyTicket(){const t=document.createElement('textarea');t.value
 function renderTriage(){const x=triageSteps[triageIndex];document.getElementById('triage-progress').textContent='Step '+(triageIndex+1)+' of 5';document.getElementById('triage-progress-bar').style.width=((triageIndex+1)*20)+'%';let html='<div class="text-cyber-blue font-mono text-xs mb-2">'+x[0]+'</div><h4 class="text-lg font-bold text-cyber-heading">'+x[1]+'</h4><p class="text-sm text-cyber-text mt-2">'+x[2]+'</p><div class="mt-4 text-xs font-mono text-cyber-green">'+x[3]+'</div>';if(triageIndex===4){html+='<div class="mt-5 rounded-lg border border-cyber-blue/40 bg-[#080d14] p-4"><div class="flex flex-wrap items-center justify-between gap-3 mb-3"><h5 class="font-bold text-cyber-blue">Tier 2 SOC Escalation Ticket / Handoff</h5><button type="button" id="copy-ticket-btn" onclick="copyEscalationTicket()" class="px-3 py-2 rounded bg-cyber-blue text-black font-bold text-xs">Copy Escalation Ticket</button></div><pre class="whitespace-pre-wrap overflow-x-auto text-[11px] leading-relaxed text-cyber-text font-mono">'+escalationTicket.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</pre></div>';}document.getElementById('triage-step-content').innerHTML=html;}
 function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}function triagePrev(){triageIndex=Math.max(0,triageIndex-1);renderTriage();}function triageReset(){triageIndex=0;renderTriage();}renderTriage();
 
-// CONTACT FORM — direct email delivery via FormSubmit AJAX
+// Show the illustrative identity-detection output panel.
+        function runIdentityDetection() {
+            const output = document.getElementById('identity-detection-output');
+            if (output) output.classList.toggle('hidden');
+        }
+
+        // CONTACT FORM — direct email delivery via FormSubmit AJAX
         async function handleContactSubmit(e) {
             e.preventDefault();
             const form = e.currentTarget;
