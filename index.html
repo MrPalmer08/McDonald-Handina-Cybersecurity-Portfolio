@@ -692,6 +692,13 @@
                                     <span>ATT&CK Technique: T1558.003 (Kerberoasting)</span>
                                     <span class="text-cyber-green font-bold">[Verified in Lab]</span>
                                 </div>
+                                <button onclick="runIdentityDetection()" class="mt-3 px-3 py-2 rounded bg-cyber-yellow/10 border border-cyber-yellow/40 text-cyber-yellow text-xs font-mono"><i class="fa-solid fa-play mr-1"></i> Run sample identity detection</button>
+                                <div id="identity-detection-output" class="hidden mt-3 p-3 rounded bg-[#080d14] border border-cyber-border text-xs font-mono">
+                                  <div class="text-cyber-yellow font-bold mb-2">Illustrative query output · synthetic rows</div>
+                                  <div class="grid grid-cols-3 gap-2 text-cyber-text/60 border-b border-cyber-border pb-1"><span>Account</span><span>Service</span><span>Ticket type</span></div>
+                                  <div class="grid grid-cols-3 gap-2 py-2 text-cyber-text"><span>svc-backup</span><span>HTTP/app01</span><span class="text-cyber-yellow">0x17 RC4</span></div>
+                                  <div class="text-cyber-green mt-1">Review SPN ownership, encryption baseline and source host before escalation.</div>
+                                </div>
                             </div>
                         </div>
 
