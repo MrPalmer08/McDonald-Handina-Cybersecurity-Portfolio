@@ -238,6 +238,12 @@
                 </p>
             </div>
 
+            <div class="flex flex-wrap justify-center gap-3 mb-5 text-xs font-mono">
+                <span class="px-3 py-2 rounded border border-cyber-red/50 bg-cyber-red/10 text-cyber-red"><i class="fa-solid fa-user-secret mr-2"></i>RED TEAM · Adversary emulation (Kali Linux)</span>
+                <span class="px-3 py-2 rounded border border-cyber-blue/50 bg-cyber-blue/10 text-cyber-blue"><i class="fa-solid fa-shield-halved mr-2"></i>BLUE TEAM · Monitoring & detection (Windows / Splunk)</span>
+                <span class="px-3 py-2 rounded border border-cyber-purple/50 bg-cyber-purple/10 text-cyber-purple"><i class="fa-solid fa-arrows-rotate mr-2"></i>PURPLE TEAM · Validate & improve detections</span>
+            </div>
+
             <!-- Architecture Canvas Container -->
             <div class="glass-panel p-6 border-cyber-border relative overflow-hidden">
                 <!-- Status Control Header -->
@@ -826,7 +832,7 @@
                     </form>
 
                     <div id="contact-toast" class="hidden mt-4 p-3 rounded bg-cyber-green/10 border border-cyber-green/40 text-cyber-green font-mono text-xs text-center">
-                        <i class="fa-solid fa-check-circle mr-1"></i> Transmission Acknowledged! Message logged successfully.
+                        <i class="fa-solid fa-check-circle mr-1"></i> Email draft prepared in your mail application. The website does not send or store messages.
                     </div>
                 </div>
 
@@ -1080,10 +1086,14 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
 // CONTACT FORM TOAST
         function handleContactSubmit(e) {
             e.preventDefault();
-            const toast = document.getElementById('contact-toast');
-            toast.classList.remove('hidden');
-            e.target.reset();
-            setTimeout(() => toast.classList.add('hidden'), 5000);
+            const fields = e.target.querySelectorAll('input, textarea');
+            const name = fields[0].value.trim();
+            const email = fields[1].value.trim();
+            const message = fields[2].value.trim();
+            const subject = encodeURIComponent('Portfolio enquiry from ' + name);
+            const body = encodeURIComponent(message + '\\n\\nReply to: ' + email);
+            document.getElementById('contact-toast').classList.remove('hidden');
+            window.location.href = 'mailto:hantinamcdonald@gmail.com?subject=' + subject + '&body=' + body;
         }
     </script>
 </body>
