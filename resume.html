@@ -3,9 +3,9 @@
 <div class="actions"><a href="index.html">← Portfolio</a><button type="button" onclick="document.getElementById('download-choices').showModal()">Download Resume</button></div>
 <dialog id="download-choices" style="border:1px solid #cbd5e1;border-radius:12px;padding:24px;max-width:390px;width:calc(100% - 32px);box-shadow:0 20px 60px #102a4340">
 <h2 style="margin-top:0">Choose your resume format</h2>
-<p style="font-size:10pt;color:#536273">Choose PDF or Word. PDF opens the print dialog; select “Save as PDF” to save it.</p>
+<p style="font-size:10pt;color:#536273">Choose the PDF or Word file to download.</p>
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-<button type="button" onclick="document.getElementById('download-choices').close();window.print()">Download PDF</button>
+<a href="McDonald_Handina_Resume.pdf" download="McDonald_Handina_Resume.pdf" onclick="document.getElementById('download-choices').close()" style="display:inline-block;padding:10px 14px;border-radius:7px;background:#087e9b;color:white;text-decoration:none;font-size:10pt">Download PDF</a>
 <button type="button" onclick="downloadWord()">Download Word</button>
 <button type="button" onclick="document.getElementById('download-choices').close()" style="background:#536273">Cancel</button>
 </div></dialog><main>
