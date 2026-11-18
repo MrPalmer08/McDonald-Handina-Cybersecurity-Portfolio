@@ -48,11 +48,7 @@ This was an isolated training domain. The documented observations are the result
 Understand how Windows authentication events can be collected and searched, then practice turning a group of related events into an evidence-based triage decision.
 
 ### Environment and evidence
-Splunk Enterprise was used with Windows Security event data from the domain controller. The separate indexed dataset contained **66,969 events**. The portfolio's guided alert scenario is a clearly labelled synthetic training example:
-- 27 Event ID 4625 failed-logon records.
-- One Event ID 4648 explicit-credential-use record.
-- Source shown in the scenario: `192.168.49.130`.
-- Target shown in the scenario: `LAB-DC01`.
+Splunk Enterprise was used with Windows Security event data from the domain controller. The separate indexed dataset contained **66,969 events**. The portfolio's guided alert scenario is a synthetic training example containing 27 Event ID 4625 failed-logon records. The source (`192.168.49.130`) and target (`LAB-DC01`) are scenario metadata, not a substitute for raw Windows event fields. The scenario does not include a claimed Event ID 4648 record.
 
 The 66,969 indexed-event count and the 28-event synthetic scenario are different evidence sets; the scenario is not presented as a measured incident extracted from those 66,969 records.
 
@@ -62,7 +58,7 @@ I used Splunk searches to filter Windows Security events by event code and group
 Example correlation search (field and index names may need adjustment for a particular Splunk input):
 
 ```spl
-index=windows sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)
+index=windows sourcetype="WinEventLog:Security" EventCode=4625
 | stats count min(_time) as first_seen max(_time) as last_seen values(EventCode) as event_ids values(TargetUserName) as accounts by Computer, IpAddress
 | convert ctime(first_seen) ctime(last_seen)
 | sort - count
@@ -70,9 +66,8 @@ index=windows sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=464
 
 ### How I interpreted the events
 - **4625** records a failed logon. I would inspect status/substatus, account, source, destination and timing to understand whether failures share a pattern.
-- **4648** records an attempt to log on using explicit credentials. It does not prove that authentication succeeded or that an account was compromised.
-- I would search for **4624** from the same source/account and review logon type and authentication package.
-- I would correlate 4648 with process name and caller context, and review nearby privileged-logon, Kerberos and endpoint events before reaching a conclusion.
+- I would search for **4624** from the same source/account and review logon type and authentication package to determine whether any subsequent authentication succeeded.
+- I would correlate the failed-logon pattern with endpoint and network telemetry before attributing it to a process or technique.
 
 ### Blue-team decision
 The scenario is treated as suspicious authentication activity requiring validation; compromise is not established by the two event types alone. The appropriate analyst output is a documented investigation and, if corroborating evidence warrants it, an escalation to Tier 2.
