@@ -454,7 +454,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <i class="fa-solid fa-check-circle text-cyber-green mt-0.5 mr-2"></i>
-                                    <span>Detection SPL: EventCode 4625 (Failed Logon) & 4648 (Explicit Credentials)</span>
+                                    <span>Detection SPL: EventCode 4625 (Failed Logon)</span>
                                 </li>
                             </ul>
                         <a class="inline-flex items-center gap-2 text-xs font-mono text-cyber-blue underline hover:text-cyber-heading" href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/projects/siem-lab/README.md" target="_blank" rel="noopener noreferrer">View Lab Notes / GitHub <i class="fa-brands fa-github"></i></a>
@@ -494,7 +494,7 @@
 
                                 <div id="sim1-table-view" class="hidden p-3 bg-[#080d14] border-t border-cyber-border">
                                     <div class="text-[11px] text-cyber-blue font-bold mb-2 flex justify-between">
-                                        <span>SPL Results: sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)</span>
+                                        <span>SPL template: sourcetype="WinEventLog:Security" EventCode=4625</span>
                                         <span class="text-cyber-green">Matched: 27 Events</span>
                                     </div>
                                     <div class="overflow-x-auto">
@@ -509,27 +509,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="divide-y divide-cyber-border/40">
-                                                <tr>
-                                                    <td class="p-1.5"><span data-sim-date></span> 11:32:44</td>
-                                                    <td class="p-1.5 text-cyber-red font-bold">4625</td>
-                                                    <td class="p-1.5">KALI-NODE</td>
-                                                    <td class="p-1.5">NULL / Anonymous</td>
-                                                    <td class="p-1.5 text-cyber-red">STATUS_LOGON_FAILURE</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="p-1.5"><span data-sim-date></span> 11:32:45</td>
-                                                    <td class="p-1.5 text-cyber-red font-bold">4625</td>
-                                                    <td class="p-1.5">KALI-NODE</td>
-                                                    <td class="p-1.5">administrator</td>
-                                                    <td class="p-1.5 text-cyber-red">NT_STATUS_ACCESS_DENIED</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="p-1.5"><span data-sim-date></span> 11:32:46</td>
-                                                    <td class="p-1.5 text-cyber-purple font-bold">4648</td>
-                                                    <td class="p-1.5">KALI-NODE</td>
-                                                    <td class="p-1.5">krbtgt</td>
-                                                    <td class="p-1.5 text-cyber-purple">EXPLICIT_CRED_ATTEMPT</td>
-                                                </tr>
+                                                <tr><td class="p-3 text-cyber-text" colspan="5">Synthetic scenario summary: 27 failed-logon records (Event ID 4625). No raw event rows are represented in this panel. Review the original Security log fields before treating this as evidence.</td></tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -716,7 +696,7 @@
                                 <span>Identity Attacks</span>
                             </div>
                             <h3 class="text-2xl font-bold text-cyber-heading">
-                                Kerberoasting & DCSync Detection Engineering
+                                Kerberoasting Lab & Identity Monitoring
                             </h3>
                             <p class="text-cyber-text text-sm leading-relaxed">
                                 Used Impacket <code class="text-cyber-yellow">GetUserSPNs.py</code> to explore the Kerberoasting attack path and reviewed credential-dumping concepts with <code class="text-cyber-yellow">secretsdump.py</code>. The published Splunk hunt focuses on Event ID 4769; this page does not claim a completed DCSync detection.
@@ -907,8 +887,8 @@
         function runSplunkQuery() {
             const body = document.getElementById('sim1-terminal-body');
             body.innerHTML += `
-                <div class="text-cyber-blue font-bold mt-2">splunk> sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)</div>
-                <div class="text-cyber-green">[DEMO] Example query result across the 66,969-event lab dataset.</div>
+                <div class="text-cyber-blue font-bold mt-2">splunk> sourcetype="WinEventLog:Security" EventCode=4625</div>
+                <div class="text-cyber-green">[DEMO] Query walkthrough only; this panel does not display raw events from the 66,969-event collection.</div>
                 <div class="text-cyber-blue">[DEMO] Example correlation: 27 failed logons and explicit-credential events attributed to the Kali test host.</div>
             `;
             body.scrollTop = body.scrollHeight;
@@ -1021,7 +1001,7 @@
 
         const triageSteps=[
 ['01 / VALIDATE','Confirm the alert is supported by evidence','Check raw Windows Security logs, timestamps, host identity and event fields. Confirm the 27 Event ID 4625 failures share the same source and target. Event ID 4625 records a failed logon; it does not by itself identify the source process or prove malicious intent.','Output: Alert is reproducible in the synthetic lab dataset.'],
-['02 / SCOPE','Identify affected identities and assets','Pivot on source IP, destination host, account, logon type and time window. Review nearby Event IDs 4624 (successful logon), 4672 (special privileges) and endpoint telemetry. For Event ID 4648, inspect Logon Type (Type 3 network vs Type 2 interactive), Process Name and caller context. lsass.exe or svchost.exe may appear in legitimate authentication flows; neither process name alone proves malicious activity. Check approved admin scripts, scheduled tasks and authorized RMM tools before escalating.','Output: Source and target mapped; benign admin / service activity checked; attribution remains unconfirmed.'],
+['02 / SCOPE','Identify affected identities and assets','Pivot on source IP, destination host, account, logon type and time window. Review nearby Event IDs 4624 (successful logon), 4672 (special privileges) and endpoint telemetry. Check the 4625 status/substatus, source address, target account, destination host and timing. Compare with approved admin activity and nearby endpoint events before escalating.','Output: Source and target mapped; benign admin / service activity checked; attribution remains unconfirmed.'],
 ['03 / ASSESS','Determine likelihood and potential impact','Look for successful authentication after failures, unusual account activity, privilege changes, lateral movement or endpoint alerts. Compare activity with the lab baseline. Raise severity only when corroborating evidence supports it.','Output: Medium-priority suspicious pattern; compromise not established.'],
 ['04 / RESPOND','Recommend proportionate response actions','If production evidence confirms malicious activity, follow the incident playbook: notify the incident lead, preserve logs, and consider account/session containment or source blocking only after checking business impact and obtaining authorization.','Output: Escalate for review; containment is conditional on confirmation.'],
 ['05 / DOCUMENT','Record disposition and prepare Tier 2 handoff','Document the evidence, validation steps, benign-activity checks, confidence and recommended containment. Use the Tier 2 escalation ticket below as the analyst handoff artifact.','Final disposition: Suspicious activity — escalated for validation. No confirmed compromise in this illustrative case.']
@@ -1120,7 +1100,7 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
         const socTrainingAlerts = [
           {id:'SOC-LAB-001',severity:'high',title:'Repeated authentication failures',detail:'27 Event ID 4625 records from one source targeting LAB-DC01.',status:'Investigating'},
           {id:'SOC-LAB-002',severity:'high',title:'Suspicious PowerShell execution',detail:'Illustrative encoded-command pattern requiring script and parent-process review.',status:'Needs review'},
-          {id:'SOC-LAB-003',severity:'medium',title:'Explicit credential use',detail:'Event ID 4648 observed; correlate account, host and logon context.',status:'Investigating'},
+          {id:'SOC-LAB-003',severity:'medium',title:'Authentication context review',detail:'Review failed-logon source, account, host and timing; no successful logon is assumed.',status:'Investigating'},
           {id:'SOC-LAB-004',severity:'medium',title:'Unusual outbound connection',detail:'Training network-flow anomaly; verify destination and authorised activity.',status:'Queued'},
           {id:'SOC-LAB-005',severity:'medium',title:'New local administrator',detail:'Review account creation, group membership and change approval.',status:'Investigating'},
           {id:'SOC-LAB-006',severity:'low',title:'Expected service discovery',detail:'Authorised lab scan matched the documented test window.',status:'Closed · benign'},
