@@ -5,7 +5,7 @@ The portfolio documents an isolated Windows Server / Active Directory environmen
 
 ## Kerberoasting detection query
 ```spl
-index=wineventlog EventCode=4769 Ticket_Encryption_Type=0x17
+index=windows EventCode=4769 Ticket_Encryption_Type=0x17
 | search Service_Name!="*$" Service_Name!="krbtgt"
 | stats count by Account_Name, Service_Name, Client_Address
 ```
