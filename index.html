@@ -14,9 +14,8 @@
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://mrpalmer08.github.io/McDonald-Handina-Cybersecurity-Portfolio/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -44,9 +43,13 @@
             }
         }
     </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- Icons load without blocking the first paint. -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Swap to web fonts when available. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -129,7 +132,7 @@
         .motion-stagger > * { transition-delay: var(--motion-delay, 0ms); }
         .motion-card { transition: transform .3s cubic-bezier(.2,.75,.25,1), border-color .3s ease, box-shadow .3s ease; }
         .motion-card:hover { transform: translateY(-5px); border-color: rgba(168,85,247,.55); box-shadow: 0 14px 34px rgba(0,0,0,.22), 0 0 22px rgba(168,85,247,.08); }
-        .motion-progress { position: fixed; inset: 0 auto auto 0; height: 2px; width: 0; z-index: 100; background: linear-gradient(90deg,#00d2ff,#a855f7,#ff4d4d); box-shadow: 0 0 12px rgba(168,85,247,.65); pointer-events: none; }
+        .motion-progress { position: fixed; inset: 0 auto auto 0; height: 2px; width: 100%; transform: scaleX(0); transform-origin: left center; z-index: 100; background: linear-gradient(90deg,#00d2ff,#a855f7,#ff4d4d); box-shadow: 0 0 12px rgba(168,85,247,.65); pointer-events: none; will-change: transform; }
         nav a { position: relative; color: #c9d1d9; }
         nav a::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -7px; height: 1px; background: linear-gradient(90deg,#00d2ff,#a855f7); transition: right .25s ease; }
         nav a:hover { color: #00d2ff; }
@@ -399,7 +402,7 @@
                         <span class="text-cyber-red font-bold">STAGE 1:</span> Kali Linux executes unauthenticated SMB/LDAP enumeration (<code class="text-cyber-blue">enum4linux -a 192.168.49.10</code>) targeting Domain Controller ports (139, 445, 389).
                     </div>
                     <div class="text-cyber-text/60 text-[10px]">
-                        <span id="red-blue-run-state" class="text-cyber-green">Auto-playing · 4s per stage</span>
+                        <span id="red-blue-run-state" class="text-cyber-green">Paused · select a stage or Resume</span>
                     </div>
                 </div>
 
@@ -644,7 +647,7 @@
                             <div class="bg-black rounded-lg border border-cyber-border p-4 font-mono text-xs space-y-3">
                                 <div class="text-cyber-yellow font-bold">// Kerberoasting Detection SPL Logic (EventCode 4769)</div>
                                 <div class="p-3 bg-[#05080c] rounded border border-cyber-border text-cyber-text leading-relaxed font-mono">
-                                    <span class="text-cyber-blue">index</span>=wineventlog <span class="text-cyber-purple">EventCode</span>=4769 <span class="text-cyber-purple">Ticket_Encryption_Type</span>=0x17<br>
+                                    <span class="text-cyber-blue">index</span>=windows <span class="text-cyber-purple">EventCode</span>=4769 <span class="text-cyber-purple">Ticket_Encryption_Type</span>=0x17<br>
                                     | <span class="text-cyber-blue">search</span> Service_Name!="*$" Service_Name!="krbtgt"<br>
                                     | <span class="text-cyber-blue">stats</span> count by Account_Name, Service_Name, Client_Address
                                 </div>
@@ -674,7 +677,7 @@
       <div class="max-w-3xl mb-9"><p class="font-mono text-xs uppercase tracking-widest text-cyber-purple">Behind the tools</p><h2 class="text-3xl font-bold text-cyber-heading mt-2">Technical Lab Case Studies</h2><p class="text-sm text-cyber-text mt-3">The objective, methodology, observations and defensive reasoning behind selected red-team and blue-team exercises. Each write-up separates observed lab results from hypotheses and recommended actions.</p></div>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         <a href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 border-cyber-purple/30 hover:border-cyber-purple transition-colors"><p class="font-mono text-[10px] text-cyber-purple">01 · RED + BLUE</p><h3 class="font-bold text-cyber-heading mt-2">Active Directory Reconnaissance</h3><p class="text-xs text-cyber-text mt-2">VMware, pfSense, Nmap and enum4linux: what was exposed, what was restricted and what defenders should monitor.</p><span class="inline-block text-xs text-cyber-blue mt-4">Read methodology →</span></a>
-        <a href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 border-cyber-blue/30 hover:border-cyber-blue transition-colors"><p class="font-mono text-[10px] text-cyber-blue">02 · BLUE TEAM</p><h3 class="font-bold text-cyber-heading mt-2">Windows Event Triage with Splunk</h3><p class="text-xs text-cyber-text mt-2">66,969 indexed events, authentication event correlation, validation steps and an evidence-based escalation decision.</p><span class="inline-block text-xs text-cyber-blue mt-4">Read methodology →</span></a>
+        <a href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 border-cyber-blue/30 hover:border-cyber-blue transition-colors"><p class="font-mono text-[10px] text-cyber-blue">02 · BLUE TEAM</p><h3 class="font-bold text-cyber-heading mt-2">Windows Event Triage with Splunk</h3><p class="text-xs text-cyber-text mt-2">A separate 66,969-event collection, plus a clearly labelled synthetic 27-record triage walkthrough.</p><span class="inline-block text-xs text-cyber-blue mt-4">Read methodology →</span></a>
         <a href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 border-cyber-red/30 hover:border-cyber-red transition-colors"><p class="font-mono text-[10px] text-cyber-red">03 · RED + BLUE</p><h3 class="font-bold text-cyber-heading mt-2">Kerberoasting & Identity Detection</h3><p class="text-xs text-cyber-text mt-2">Impacket attack-path learning, Event ID 4769 hunting, RC4 false-positive tuning and service-account risk.</p><span class="inline-block text-xs text-cyber-blue mt-4">Read methodology →</span></a>
         <a href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 border-cyber-green/30 hover:border-cyber-green transition-colors"><p class="font-mono text-[10px] text-cyber-green">04 · APPLICATION SECURITY</p><h3 class="font-bold text-cyber-heading mt-2">Android Security with MobSF</h3><p class="text-xs text-cyber-text mt-2">Manifest review, exported components, sensitive permissions and validation of static-analysis findings.</p><span class="inline-block text-xs text-cyber-blue mt-4">Read methodology →</span></a>
         <a href="https://github.com/MrPalmer08/McDonald-Handina-Cybersecurity-Portfolio/blob/main/case-studies/README.md" target="_blank" rel="noopener noreferrer" class="glass-panel p-5 border-cyber-yellow/30 hover:border-cyber-yellow transition-colors"><p class="font-mono text-[10px] text-cyber-yellow">05 · DEFENSIVE DESIGN</p><h3 class="font-bold text-cyber-heading mt-2">Mobile Data Loss Prevention</h3><p class="text-xs text-cyber-text mt-2">Device, OS/UEM, app and network control layers, with a focus on validation and audit evidence.</p><span class="inline-block text-xs text-cyber-blue mt-4">Read methodology →</span></a>
@@ -812,7 +815,7 @@
             body.innerHTML += `
                 <div class="text-cyber-blue font-bold mt-2">splunk> sourcetype="WinEventLog:Security" EventCode=4625</div>
                 <div class="text-cyber-green">[DEMO] Query walkthrough only; this panel does not display raw events from the 66,969-event collection.</div>
-                <div class="text-cyber-blue">[DEMO] Example correlation: 27 failed logons and explicit-credential events attributed to the Kali test host.</div>
+                <div class="text-cyber-blue">[DEMO] Synthetic example: 27 failed-logon records. No explicit-credential event or successful logon is asserted.</div>
             `;
             body.scrollTop = body.scrollHeight;
             document.getElementById('sim1-table-view').classList.remove('hidden');
@@ -1042,7 +1045,7 @@ function triageNext(){triageIndex=Math.min(4,triageIndex+1);renderTriage();}func
             let ticking = false;
             const updateProgress = () => {
                 const max = document.documentElement.scrollHeight - window.innerHeight;
-                progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+                progress.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
                 ticking = false;
             };
             window.addEventListener('scroll', () => {
