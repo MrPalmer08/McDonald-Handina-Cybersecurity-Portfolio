@@ -1,4 +1,4 @@
-# McDonald Tatenda Handina — Cybersecurity & IT Support Portfolio
+# McDonald Handina — Cybersecurity & IT Support Portfolio
 
 **Toronto, Ontario, Canada**  
 **LinkedIn:** https://www.linkedin.com/in/mcdonald-handina-27a862359/  
