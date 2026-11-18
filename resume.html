@@ -5,7 +5,7 @@
 <h2 style="margin-top:0">Choose your resume format</h2>
 <p style="font-size:10pt;color:#536273">Choose the PDF or Word file to download.</p>
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-<a href="McDonald_Handina_Resume.pdf" download="McDonald_Handina_Resume.pdf" onclick="document.getElementById('download-choices').close()" style="display:inline-block;padding:10px 14px;border-radius:7px;background:#087e9b;color:white;text-decoration:none;font-size:10pt">Download PDF</a>
+<button type="button" onclick="document.getElementById('download-choices').close();window.print()">Print / Save as PDF</button>
 <button type="button" onclick="downloadWord()">Download Word</button>
 <button type="button" onclick="document.getElementById('download-choices').close()" style="background:#536273">Cancel</button>
 </div></dialog><main>
