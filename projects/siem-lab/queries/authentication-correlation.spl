@@ -1,4 +1,4 @@
-index=windows sourcetype="WinEventLog:Security" (EventCode=4625 OR EventCode=4648)
+index=windows sourcetype="WinEventLog:Security" EventCode=4625
 | stats count min(_time) as first_seen max(_time) as last_seen values(EventCode) as event_ids values(TargetUserName) as accounts by Computer, IpAddress
 | convert ctime(first_seen) ctime(last_seen)
 | sort - count
